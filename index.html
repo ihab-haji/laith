@@ -31,6 +31,32 @@
             text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
         }
 
+        .child-photo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            padding: 10px;
+        }
+
+        .child-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid white;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            animation: photoGlow 3s infinite;
+        }
+
+        @keyframes photoGlow {
+            0%, 100% {
+                box-shadow: 0 8px 20px rgba(0,0,0,0.3), 0 0 20px rgba(255,255,255,0.5);
+            }
+            50% {
+                box-shadow: 0 8px 30px rgba(0,0,0,0.4), 0 0 40px rgba(255,215,0,0.6);
+            }
+        }
+
         .header h1 {
             font-size: 3em;
             margin-bottom: 10px;
@@ -130,7 +156,7 @@
         }
 
         .letter {
-            font-size: 6em;
+            font-size: 7em;
             font-weight: bold;
             color: white;
             text-shadow: 3px 3px 6px rgba(0,0,0,0.3);
@@ -138,7 +164,7 @@
         }
 
         .letter-name {
-            font-size: 1.5em;
+            font-size: 1.8em;
             color: white;
             font-weight: bold;
             background: rgba(0,0,0,0.2);
@@ -189,6 +215,12 @@
                 padding: 10px;
             }
             
+            .child-photo {
+                width: 140px;
+                height: 140px;
+                border: 5px solid white;
+            }
+            
             .header h1 {
                 font-size: 1.8em;
                 padding: 10px;
@@ -223,11 +255,11 @@
             }
             
             .letter {
-                font-size: 3.5em;
+                font-size: 4.5em;
             }
             
             .letter-name {
-                font-size: 1.2em;
+                font-size: 1.5em;
             }
             
             .hint {
@@ -247,6 +279,12 @@
             body {
                 padding: 8px;
                 font-size: 14px;
+            }
+            
+            .child-photo {
+                width: 120px;
+                height: 120px;
+                border: 4px solid white;
             }
             
             .header h1 {
@@ -282,11 +320,11 @@
             }
             
             .letter {
-                font-size: 4em;
+                font-size: 5em;
             }
             
             .letter-name {
-                font-size: 1.3em;
+                font-size: 1.6em;
             }
             
             .hint {
@@ -1015,6 +1053,11 @@
 </head>
 <body>
     <div class="header">
+        <!-- Child Photo Section -->
+        <div class="child-photo-container">
+            <img src="child-photo.jpg" alt="Child Photo" class="child-photo">
+        </div>
+        
         <h1 id="main-title">🌟 تعلم الحروف العربية 🌟</h1>
         <p id="subtitle">اضغط على البطاقة لرؤية الحيوان!</p>
         
