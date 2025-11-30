@@ -214,62 +214,62 @@
             body {
                 padding: 10px;
             }
-            
+
             .child-photo {
                 width: 140px;
                 height: 140px;
                 border: 5px solid white;
             }
-            
+
             .header h1 {
                 font-size: 1.8em;
                 padding: 10px;
             }
-            
+
             .header p {
                 font-size: 1em;
                 padding: 5px;
             }
-            
+
             .tabs {
                 gap: 5px;
                 padding: 10px;
                 flex-wrap: wrap;
             }
-            
+
             .tab-btn {
                 font-size: 0.9em;
                 padding: 10px 15px;
                 min-width: 45%;
                 flex: 1 1 45%;
             }
-            
+
             .container {
                 grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
                 gap: 12px;
                 padding: 15px;
             }
-            
+
             .card {
                 height: 180px;
             }
-            
+
             .letter {
                 font-size: 4.5em;
             }
-            
+
             .letter-name {
                 font-size: 1.5em;
             }
-            
+
             .hint {
                 font-size: 0.9em;
             }
-            
+
             .animal-emoji {
                 font-size: 3em;
             }
-            
+
             .animal-name {
                 font-size: 1.2em;
             }
@@ -280,61 +280,61 @@
                 padding: 8px;
                 font-size: 14px;
             }
-            
+
             .child-photo {
                 width: 120px;
                 height: 120px;
                 border: 4px solid white;
             }
-            
+
             .header h1 {
                 font-size: 1.5em;
                 padding: 8px;
             }
-            
+
             .header p {
                 font-size: 0.9em;
             }
-            
+
             .tabs {
                 gap: 5px;
                 padding: 8px;
             }
-            
+
             .tab-btn {
                 font-size: 0.8em;
                 padding: 8px 10px;
                 min-width: 48%;
                 flex: 1 1 48%;
             }
-            
+
             .container {
                 grid-template-columns: 1fr;
                 gap: 15px;
                 padding: 10px;
             }
-            
+
             .card {
                 height: 200px;
                 max-width: 100%;
             }
-            
+
             .letter {
                 font-size: 5em;
             }
-            
+
             .letter-name {
                 font-size: 1.6em;
             }
-            
+
             .hint {
                 font-size: 1em;
             }
-            
+
             .animal-emoji {
                 font-size: 3.5em;
             }
-            
+
             .animal-name {
                 font-size: 1.3em;
             }
@@ -590,6 +590,45 @@
             }
         }
 
+        @keyframes miniCelebrate {
+            0% {
+                transform: translate(0, 0) scale(0.5) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translate(var(--random-x), -60px) scale(1.2) rotate(180deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--random-x), -120px) scale(0.8) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .mini-celebration-emoji {
+            --random-x: 0px;
+        }
+
+        @keyframes prizeCelebrate {
+            0% {
+                transform: translate(0, 0) scale(0.5) rotate(0deg);
+                opacity: 1;
+            }
+            50% {
+                transform: translate(var(--prize-x), calc(var(--prize-y) / 2)) scale(1.3) rotate(180deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--prize-x), var(--prize-y)) scale(1) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .celebration-prize {
+            --prize-x: 0px;
+            --prize-y: -100px;
+        }
+
         @keyframes shake {
             0%, 100% { transform: translateX(0); }
             25% { transform: translateX(-10px); }
@@ -600,53 +639,53 @@
             .paint-game {
                 padding: 20px;
             }
-            
+
             .game-header h2 {
                 font-size: 1.6em;
             }
-            
+
             .game-header p {
                 font-size: 1em;
             }
-            
+
             .picture-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
             }
-            
+
             .picture-preview {
                 font-size: 3em;
             }
-            
+
             .picture-card p {
                 font-size: 1.1em;
             }
-            
+
             .painting-header {
                 flex-direction: column;
                 gap: 10px;
             }
-            
+
             .painting-header h3 {
                 font-size: 1.3em;
             }
-            
+
             .palette-color {
                 width: 50px;
                 height: 50px;
                 font-size: 1.2em;
             }
-            
+
             .control-btn {
                 font-size: 1em;
                 padding: 12px 20px;
             }
-            
+
             .game-controls {
                 flex-direction: column;
                 gap: 10px;
             }
-            
+
             .canvas-container {
                 padding: 10px;
             }
@@ -656,53 +695,53 @@
             .paint-game {
                 padding: 15px;
             }
-            
+
             .game-header h2 {
                 font-size: 1.3em;
             }
-            
+
             .game-header p {
                 font-size: 0.9em;
             }
-            
+
             .picture-grid {
                 grid-template-columns: 1fr;
                 gap: 12px;
             }
-            
+
             .picture-card {
                 padding: 20px;
             }
-            
+
             .picture-preview {
                 font-size: 2.5em;
             }
-            
+
             .picture-card p {
                 font-size: 1em;
             }
-            
+
             .painting-header h3 {
                 font-size: 1.1em;
             }
-            
+
             .small-btn {
                 font-size: 0.9em;
                 padding: 8px 15px;
             }
-            
+
             .palette-color {
                 width: 45px;
                 height: 45px;
                 font-size: 1.1em;
             }
-            
+
             .control-btn {
                 font-size: 0.9em;
                 padding: 10px 15px;
                 width: 100%;
             }
-            
+
             .canvas-container {
                 padding: 8px;
             }
@@ -896,65 +935,65 @@
             .memory-game {
                 padding: 20px;
             }
-            
+
             .start-card {
                 padding: 40px 25px;
             }
-            
+
             .big-emoji {
                 font-size: 4.5em;
             }
-            
+
             .start-card h3 {
                 font-size: 1.8em;
             }
-            
+
             .start-card p {
                 font-size: 1.2em;
             }
-            
+
             .start-game-btn {
                 padding: 15px 35px;
                 font-size: 1.4em;
             }
-            
+
             .memory-header {
                 flex-direction: column;
                 gap: 12px;
                 padding: 15px;
             }
-            
+
             .score-value, .tries-value {
                 font-size: 2em;
             }
-            
+
             .target-display {
                 flex-direction: row;
                 gap: 10px;
                 align-items: center;
             }
-            
+
             .target-emoji {
                 font-size: 2.5em;
             }
-            
+
             .target-name {
                 font-size: 1.5em;
             }
-            
+
             .memory-cards-grid {
                 grid-template-columns: repeat(5, 1fr);
                 gap: 10px;
             }
-            
+
             .memory-card-front {
                 font-size: 3em;
             }
-            
+
             .memory-card-back {
                 font-size: 2.5em;
             }
-            
+
             .memory-feedback {
                 font-size: 1.5em;
             }
@@ -964,1329 +1003,2307 @@
             .memory-game {
                 padding: 15px;
             }
-            
+
             .game-header h2 {
                 font-size: 1.5em;
             }
-            
+
             .game-header p {
                 font-size: 1em;
             }
-            
+
             .start-card {
                 padding: 30px 20px;
             }
-            
+
             .big-emoji {
                 font-size: 3.5em;
             }
-            
+
             .start-card h3 {
                 font-size: 1.5em;
             }
-            
+
             .start-card p {
                 font-size: 1em;
                 margin-bottom: 20px;
             }
-            
+
             .start-game-btn {
                 padding: 12px 25px;
                 font-size: 1.2em;
             }
-            
+
             .memory-header {
                 padding: 12px;
                 gap: 10px;
             }
-            
+
             .score-label, .target-label, .tries-label {
                 font-size: 0.85em;
             }
-            
+
             .score-value, .tries-value {
                 font-size: 1.8em;
             }
-            
+
             .target-display {
                 flex-direction: column;
                 gap: 5px;
             }
-            
+
             .target-emoji {
                 font-size: 2.2em;
             }
-            
+
             .target-name {
                 font-size: 1.2em;
             }
-            
+
             .memory-cards-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 8px;
             }
-            
+
             .memory-card {
                 border-radius: 15px;
             }
-            
+
             .memory-card-front {
                 font-size: 2.5em;
             }
-            
+
             .memory-card-back {
                 font-size: 2em;
             }
-            
+
             .memory-feedback {
                 font-size: 1.2em;
                 min-height: 50px;
             }
-            
+
             .control-btn {
                 width: 100%;
                 font-size: 1em;
                 padding: 12px 20px;
             }
         }
+
+        /* Number Ordering Game Styles */
+        .ordering-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .ordering-game {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .ordering-status {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .status-message {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 15px;
+            min-height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .status-message.success {
+            background: #4CAF50;
+            color: white;
+            animation: bounce 0.6s;
+        }
+
+        .ordering-area {
+            margin-bottom: 30px;
+        }
+
+        .ordering-slots {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            min-height: 120px;
+        }
+
+        .ordering-slot {
+            width: 80px;
+            height: 100px;
+            border: 3px dashed #999;
+            border-radius: 15px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .ordering-slot::before {
+            content: attr(data-position);
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.9em;
+            color: #999;
+            font-weight: bold;
+        }
+
+        .ordering-slot.drag-over {
+            background: #e3f2fd;
+            border-color: #667eea;
+            transform: scale(1.05);
+        }
+
+        .ordering-slot.filled {
+            border-style: solid;
+            border-color: #4CAF50;
+        }
+
+        .ordering-pieces-container {
+            background: #fff9e6;
+            border-radius: 20px;
+            padding: 20px;
+        }
+
+        .ordering-pieces-container h3 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        .ordering-pieces {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+            min-height: 120px;
+            padding: 10px;
+        }
+
+        .ordering-number {
+            width: 80px;
+            height: 100px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: 4px solid #333;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3em;
+            font-weight: bold;
+            color: white;
+            cursor: move;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            user-select: none;
+            touch-action: none;
+        }
+
+        .ordering-number:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        .ordering-number.dragging {
+            opacity: 0.5;
+            transform: rotate(15deg) scale(0.9);
+        }
+
+        .ordering-number.placed {
+            cursor: default;
+        }
+
+        @media (max-width: 768px) {
+            .ordering-game {
+                padding: 25px;
+            }
+
+            .game-header h2 {
+                font-size: 1.6em;
+            }
+
+            .status-message {
+                font-size: 1.4em;
+            }
+
+            .ordering-slot,
+            .ordering-number {
+                width: 70px;
+                height: 90px;
+                font-size: 2.5em;
+            }
+
+            .ordering-slots,
+            .ordering-pieces {
+                gap: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .ordering-game {
+                padding: 15px;
+            }
+
+            .game-header h2 {
+                font-size: 1.3em;
+            }
+
+            .status-message {
+                font-size: 1.2em;
+            }
+
+            .ordering-slot,
+            .ordering-number {
+                width: 60px;
+                height: 80px;
+                font-size: 2em;
+            }
+
+            .ordering-slots {
+                gap: 5px;
+                padding: 10px;
+            }
+
+            .ordering-pieces {
+                gap: 5px;
+            }
+
+            .control-btn {
+                width: 100%;
+            }
+        }
+
+        /* Counting Game Styles */
+        .counting-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .counting-game {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .counting-score {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .score-display {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+            background: #f0f0f0;
+            padding: 15px 30px;
+            border-radius: 20px;
+            display: inline-block;
+        }
+
+        .counting-card {
+            background: linear-gradient(135deg, #fff9e6 0%, #ffe6f0 100%);
+            border-radius: 25px;
+            padding: 30px;
+            margin-bottom: 30px;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+        }
+
+        .counting-card h3 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+        }
+
+        .items-display {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            max-width: 600px;
+        }
+
+        .counting-item {
+            font-size: 4em;
+            animation: popIn 0.3s ease-out;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .counting-options {
+            margin-bottom: 30px;
+        }
+
+        .counting-options h3 {
+            text-align: center;
+            color: #667eea;
+            font-size: 1.6em;
+            margin-bottom: 20px;
+        }
+
+        .number-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .number-btn {
+            width: 70px;
+            height: 70px;
+            font-size: 2em;
+            font-weight: bold;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: 4px solid #333;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .number-btn:hover {
+            transform: scale(1.15) rotate(5deg);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        }
+
+        .number-btn.correct {
+            background: #4CAF50;
+            animation: pulse 0.5s;
+        }
+
+        .number-btn.wrong {
+            background: #f44336;
+            animation: shake 0.5s;
+        }
+
+        .number-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .counting-feedback {
+            text-align: center;
+            font-size: 2em;
+            font-weight: bold;
+            min-height: 60px;
+            margin: 20px 0;
+        }
+
+        .counting-feedback.correct-answer {
+            color: #4CAF50;
+            animation: bounce 0.6s;
+        }
+
+        .counting-feedback.wrong-answer {
+            color: #f44336;
+            animation: shake 0.5s;
+        }
+
+        @media (max-width: 768px) {
+            .counting-game {
+                padding: 25px;
+            }
+
+            .score-display {
+                font-size: 1.6em;
+                padding: 12px 25px;
+            }
+
+            .counting-card {
+                padding: 20px;
+                min-height: 250px;
+            }
+
+            .counting-item {
+                font-size: 3em;
+            }
+
+            .number-btn {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .counting-game {
+                padding: 15px;
+            }
+
+            .score-display {
+                font-size: 1.3em;
+                padding: 10px 20px;
+            }
+
+            .counting-card {
+                padding: 15px;
+                min-height: 200px;
+            }
+
+            .counting-card h3 {
+                font-size: 1.3em;
+            }
+
+            .counting-item {
+                font-size: 2.5em;
+            }
+
+            .number-btn {
+                width: 55px;
+                height: 55px;
+                font-size: 1.6em;
+            }
+
+            .control-btn {
+                width: 100%;
+            }
+        }
+
     </style>
 </head>
 <body>
-    <div class="header">
-        <!-- Child Photo Section -->
-        <div class="child-photo-container">
-            <img src="child-photo.jpg" alt="Child Photo" class="child-photo">
-        </div>
-        
-        <h1 id="main-title">🌟 تعلم الحروف العربية 🌟</h1>
-        <p id="subtitle">اضغط على البطاقة لرؤية الحيوان!</p>
-        
-        <!-- Tab Buttons -->
-        <div class="tabs">
-            <button class="tab-btn active" onclick="showTab('arabic')">🌙 الحروف العربية</button>
-            <button class="tab-btn" onclick="showTab('english')">🌟 English Letters</button>
-            <button class="tab-btn" onclick="showTab('numbers')">🎨 Paint Numbers</button>
-            <button class="tab-btn" onclick="showTab('memory')">🧠 Memory Game</button>
-        </div>
+<div class="header">
+    <!-- Child Photo Section -->
+    <div class="child-photo-container">
+        <img src="child-photo.jpg" alt="Child Photo" class="child-photo">
     </div>
 
-    <!-- Arabic Cards Container -->
-    <div class="container" id="arabic-container">
-        <!-- أ - أرنب (Rabbit) -->
-        <div class="card" data-letter="أ" data-language="arabic">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">أ</div>
-                    <div class="letter-name">ألف</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐰</div>
-                    <div class="animal-name">أرنب</div>
-                </div>
-            </div>
-        </div>
+    <h1 id="main-title">🌟 تعلم الحروف العربية 🌟</h1>
+    <p id="subtitle">اضغط على البطاقة لرؤية الحيوان!</p>
 
-        <!-- ب - بطة (Duck) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ب</div>
-                    <div class="letter-name">باء</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦆</div>
-                    <div class="animal-name">بطة</div>
-                </div>
-            </div>
-        </div>
+    <!-- Tab Buttons -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="showTab('arabic')">🌙 الحروف العربية</button>
+        <button class="tab-btn" onclick="showTab('english')">🌟 English Letters</button>
+        <button class="tab-btn" onclick="showTab('numbers')">🎨 Paint Numbers</button>
+        <button class="tab-btn" onclick="showTab('memory')">🧠 Memory Game</button>
+        <button class="tab-btn" onclick="showTab('order-arabic')">🔢 رتب الأرقام</button>
+        <button class="tab-btn" onclick="showTab('order-english')">🔢 Order Numbers</button>
+        <button class="tab-btn" onclick="showTab('count-arabic')">🍎 عد الفواكه</button>
+        <button class="tab-btn" onclick="showTab('count-english')">🍎 Count Fruits</button>
+    </div>
+</div>
 
-        <!-- ت - تمساح (Crocodile) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ت</div>
-                    <div class="letter-name">تاء</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐊</div>
-                    <div class="animal-name">تمساح</div>
-                </div>
+<!-- Arabic Cards Container -->
+<div class="container" id="arabic-container">
+    <!-- أ - أرنب (Rabbit) -->
+    <div class="card" data-letter="أ" data-language="arabic">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">أ</div>
+                <div class="letter-name">ألف</div>
+                <div class="hint">👆 اضغط</div>
             </div>
-        </div>
-
-        <!-- ث - ثعلب (Fox) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ث</div>
-                    <div class="letter-name">ثاء</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦊</div>
-                    <div class="animal-name">ثعلب</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ج - جمل (Camel) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ج</div>
-                    <div class="letter-name">جيم</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐪</div>
-                    <div class="animal-name">جمل</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ح - حصان (Horse) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ح</div>
-                    <div class="letter-name">حاء</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐴</div>
-                    <div class="animal-name">حصان</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- خ - خروف (Sheep) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">خ</div>
-                    <div class="letter-name">خاء</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐑</div>
-                    <div class="animal-name">خروف</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- د - دب (Bear) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">د</div>
-                    <div class="letter-name">دال</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐻</div>
-                    <div class="animal-name">دب</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ر - رجل (Rooster) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ر</div>
-                    <div class="letter-name">راء</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐓</div>
-                    <div class="animal-name">ديك</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ز - زرافة (Giraffe) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ز</div>
-                    <div class="letter-name">زاي</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦒</div>
-                    <div class="animal-name">زرافة</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- س - سمكة (Fish) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">س</div>
-                    <div class="letter-name">سين</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐟</div>
-                    <div class="animal-name">سمكة</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ش - شجرة (Tree - using bee) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ش</div>
-                    <div class="letter-name">شين</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐝</div>
-                    <div class="animal-name">نحلة</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ص - صقر (Falcon) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ص</div>
-                    <div class="letter-name">صاد</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦅</div>
-                    <div class="animal-name">صقر</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ض - ضفدع (Frog) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ض</div>
-                    <div class="letter-name">ضاد</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐸</div>
-                    <div class="animal-name">ضفدع</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ط - طاووس (Peacock) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ط</div>
-                    <div class="letter-name">طاء</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦚</div>
-                    <div class="animal-name">طاووس</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ظ - ظبي (Deer) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ظ</div>
-                    <div class="letter-name">ظاء</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦌</div>
-                    <div class="animal-name">غزال</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ع - عصفور (Bird) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ع</div>
-                    <div class="letter-name">عين</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐦</div>
-                    <div class="animal-name">عصفور</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- غ - غراب (Crow) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">غ</div>
-                    <div class="letter-name">غين</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐦‍⬛</div>
-                    <div class="animal-name">غراب</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ف - فيل (Elephant) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ف</div>
-                    <div class="letter-name">فاء</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐘</div>
-                    <div class="animal-name">فيل</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ق - قطة (Cat) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ق</div>
-                    <div class="letter-name">قاف</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐱</div>
-                    <div class="animal-name">قطة</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ك - كلب (Dog) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ك</div>
-                    <div class="letter-name">كاف</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐕</div>
-                    <div class="animal-name">كلب</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ل - أسد (Lion) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ل</div>
-                    <div class="letter-name">لام</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦁</div>
-                    <div class="animal-name">أسد</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- م - ماعز (Goat) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">م</div>
-                    <div class="letter-name">ميم</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐐</div>
-                    <div class="animal-name">ماعز</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ن - نمر (Tiger) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ن</div>
-                    <div class="letter-name">نون</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐯</div>
-                    <div class="animal-name">نمر</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ه - هدهد (Bird) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ه</div>
-                    <div class="letter-name">هاء</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦜</div>
-                    <div class="animal-name">ببغاء</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- و - وزة (Goose) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">و</div>
-                    <div class="letter-name">واو</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦢</div>
-                    <div class="animal-name">بجعة</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- ي - يمامة (Dove) -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">ي</div>
-                    <div class="letter-name">ياء</div>
-                    <div class="hint">👆 اضغط</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🕊️</div>
-                    <div class="animal-name">حمامة</div>
-                </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐰</div>
+                <div class="animal-name">أرنب</div>
             </div>
         </div>
     </div>
 
-    <!-- English Cards Container -->
-    <div class="container" id="english-container" style="display: none;">
-        <!-- a - Alligator -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">a</div>
-                    <div class="letter-name">a</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐊</div>
-                    <div class="animal-name">Alligator</div>
-                </div>
+    <!-- ب - بطة (Duck) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ب</div>
+                <div class="letter-name">باء</div>
+                <div class="hint">👆 اضغط</div>
             </div>
-        </div>
-
-        <!-- b - Butterfly -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">b</div>
-                    <div class="letter-name">b</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦋</div>
-                    <div class="animal-name">Butterfly</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- c - Cat -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">c</div>
-                    <div class="letter-name">c</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐱</div>
-                    <div class="animal-name">Cat</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- d - Dog -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">d</div>
-                    <div class="letter-name">d</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐕</div>
-                    <div class="animal-name">Dog</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- e - Elephant -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">e</div>
-                    <div class="letter-name">e</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐘</div>
-                    <div class="animal-name">Elephant</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- f - Fish -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">f</div>
-                    <div class="letter-name">f</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐟</div>
-                    <div class="animal-name">Fish</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- g - Goat -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">g</div>
-                    <div class="letter-name">g</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐐</div>
-                    <div class="animal-name">Goat</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- h - Horse -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">h</div>
-                    <div class="letter-name">h</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐴</div>
-                    <div class="animal-name">Horse</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- i - Iguana -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">i</div>
-                    <div class="letter-name">i</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦎</div>
-                    <div class="animal-name">Iguana</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- j - Jellyfish -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">j</div>
-                    <div class="letter-name">j</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🪼</div>
-                    <div class="animal-name">Jellyfish</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- k - Koala -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">k</div>
-                    <div class="letter-name">k</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐨</div>
-                    <div class="animal-name">Koala</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- l - Lion -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">l</div>
-                    <div class="letter-name">l</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦁</div>
-                    <div class="animal-name">Lion</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- m - Monkey -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">m</div>
-                    <div class="letter-name">m</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐵</div>
-                    <div class="animal-name">Monkey</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- n - Narwhal -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">n</div>
-                    <div class="letter-name">n</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐳</div>
-                    <div class="animal-name">Narwhal</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- o - Owl -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">o</div>
-                    <div class="letter-name">o</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦉</div>
-                    <div class="animal-name">Owl</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- p - Penguin -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">p</div>
-                    <div class="letter-name">p</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐧</div>
-                    <div class="animal-name">Penguin</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- q - Quail -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">q</div>
-                    <div class="letter-name">q</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐦</div>
-                    <div class="animal-name">Quail</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- r - Rabbit -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">r</div>
-                    <div class="letter-name">r</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐰</div>
-                    <div class="animal-name">Rabbit</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- s - Snake -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">s</div>
-                    <div class="letter-name">s</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐍</div>
-                    <div class="animal-name">Snake</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- t - Tiger -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">t</div>
-                    <div class="letter-name">t</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐯</div>
-                    <div class="animal-name">Tiger</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- u - Unicorn -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">u</div>
-                    <div class="letter-name">u</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦄</div>
-                    <div class="animal-name">Unicorn</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- v - Vulture -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">v</div>
-                    <div class="letter-name">v</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦅</div>
-                    <div class="animal-name">Vulture</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- w - Whale -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">w</div>
-                    <div class="letter-name">w</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐋</div>
-                    <div class="animal-name">Whale</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- x - X-ray Fish -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">x</div>
-                    <div class="letter-name">x</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐠</div>
-                    <div class="animal-name">X-ray Fish</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- y - Yak -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">y</div>
-                    <div class="letter-name">y</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🐃</div>
-                    <div class="animal-name">Yak</div>
-                </div>
-            </div>
-        </div>
-
-        <!-- z - Zebra -->
-        <div class="card">
-            <div class="card-inner">
-                <div class="card-front">
-                    <div class="letter">z</div>
-                    <div class="letter-name">z</div>
-                    <div class="hint">👆 Click</div>
-                </div>
-                <div class="card-back">
-                    <div class="animal-emoji">🦓</div>
-                    <div class="animal-name">Zebra</div>
-                </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦆</div>
+                <div class="animal-name">بطة</div>
             </div>
         </div>
     </div>
 
-    <!-- Paint Numbers Container -->
-    <div class="numbers-container" id="numbers-container" style="display: none;">
-        <div class="paint-game">
-            <div class="game-header">
-                <h2>🎨 Paint by Numbers - لون بالأرقام 🎨</h2>
-                <p>Choose a picture to paint!</p>
+    <!-- ت - تمساح (Crocodile) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ت</div>
+                <div class="letter-name">تاء</div>
+                <div class="hint">👆 اضغط</div>
             </div>
-            
-            <!-- Picture Selection Menu -->
-            <div id="picture-selection" class="picture-selection">
-                <div class="picture-grid">
-                    <div class="picture-card" onclick="selectPicture('butterfly')">
-                        <div class="picture-preview">
-                            <svg viewBox="0 0 100 100" width="100%" height="100%">
-                                <ellipse cx="50" cy="50" rx="8" ry="25" fill="#ddd" stroke="#000"/>
-                                <path d="M 40 50 Q 25 35 30 25 Q 35 35 40 40 Z" fill="#ddd" stroke="#000"/>
-                                <path d="M 60 50 Q 75 35 70 25 Q 65 35 60 40 Z" fill="#ddd" stroke="#000"/>
-                            </svg>
-                        </div>
-                        <h3>🦋 Butterfly</h3>
-                        <p>6 areas</p>
-                    </div>
-                    
-                    <div class="picture-card" onclick="selectPicture('house')">
-                        <div class="picture-preview">
-                            <svg viewBox="0 0 100 100" width="100%" height="100%">
-                                <path d="M 20 50 L 50 25 L 80 50 Z" fill="#ddd" stroke="#000"/>
-                                <rect x="25" y="50" width="50" height="40" fill="#ddd" stroke="#000"/>
-                                <rect x="40" y="65" width="20" height="25" fill="#ddd" stroke="#000"/>
-                            </svg>
-                        </div>
-                        <h3>🏠 House</h3>
-                        <p>8 areas</p>
-                    </div>
-                    
-                    <div class="picture-card" onclick="selectPicture('flower')">
-                        <div class="picture-preview">
-                            <svg viewBox="0 0 100 100" width="100%" height="100%">
-                                <circle cx="50" cy="40" r="6" fill="#ddd" stroke="#000"/>
-                                <circle cx="42" cy="47" r="6" fill="#ddd" stroke="#000"/>
-                                <circle cx="58" cy="47" r="6" fill="#ddd" stroke="#000"/>
-                                <circle cx="50" cy="50" r="5" fill="#ddd" stroke="#000"/>
-                                <rect x="48" y="50" width="4" height="30" fill="#ddd" stroke="#000"/>
-                            </svg>
-                        </div>
-                        <h3>🌸 Flower</h3>
-                        <p>6 areas</p>
-                    </div>
-                    
-                    <div class="picture-card" onclick="selectPicture('car')">
-                        <div class="picture-preview">
-                            <svg viewBox="0 0 100 100" width="100%" height="100%">
-                                <rect x="20" y="50" width="60" height="25" fill="#ddd" stroke="#000" rx="5"/>
-                                <path d="M 35 50 L 40 35 L 60 35 L 65 50 Z" fill="#ddd" stroke="#000"/>
-                                <circle cx="33" cy="75" r="8" fill="#ddd" stroke="#000"/>
-                                <circle cx="67" cy="75" r="8" fill="#ddd" stroke="#000"/>
-                            </svg>
-                        </div>
-                        <h3>🚗 Car</h3>
-                        <p>7 areas</p>
-                    </div>
-                    
-                    <div class="picture-card" onclick="selectPicture('fish')">
-                        <div class="picture-preview">
-                            <svg viewBox="0 0 100 100" width="100%" height="100%">
-                                <ellipse cx="55" cy="50" rx="25" ry="15" fill="#ddd" stroke="#000"/>
-                                <path d="M 30 50 L 20 40 L 20 60 Z" fill="#ddd" stroke="#000"/>
-                                <circle cx="70" cy="47" r="3" fill="#000"/>
-                            </svg>
-                        </div>
-                        <h3>🐟 Fish</h3>
-                        <p>5 areas</p>
-                    </div>
-                    
-                    <div class="picture-card" onclick="selectPicture('tree')">
-                        <div class="picture-preview">
-                            <svg viewBox="0 0 100 100" width="100%" height="100%">
-                                <circle cx="50" cy="35" r="20" fill="#ddd" stroke="#000"/>
-                                <rect x="45" y="55" width="10" height="30" fill="#ddd" stroke="#000"/>
-                            </svg>
-                        </div>
-                        <h3>🌳 Tree</h3>
-                        <p>4 areas</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Painting Area (Hidden initially) -->
-            <div id="painting-area" style="display: none;">
-                <div class="back-button-container">
-                    <button class="control-btn" onclick="backToSelection()">⬅️ Choose Another Picture</button>
-                </div>
-                
-                <h3 id="current-picture-title" style="text-align: center; color: #667eea; margin: 20px 0;">🦋 Butterfly</h3>
-                
-                <div class="color-palette" id="color-palette">
-                    <button class="palette-color" data-number="1" data-color="#FF0000" style="background: #FF0000;">1</button>
-                    <button class="palette-color" data-number="2" data-color="#0000FF" style="background: #0000FF;">2</button>
-                    <button class="palette-color" data-number="3" data-color="#00FF00" style="background: #00FF00;">3</button>
-                    <button class="palette-color" data-number="4" data-color="#FFFF00" style="background: #FFFF00;">4</button>
-                    <button class="palette-color" data-number="5" data-color="#FFA500" style="background: #FFA500;">5</button>
-                    <button class="palette-color" data-number="6" data-color="#800080" style="background: #800080;">6</button>
-                    <button class="palette-color" data-number="7" data-color="#FFC0CB" style="background: #FFC0CB;">7</button>
-                    <button class="palette-color" data-number="8" data-color="#8B4513" style="background: #8B4513;">8</button>
-                </div>
-                
-                <div class="canvas-container">
-                    <svg id="paint-canvas" viewBox="0 0 400 400" width="100%" height="100%">
-                        <!-- SVG content will be loaded dynamically -->
-                    </svg>
-                </div>
-                
-                <div class="game-controls">
-                    <button class="control-btn" onclick="resetPainting()">🔄 Reset Colors</button>
-                    <button class="control-btn" onclick="checkCompletion()">✅ Check if Done</button>
-                </div>
-                
-                <div class="game-feedback" id="paint-feedback"></div>
+            <div class="card-back">
+                <div class="animal-emoji">🐊</div>
+                <div class="animal-name">تمساح</div>
             </div>
         </div>
     </div>
 
-    <!-- Memory Game Container -->
-    <div class="memory-container" id="memory-container" style="display: none;">
-        <div class="memory-game">
-            <div class="game-header">
-                <h2>🧠 Animal Memory Game - لعبة الذاكرة 🧠</h2>
-                <p>Remember the animals and find them!</p>
+    <!-- ث - ثعلب (Fox) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ث</div>
+                <div class="letter-name">ثاء</div>
+                <div class="hint">👆 اضغط</div>
             </div>
-            
-            <!-- Start Screen -->
-            <div class="memory-start" id="memory-start">
-                <div class="start-card">
-                    <div class="big-emoji">🎮</div>
-                    <h3>Ready to Play?</h3>
-                    <p>You will see 5 animal cards. Try to remember them!</p>
-                    <button class="start-game-btn" onclick="startMemoryGame()">🚀 Start Game</button>
-                </div>
-            </div>
-            
-            <!-- Game Area -->
-            <div class="memory-play" id="memory-play" style="display: none;">
-                <div class="memory-header">
-                    <div class="score-display">
-                        <span class="score-label">✅ Correct:</span>
-                        <span class="score-value" id="correct-count">0</span>
-                    </div>
-                    <div class="target-display" id="target-display">
-                        <span class="target-label">🎯 Find:</span>
-                        <span class="target-emoji" id="target-emoji">🦁</span>
-                        <span class="target-name" id="target-name">Lion</span>
-                    </div>
-                    <div class="tries-display">
-                        <span class="tries-label">❌ Tries:</span>
-                        <span class="tries-value" id="tries-count">0</span>
-                    </div>
-                </div>
-                
-                <div class="memory-cards-grid" id="memory-cards-grid">
-                    <!-- Cards will be generated here -->
-                </div>
-                
-                <div class="memory-feedback" id="memory-feedback"></div>
-                
-                <button class="control-btn" onclick="resetMemoryGame()" style="margin-top: 20px;">🔄 New Game</button>
+            <div class="card-back">
+                <div class="animal-emoji">🦊</div>
+                <div class="animal-name">ثعلب</div>
             </div>
         </div>
     </div>
 
-    <script>
-        // Paint by numbers variables
-        let selectedColor = null;
-        let selectedNumber = null;
-        let paintedAreas = new Set();
-        let currentPicture = '';
-        
-        // Memory game variables
-        let memoryAnimals = [
-            { emoji: '🦁', name: 'Lion', arabic: 'أسد' },
-            { emoji: '🐘', name: 'Elephant', arabic: 'فيل' },
-            { emoji: '🦒', name: 'Giraffe', arabic: 'زرافة' },
-            { emoji: '🐯', name: 'Tiger', arabic: 'نمر' },
-            { emoji: '🐻', name: 'Bear', arabic: 'دب' },
-            { emoji: '🐼', name: 'Panda', arabic: 'باندا' },
-            { emoji: '🐨', name: 'Koala', arabic: 'كوالا' },
-            { emoji: '🦊', name: 'Fox', arabic: 'ثعلب' },
-            { emoji: '🐰', name: 'Rabbit', arabic: 'أرنب' },
-            { emoji: '🐸', name: 'Frog', arabic: 'ضفدع' },
-            { emoji: '🐵', name: 'Monkey', arabic: 'قرد' },
-            { emoji: '🦓', name: 'Zebra', arabic: 'حمار وحشي' },
-            { emoji: '🦘', name: 'Kangaroo', arabic: 'كنغر' },
-            { emoji: '🐧', name: 'Penguin', arabic: 'بطريق' },
-            { emoji: '🦅', name: 'Eagle', arabic: 'نسر' },
-            { emoji: '🦉', name: 'Owl', arabic: 'بومة' },
-            { emoji: '🦜', name: 'Parrot', arabic: 'ببغاء' },
-            { emoji: '🐬', name: 'Dolphin', arabic: 'دولفين' },
-            { emoji: '🦈', name: 'Shark', arabic: 'سمك القرش' },
-            { emoji: '🐳', name: 'Whale', arabic: 'حوت' },
-            { emoji: '🐙', name: 'Octopus', arabic: 'أخطبوط' },
-            { emoji: '🦀', name: 'Crab', arabic: 'سلطعون' },
-            { emoji: '🐍', name: 'Snake', arabic: 'ثعبان' },
-            { emoji: '🦎', name: 'Lizard', arabic: 'سحلية' },
-            { emoji: '🐊', name: 'Crocodile', arabic: 'تمساح' }
-        ];
-        
-        let currentGameAnimals = [];
-        let currentTargetAnimal = null;
-        let correctCount = 0;
-        let triesCount = 0;
-        let foundAnimals = new Set();
-        
-        function startMemoryGame() {
-            correctCount = 0;
-            triesCount = 0;
-            foundAnimals.clear();
-            
-            const shuffled = [...memoryAnimals].sort(() => Math.random() - 0.5);
-            currentGameAnimals = shuffled.slice(0, 5);
-            
-            document.getElementById('memory-start').style.display = 'none';
-            document.getElementById('memory-play').style.display = 'block';
-            
-            showAnimalsPhase();
+    <!-- ج - جمل (Camel) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ج</div>
+                <div class="letter-name">جيم</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐪</div>
+                <div class="animal-name">جمل</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ح - حصان (Horse) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ح</div>
+                <div class="letter-name">حاء</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐴</div>
+                <div class="animal-name">حصان</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- خ - خروف (Sheep) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">خ</div>
+                <div class="letter-name">خاء</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐑</div>
+                <div class="animal-name">خروف</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- د - دب (Bear) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">د</div>
+                <div class="letter-name">دال</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐻</div>
+                <div class="animal-name">دب</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ر - رجل (Rooster) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ر</div>
+                <div class="letter-name">راء</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐓</div>
+                <div class="animal-name">ديك</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ز - زرافة (Giraffe) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ز</div>
+                <div class="letter-name">زاي</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦒</div>
+                <div class="animal-name">زرافة</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- س - سمكة (Fish) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">س</div>
+                <div class="letter-name">سين</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐟</div>
+                <div class="animal-name">سمكة</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ش - شجرة (Tree - using bee) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ش</div>
+                <div class="letter-name">شين</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐝</div>
+                <div class="animal-name">نحلة</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ص - صقر (Falcon) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ص</div>
+                <div class="letter-name">صاد</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦅</div>
+                <div class="animal-name">صقر</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ض - ضفدع (Frog) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ض</div>
+                <div class="letter-name">ضاد</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐸</div>
+                <div class="animal-name">ضفدع</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ط - طاووس (Peacock) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ط</div>
+                <div class="letter-name">طاء</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦚</div>
+                <div class="animal-name">طاووس</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ظ - ظبي (Deer) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ظ</div>
+                <div class="letter-name">ظاء</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦌</div>
+                <div class="animal-name">غزال</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ع - عصفور (Bird) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ع</div>
+                <div class="letter-name">عين</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐦</div>
+                <div class="animal-name">عصفور</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- غ - غراب (Crow) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">غ</div>
+                <div class="letter-name">غين</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐦‍⬛</div>
+                <div class="animal-name">غراب</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ف - فيل (Elephant) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ف</div>
+                <div class="letter-name">فاء</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐘</div>
+                <div class="animal-name">فيل</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ق - قطة (Cat) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ق</div>
+                <div class="letter-name">قاف</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐱</div>
+                <div class="animal-name">قطة</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ك - كلب (Dog) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ك</div>
+                <div class="letter-name">كاف</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐕</div>
+                <div class="animal-name">كلب</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ل - أسد (Lion) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ل</div>
+                <div class="letter-name">لام</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦁</div>
+                <div class="animal-name">أسد</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- م - ماعز (Goat) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">م</div>
+                <div class="letter-name">ميم</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐐</div>
+                <div class="animal-name">ماعز</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ن - نمر (Tiger) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ن</div>
+                <div class="letter-name">نون</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐯</div>
+                <div class="animal-name">نمر</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ه - هدهد (Bird) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ه</div>
+                <div class="letter-name">هاء</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦜</div>
+                <div class="animal-name">ببغاء</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- و - وزة (Goose) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">و</div>
+                <div class="letter-name">واو</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦢</div>
+                <div class="animal-name">بجعة</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ي - يمامة (Dove) -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">ي</div>
+                <div class="letter-name">ياء</div>
+                <div class="hint">👆 اضغط</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🕊️</div>
+                <div class="animal-name">حمامة</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- English Cards Container -->
+<div class="container" id="english-container" style="display: none;">
+    <!-- a - Alligator -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">a</div>
+                <div class="letter-name">a</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐊</div>
+                <div class="animal-name">Alligator</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- b - Butterfly -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">b</div>
+                <div class="letter-name">b</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦋</div>
+                <div class="animal-name">Butterfly</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- c - Cat -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">c</div>
+                <div class="letter-name">c</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐱</div>
+                <div class="animal-name">Cat</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- d - Dog -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">d</div>
+                <div class="letter-name">d</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐕</div>
+                <div class="animal-name">Dog</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- e - Elephant -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">e</div>
+                <div class="letter-name">e</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐘</div>
+                <div class="animal-name">Elephant</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- f - Fish -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">f</div>
+                <div class="letter-name">f</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐟</div>
+                <div class="animal-name">Fish</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- g - Goat -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">g</div>
+                <div class="letter-name">g</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐐</div>
+                <div class="animal-name">Goat</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- h - Horse -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">h</div>
+                <div class="letter-name">h</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐴</div>
+                <div class="animal-name">Horse</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- i - Iguana -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">i</div>
+                <div class="letter-name">i</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦎</div>
+                <div class="animal-name">Iguana</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- j - Jellyfish -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">j</div>
+                <div class="letter-name">j</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🪼</div>
+                <div class="animal-name">Jellyfish</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- k - Koala -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">k</div>
+                <div class="letter-name">k</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐨</div>
+                <div class="animal-name">Koala</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- l - Lion -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">l</div>
+                <div class="letter-name">l</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦁</div>
+                <div class="animal-name">Lion</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- m - Monkey -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">m</div>
+                <div class="letter-name">m</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐵</div>
+                <div class="animal-name">Monkey</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- n - Narwhal -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">n</div>
+                <div class="letter-name">n</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐳</div>
+                <div class="animal-name">Narwhal</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- o - Owl -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">o</div>
+                <div class="letter-name">o</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦉</div>
+                <div class="animal-name">Owl</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- p - Penguin -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">p</div>
+                <div class="letter-name">p</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐧</div>
+                <div class="animal-name">Penguin</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- q - Quail -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">q</div>
+                <div class="letter-name">q</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐦</div>
+                <div class="animal-name">Quail</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- r - Rabbit -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">r</div>
+                <div class="letter-name">r</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐰</div>
+                <div class="animal-name">Rabbit</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- s - Snake -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">s</div>
+                <div class="letter-name">s</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐍</div>
+                <div class="animal-name">Snake</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- t - Tiger -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">t</div>
+                <div class="letter-name">t</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐯</div>
+                <div class="animal-name">Tiger</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- u - Unicorn -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">u</div>
+                <div class="letter-name">u</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦄</div>
+                <div class="animal-name">Unicorn</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- v - Vulture -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">v</div>
+                <div class="letter-name">v</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦅</div>
+                <div class="animal-name">Vulture</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- w - Whale -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">w</div>
+                <div class="letter-name">w</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐋</div>
+                <div class="animal-name">Whale</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- x - X-ray Fish -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">x</div>
+                <div class="letter-name">x</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐠</div>
+                <div class="animal-name">X-ray Fish</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- y - Yak -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">y</div>
+                <div class="letter-name">y</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🐃</div>
+                <div class="animal-name">Yak</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- z - Zebra -->
+    <div class="card">
+        <div class="card-inner">
+            <div class="card-front">
+                <div class="letter">z</div>
+                <div class="letter-name">z</div>
+                <div class="hint">👆 Click</div>
+            </div>
+            <div class="card-back">
+                <div class="animal-emoji">🦓</div>
+                <div class="animal-name">Zebra</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Paint Numbers Container -->
+<div class="numbers-container" id="numbers-container" style="display: none;">
+    <div class="paint-game">
+        <div class="game-header">
+            <h2>🎨 Paint by Numbers - لون بالأرقام 🎨</h2>
+            <p>Choose a picture to paint!</p>
+        </div>
+
+        <!-- Picture Selection Menu -->
+        <div id="picture-selection" class="picture-selection">
+            <div class="picture-grid">
+                <div class="picture-card" onclick="selectPicture('butterfly')">
+                    <div class="picture-preview">
+                        <svg viewBox="0 0 100 100" width="100%" height="100%">
+                            <ellipse cx="50" cy="50" rx="8" ry="25" fill="#ddd" stroke="#000"/>
+                            <path d="M 40 50 Q 25 35 30 25 Q 35 35 40 40 Z" fill="#ddd" stroke="#000"/>
+                            <path d="M 60 50 Q 75 35 70 25 Q 65 35 60 40 Z" fill="#ddd" stroke="#000"/>
+                        </svg>
+                    </div>
+                    <h3>🦋 Butterfly</h3>
+                    <p>6 areas</p>
+                </div>
+
+                <div class="picture-card" onclick="selectPicture('house')">
+                    <div class="picture-preview">
+                        <svg viewBox="0 0 100 100" width="100%" height="100%">
+                            <path d="M 20 50 L 50 25 L 80 50 Z" fill="#ddd" stroke="#000"/>
+                            <rect x="25" y="50" width="50" height="40" fill="#ddd" stroke="#000"/>
+                            <rect x="40" y="65" width="20" height="25" fill="#ddd" stroke="#000"/>
+                        </svg>
+                    </div>
+                    <h3>🏠 House</h3>
+                    <p>8 areas</p>
+                </div>
+
+                <div class="picture-card" onclick="selectPicture('flower')">
+                    <div class="picture-preview">
+                        <svg viewBox="0 0 100 100" width="100%" height="100%">
+                            <circle cx="50" cy="40" r="6" fill="#ddd" stroke="#000"/>
+                            <circle cx="42" cy="47" r="6" fill="#ddd" stroke="#000"/>
+                            <circle cx="58" cy="47" r="6" fill="#ddd" stroke="#000"/>
+                            <circle cx="50" cy="50" r="5" fill="#ddd" stroke="#000"/>
+                            <rect x="48" y="50" width="4" height="30" fill="#ddd" stroke="#000"/>
+                        </svg>
+                    </div>
+                    <h3>🌸 Flower</h3>
+                    <p>6 areas</p>
+                </div>
+
+                <div class="picture-card" onclick="selectPicture('car')">
+                    <div class="picture-preview">
+                        <svg viewBox="0 0 100 100" width="100%" height="100%">
+                            <rect x="20" y="50" width="60" height="25" fill="#ddd" stroke="#000" rx="5"/>
+                            <path d="M 35 50 L 40 35 L 60 35 L 65 50 Z" fill="#ddd" stroke="#000"/>
+                            <circle cx="33" cy="75" r="8" fill="#ddd" stroke="#000"/>
+                            <circle cx="67" cy="75" r="8" fill="#ddd" stroke="#000"/>
+                        </svg>
+                    </div>
+                    <h3>🚗 Car</h3>
+                    <p>7 areas</p>
+                </div>
+
+                <div class="picture-card" onclick="selectPicture('fish')">
+                    <div class="picture-preview">
+                        <svg viewBox="0 0 100 100" width="100%" height="100%">
+                            <ellipse cx="55" cy="50" rx="25" ry="15" fill="#ddd" stroke="#000"/>
+                            <path d="M 30 50 L 20 40 L 20 60 Z" fill="#ddd" stroke="#000"/>
+                            <circle cx="70" cy="47" r="3" fill="#000"/>
+                        </svg>
+                    </div>
+                    <h3>🐟 Fish</h3>
+                    <p>5 areas</p>
+                </div>
+
+                <div class="picture-card" onclick="selectPicture('tree')">
+                    <div class="picture-preview">
+                        <svg viewBox="0 0 100 100" width="100%" height="100%">
+                            <circle cx="50" cy="35" r="20" fill="#ddd" stroke="#000"/>
+                            <rect x="45" y="55" width="10" height="30" fill="#ddd" stroke="#000"/>
+                        </svg>
+                    </div>
+                    <h3>🌳 Tree</h3>
+                    <p>4 areas</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Painting Area (Hidden initially) -->
+        <div id="painting-area" style="display: none;">
+            <div class="back-button-container">
+                <button class="control-btn" onclick="backToSelection()">⬅️ Choose Another Picture</button>
+            </div>
+
+            <h3 id="current-picture-title" style="text-align: center; color: #667eea; margin: 20px 0;">🦋 Butterfly</h3>
+
+            <div class="color-palette" id="color-palette">
+                <button class="palette-color" data-number="1" data-color="#FF0000" style="background: #FF0000;">1</button>
+                <button class="palette-color" data-number="2" data-color="#0000FF" style="background: #0000FF;">2</button>
+                <button class="palette-color" data-number="3" data-color="#00FF00" style="background: #00FF00;">3</button>
+                <button class="palette-color" data-number="4" data-color="#FFFF00" style="background: #FFFF00;">4</button>
+                <button class="palette-color" data-number="5" data-color="#FFA500" style="background: #FFA500;">5</button>
+                <button class="palette-color" data-number="6" data-color="#800080" style="background: #800080;">6</button>
+                <button class="palette-color" data-number="7" data-color="#FFC0CB" style="background: #FFC0CB;">7</button>
+                <button class="palette-color" data-number="8" data-color="#8B4513" style="background: #8B4513;">8</button>
+            </div>
+
+            <div class="canvas-container">
+                <svg id="paint-canvas" viewBox="0 0 400 400" width="100%" height="100%">
+                    <!-- SVG content will be loaded dynamically -->
+                </svg>
+            </div>
+
+            <div class="game-controls">
+                <button class="control-btn" onclick="resetPainting()">🔄 Reset Colors</button>
+                <button class="control-btn" onclick="checkCompletion()">✅ Check if Done</button>
+            </div>
+
+            <div class="game-feedback" id="paint-feedback"></div>
+        </div>
+    </div>
+</div>
+
+<!-- Memory Game Container -->
+<div class="memory-container" id="memory-container" style="display: none;">
+    <div class="memory-game">
+        <div class="game-header">
+            <h2>🧠 Animal Memory Game - لعبة الذاكرة 🧠</h2>
+            <p>Remember the animals and find them!</p>
+        </div>
+
+        <!-- Start Screen -->
+        <div class="memory-start" id="memory-start">
+            <div class="start-card">
+                <div class="big-emoji">🎮</div>
+                <h3>Ready to Play?</h3>
+                <p>You will see 5 animal cards. Try to remember them!</p>
+                <button class="start-game-btn" onclick="startMemoryGame()">🚀 Start Game</button>
+            </div>
+        </div>
+
+        <!-- Game Area -->
+        <div class="memory-play" id="memory-play" style="display: none;">
+            <div class="memory-header">
+                <div class="score-display">
+                    <span class="score-label">✅ Correct:</span>
+                    <span class="score-value" id="correct-count">0</span>
+                </div>
+                <div class="target-display" id="target-display">
+                    <span class="target-label">🎯 Find:</span>
+                    <span class="target-emoji" id="target-emoji">🦁</span>
+                    <span class="target-name" id="target-name">Lion</span>
+                </div>
+                <div class="tries-display">
+                    <span class="tries-label">❌ Tries:</span>
+                    <span class="tries-value" id="tries-count">0</span>
+                </div>
+            </div>
+
+            <div class="memory-cards-grid" id="memory-cards-grid">
+                <!-- Cards will be generated here -->
+            </div>
+
+            <div class="memory-feedback" id="memory-feedback"></div>
+
+            <button class="control-btn" onclick="resetMemoryGame()" style="margin-top: 20px;">🔄 New Game</button>
+        </div>
+    </div>
+</div>
+
+<!-- Arabic Number Ordering Game -->
+<div class="ordering-container" id="order-arabic-container" style="display: none;">
+    <div class="ordering-game">
+        <div class="game-header">
+            <h2>🔢 رتب الأرقام العربية 🔢</h2>
+            <p>اسحب الأرقام لترتيبها من ١ إلى ١٠</p>
+        </div>
+
+        <div class="ordering-status">
+            <div class="status-message" id="arabic-status">ابدأ بترتيب الأرقام!</div>
+        </div>
+
+        <div class="ordering-area">
+            <div class="ordering-slots" id="arabic-slots">
+                <!-- Slots will be generated here -->
+            </div>
+
+            <div class="ordering-pieces-container">
+                <h3>اسحب الأرقام من هنا:</h3>
+                <div class="ordering-pieces" id="arabic-pieces">
+                    <!-- Draggable numbers will be generated here -->
+                </div>
+            </div>
+        </div>
+
+        <button class="control-btn" onclick="resetArabicOrdering()">🔄 ابدأ من جديد</button>
+    </div>
+</div>
+
+<!-- English Number Ordering Game -->
+<div class="ordering-container" id="order-english-container" style="display: none;">
+    <div class="ordering-game">
+        <div class="game-header">
+            <h2>🔢 Order the Numbers 🔢</h2>
+            <p>Drag the numbers to put them in order from 1 to 10</p>
+        </div>
+
+        <div class="ordering-status">
+            <div class="status-message" id="english-status">Start ordering the numbers!</div>
+        </div>
+
+        <div class="ordering-area">
+            <div class="ordering-slots" id="english-slots">
+                <!-- Slots will be generated here -->
+            </div>
+
+            <div class="ordering-pieces-container">
+                <h3>Drag numbers from here:</h3>
+                <div class="ordering-pieces" id="english-pieces">
+                    <!-- Draggable numbers will be generated here -->
+                </div>
+            </div>
+        </div>
+
+        <button class="control-btn" onclick="resetEnglishOrdering()">🔄 Start Over</button>
+    </div>
+</div>
+
+<!-- Arabic Counting Game -->
+<div class="counting-container" id="count-arabic-container" style="display: none;">
+    <div class="counting-game">
+        <div class="game-header">
+            <h2>🍎 عد الفواكه والخضروات 🥕</h2>
+            <p>كم عدد الفواكه أو الخضروات؟ اختر الرقم الصحيح!</p>
+        </div>
+
+        <div class="counting-score">
+            <div class="score-display">النقاط: <span id="arabic-count-score">0</span> 🌟</div>
+        </div>
+
+        <div class="counting-card" id="arabic-counting-card">
+            <!-- Card will be generated here -->
+        </div>
+
+        <div class="counting-options">
+            <h3>اختر الرقم الصحيح:</h3>
+            <div class="number-buttons" id="arabic-number-buttons">
+                <!-- Number buttons will be generated here -->
+            </div>
+        </div>
+
+        <button class="control-btn" onclick="nextArabicCounting()">التالي ➡️</button>
+    </div>
+</div>
+
+<!-- English Counting Game -->
+<div class="counting-container" id="count-english-container" style="display: none;">
+    <div class="counting-game">
+        <div class="game-header">
+            <h2>🍎 Count Fruits and Vegetables 🥕</h2>
+            <p>How many fruits or vegetables? Choose the correct number!</p>
+        </div>
+
+        <div class="counting-score">
+            <div class="score-display">Score: <span id="english-count-score">0</span> 🌟</div>
+        </div>
+
+        <div class="counting-card" id="english-counting-card">
+            <!-- Card will be generated here -->
+        </div>
+
+        <div class="counting-options">
+            <h3>Choose the correct number:</h3>
+            <div class="number-buttons" id="english-number-buttons">
+                <!-- Number buttons will be generated here -->
+            </div>
+        </div>
+
+        <button class="control-btn" onclick="nextEnglishCounting()">Next ➡️</button>
+    </div>
+</div>
+
+<script>
+    // Paint by numbers variables
+    let selectedColor = null;
+    let selectedNumber = null;
+    let paintedAreas = new Set();
+    let currentPicture = '';
+
+    // Counting Game Variables
+    const fruitsAndVeggies = [
+        { emoji: '🍎', name: 'Apple', arabicName: 'تفاحة' },
+        { emoji: '🍊', name: 'Orange', arabicName: 'برتقالة' },
+        { emoji: '🍌', name: 'Banana', arabicName: 'موزة' },
+        { emoji: '🍇', name: 'Grapes', arabicName: 'عنب' },
+        { emoji: '🍓', name: 'Strawberry', arabicName: 'فراولة' },
+        { emoji: '🍉', name: 'Watermelon', arabicName: 'بطيخ' },
+        { emoji: '🍑', name: 'Peach', arabicName: 'خوخ' },
+        { emoji: '🍒', name: 'Cherry', arabicName: 'كرز' },
+        { emoji: '🥝', name: 'Kiwi', arabicName: 'كيوي' },
+        { emoji: '🍍', name: 'Pineapple', arabicName: 'أناناس' },
+        { emoji: '🥕', name: 'Carrot', arabicName: 'جزر' },
+        { emoji: '🥒', name: 'Cucumber', arabicName: 'خيار' },
+        { emoji: '🍅', name: 'Tomato', arabicName: 'طماطم' },
+        { emoji: '🥦', name: 'Broccoli', arabicName: 'بروكلي' },
+        { emoji: '🌽', name: 'Corn', arabicName: 'ذرة' },
+        { emoji: '🥬', name: 'Lettuce', arabicName: 'خس' },
+        { emoji: '🫑', name: 'Pepper', arabicName: 'فلفل' },
+        { emoji: '🍆', name: 'Eggplant', arabicName: 'باذنجان' }
+    ];
+
+    let arabicCountScore = 0;
+    let englishCountScore = 0;
+    let currentArabicCount = null;
+    let currentEnglishCount = null;
+    let currentArabicItem = null;
+    let currentEnglishItem = null;
+    let arabicAnswered = false;
+    let englishAnswered = false;
+
+    function generateArabicCounting() {
+        arabicAnswered = false;
+        const count = Math.floor(Math.random() * 10) + 1;
+        const item = fruitsAndVeggies[Math.floor(Math.random() * fruitsAndVeggies.length)];
+
+        currentArabicCount = count;
+        currentArabicItem = item;
+
+        const card = document.getElementById('arabic-counting-card');
+        card.innerHTML = `
+                <h3>${item.arabicName}</h3>
+                <div class="items-display" id="arabic-items-display"></div>
+            `;
+
+        const itemsDisplay = document.getElementById('arabic-items-display');
+        for (let i = 0; i < count; i++) {
+            const itemEl = document.createElement('div');
+            itemEl.className = 'counting-item';
+            itemEl.textContent = item.emoji;
+            itemEl.style.animationDelay = (i * 0.1) + 's';
+            itemsDisplay.appendChild(itemEl);
         }
-        
-        function showAnimalsPhase() {
-            const grid = document.getElementById('memory-cards-grid');
-            const feedback = document.getElementById('memory-feedback');
-            
-            feedback.textContent = '👀 Look carefully at these animals!';
-            feedback.className = 'memory-feedback';
-            
-            grid.innerHTML = '';
-            
-            const shuffledAnimals = [...currentGameAnimals].sort(() => Math.random() - 0.5);
-            
-            shuffledAnimals.forEach((animal, index) => {
-                const card = document.createElement('div');
-                card.className = 'memory-card showing-front';
-                card.setAttribute('data-animal', animal.emoji);
-                card.innerHTML = `
+
+        generateArabicNumberButtons();
+    }
+
+    function generateArabicNumberButtons() {
+        const buttonsContainer = document.getElementById('arabic-number-buttons');
+        buttonsContainer.innerHTML = '';
+
+        const arabicNums = ['١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩', '١٠'];
+
+        for (let i = 1; i <= 10; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'number-btn';
+            btn.textContent = arabicNums[i - 1];
+            btn.onclick = () => checkArabicAnswer(i, btn);
+            buttonsContainer.appendChild(btn);
+        }
+    }
+
+    function checkArabicAnswer(selected, btn) {
+        if (arabicAnswered) return;
+
+        arabicAnswered = true;
+        const allButtons = document.querySelectorAll('#arabic-number-buttons .number-btn');
+
+        if (selected === currentArabicCount) {
+            btn.classList.add('correct');
+            arabicCountScore++;
+            document.getElementById('arabic-count-score').textContent = arabicCountScore;
+            playSuccessSound();
+            createCountingCelebration('arabic-counting-card');
+
+            allButtons.forEach(b => b.disabled = true);
+        } else {
+            btn.classList.add('wrong');
+            playErrorSound();
+            setTimeout(() => {
+                btn.classList.remove('wrong');
+                arabicAnswered = false;
+            }, 800);
+        }
+    }
+
+    function generateEnglishCounting() {
+        englishAnswered = false;
+        const count = Math.floor(Math.random() * 10) + 1;
+        const item = fruitsAndVeggies[Math.floor(Math.random() * fruitsAndVeggies.length)];
+
+        currentEnglishCount = count;
+        currentEnglishItem = item;
+
+        const card = document.getElementById('english-counting-card');
+        card.innerHTML = `
+                <h3>${item.name}</h3>
+                <div class="items-display" id="english-items-display"></div>
+            `;
+
+        const itemsDisplay = document.getElementById('english-items-display');
+        for (let i = 0; i < count; i++) {
+            const itemEl = document.createElement('div');
+            itemEl.className = 'counting-item';
+            itemEl.textContent = item.emoji;
+            itemEl.style.animationDelay = (i * 0.1) + 's';
+            itemsDisplay.appendChild(itemEl);
+        }
+
+        generateEnglishNumberButtons();
+    }
+
+    function generateEnglishNumberButtons() {
+        const buttonsContainer = document.getElementById('english-number-buttons');
+        buttonsContainer.innerHTML = '';
+
+        for (let i = 1; i <= 10; i++) {
+            const btn = document.createElement('button');
+            btn.className = 'number-btn';
+            btn.textContent = i;
+            btn.onclick = () => checkEnglishAnswer(i, btn);
+            buttonsContainer.appendChild(btn);
+        }
+    }
+
+    function checkEnglishAnswer(selected, btn) {
+        if (englishAnswered) return;
+
+        englishAnswered = true;
+        const allButtons = document.querySelectorAll('#english-number-buttons .number-btn');
+
+        if (selected === currentEnglishCount) {
+            btn.classList.add('correct');
+            englishCountScore++;
+            document.getElementById('english-count-score').textContent = englishCountScore;
+            playSuccessSound();
+            createCountingCelebration('english-counting-card');
+
+            allButtons.forEach(b => b.disabled = true);
+        } else {
+            btn.classList.add('wrong');
+            playErrorSound();
+            setTimeout(() => {
+                btn.classList.remove('wrong');
+                englishAnswered = false;
+            }, 800);
+        }
+    }
+
+    function createCountingCelebration(containerId) {
+        const container = document.getElementById(containerId);
+        const prizeEmojis = ['🎉', '⭐', '🌟', '✨', '🎊', '👏', '💫', '🏆', '✅', '🎯', '💯'];
+
+        for (let i = 0; i < 15; i++) {
+            const emoji = document.createElement('div');
+            emoji.textContent = prizeEmojis[Math.floor(Math.random() * prizeEmojis.length)];
+            emoji.className = 'celebration-prize';
+
+            const rect = container.getBoundingClientRect();
+            emoji.style.position = 'fixed';
+            emoji.style.left = (rect.left + Math.random() * rect.width) + 'px';
+            emoji.style.top = (rect.top + rect.height / 2) + 'px';
+            emoji.style.fontSize = '2.5em';
+            emoji.style.zIndex = '9999';
+            emoji.style.pointerEvents = 'none';
+
+            const randomX = (Math.random() - 0.5) * 200;
+            const randomY = -100 - Math.random() * 100;
+            emoji.style.setProperty('--prize-x', randomX + 'px');
+            emoji.style.setProperty('--prize-y', randomY + 'px');
+            emoji.style.animation = `prizeCelebrate ${1 + Math.random() * 0.5}s ease-out forwards`;
+            emoji.style.animationDelay = (i * 0.05) + 's';
+
+            document.body.appendChild(emoji);
+
+            setTimeout(() => emoji.remove(), 2000);
+        }
+    }
+
+    function nextArabicCounting() {
+        generateArabicCounting();
+    }
+
+    function nextEnglishCounting() {
+        generateEnglishCounting();
+    }
+
+    // Number Ordering Game Variables
+    const arabicNumbers = ['١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩', '١٠'];
+    const englishNumbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
+
+    let currentDraggedElement = null;
+    let touchDragElement = null;
+    let touchOffsetOrderX = 0;
+    let touchOffsetOrderY = 0;
+
+    function initializeArabicOrdering() {
+        const slotsContainer = document.getElementById('arabic-slots');
+        const piecesContainer = document.getElementById('arabic-pieces');
+
+        slotsContainer.innerHTML = '';
+        piecesContainer.innerHTML = '';
+
+        // Create slots
+        for (let i = 0; i < 10; i++) {
+            const slot = document.createElement('div');
+            slot.className = 'ordering-slot';
+            slot.dataset.position = i + 1;
+            slot.dataset.expected = arabicNumbers[i];
+            slot.addEventListener('dragover', handleOrderDragOver);
+            slot.addEventListener('drop', handleOrderDrop);
+            slot.addEventListener('dragleave', handleOrderDragLeave);
+            slotsContainer.appendChild(slot);
+        }
+
+        // Create shuffled numbers
+        const shuffled = [...arabicNumbers].sort(() => Math.random() - 0.5);
+        shuffled.forEach((num, index) => {
+            const numberCard = document.createElement('div');
+            numberCard.className = 'ordering-number';
+            numberCard.textContent = num;
+            numberCard.draggable = true;
+            numberCard.dataset.value = num;
+            numberCard.addEventListener('dragstart', handleOrderDragStart);
+            numberCard.addEventListener('dragend', handleOrderDragEnd);
+            numberCard.addEventListener('touchstart', handleOrderTouchStart, {passive: false});
+            numberCard.addEventListener('touchmove', handleOrderTouchMove, {passive: false});
+            numberCard.addEventListener('touchend', handleOrderTouchEnd, {passive: false});
+            piecesContainer.appendChild(numberCard);
+        });
+    }
+
+    function initializeEnglishOrdering() {
+        const slotsContainer = document.getElementById('english-slots');
+        const piecesContainer = document.getElementById('english-pieces');
+
+        slotsContainer.innerHTML = '';
+        piecesContainer.innerHTML = '';
+
+        // Create slots
+        for (let i = 0; i < 10; i++) {
+            const slot = document.createElement('div');
+            slot.className = 'ordering-slot';
+            slot.dataset.position = i + 1;
+            slot.dataset.expected = englishNumbers[i];
+            slot.addEventListener('dragover', handleOrderDragOver);
+            slot.addEventListener('drop', handleOrderDrop);
+            slot.addEventListener('dragleave', handleOrderDragLeave);
+            slotsContainer.appendChild(slot);
+        }
+
+        // Create shuffled numbers
+        const shuffled = [...englishNumbers].sort(() => Math.random() - 0.5);
+        shuffled.forEach((num, index) => {
+            const numberCard = document.createElement('div');
+            numberCard.className = 'ordering-number';
+            numberCard.textContent = num;
+            numberCard.draggable = true;
+            numberCard.dataset.value = num;
+            numberCard.addEventListener('dragstart', handleOrderDragStart);
+            numberCard.addEventListener('dragend', handleOrderDragEnd);
+            numberCard.addEventListener('touchstart', handleOrderTouchStart, {passive: false});
+            numberCard.addEventListener('touchmove', handleOrderTouchMove, {passive: false});
+            numberCard.addEventListener('touchend', handleOrderTouchEnd, {passive: false});
+            piecesContainer.appendChild(numberCard);
+        });
+    }
+
+    function handleOrderDragStart(e) {
+        currentDraggedElement = e.target;
+        e.target.classList.add('dragging');
+        e.dataTransfer.effectAllowed = 'move';
+    }
+
+    function handleOrderDragEnd(e) {
+        e.target.classList.remove('dragging');
+    }
+
+    function handleOrderDragOver(e) {
+        e.preventDefault();
+        e.dataTransfer.dropEffect = 'move';
+        if (!e.target.classList.contains('filled')) {
+            e.target.classList.add('drag-over');
+        }
+    }
+
+    function handleOrderDragLeave(e) {
+        e.target.classList.remove('drag-over');
+    }
+
+    function handleOrderDrop(e) {
+        e.preventDefault();
+        const slot = e.target.classList.contains('ordering-slot') ? e.target : e.target.closest('.ordering-slot');
+
+        if (slot && !slot.classList.contains('filled')) {
+            slot.classList.remove('drag-over');
+            const expected = slot.dataset.expected;
+            const actual = currentDraggedElement.dataset.value;
+
+            if (expected === actual) {
+                slot.appendChild(currentDraggedElement);
+                slot.classList.add('filled');
+                currentDraggedElement.classList.add('placed');
+                currentDraggedElement.draggable = false;
+                playPuzzleCorrectSound();
+                createMiniCelebration(slot);
+                checkOrderCompletion();
+            } else {
+                playErrorSound();
+            }
+        }
+    }
+
+    function handleOrderTouchStart(e) {
+        e.preventDefault();
+        touchDragElement = e.target;
+        touchDragElement.classList.add('dragging');
+
+        const touch = e.touches[0];
+        const rect = touchDragElement.getBoundingClientRect();
+        touchOffsetOrderX = touch.clientX - rect.left;
+        touchOffsetOrderY = touch.clientY - rect.top;
+    }
+
+    function handleOrderTouchMove(e) {
+        e.preventDefault();
+        if (!touchDragElement) return;
+
+        const touch = e.touches[0];
+        touchDragElement.style.position = 'fixed';
+        touchDragElement.style.zIndex = '1000';
+        touchDragElement.style.left = (touch.clientX - touchOffsetOrderX) + 'px';
+        touchDragElement.style.top = (touch.clientY - touchOffsetOrderY) + 'px';
+    }
+
+    function handleOrderTouchEnd(e) {
+        e.preventDefault();
+        if (!touchDragElement) return;
+
+        touchDragElement.classList.remove('dragging');
+        touchDragElement.style.position = '';
+        touchDragElement.style.left = '';
+        touchDragElement.style.top = '';
+        touchDragElement.style.zIndex = '';
+
+        const touch = e.changedTouches[0];
+        const dropTarget = document.elementFromPoint(touch.clientX, touch.clientY);
+        const slot = dropTarget?.classList.contains('ordering-slot') ? dropTarget : dropTarget?.closest('.ordering-slot');
+
+        if (slot && !slot.classList.contains('filled')) {
+            const expected = slot.dataset.expected;
+            const actual = touchDragElement.dataset.value;
+
+            if (expected === actual) {
+                slot.appendChild(touchDragElement);
+                slot.classList.add('filled');
+                touchDragElement.classList.add('placed');
+                touchDragElement.draggable = false;
+                playPuzzleCorrectSound();
+                createMiniCelebration(slot);
+                checkOrderCompletion();
+            } else {
+                playErrorSound();
+            }
+        }
+
+        touchDragElement = null;
+    }
+
+    function checkOrderCompletion() {
+        const activeContainer = document.querySelector('.ordering-container:not([style*="display: none"])');
+        if (!activeContainer) return;
+
+        const slots = activeContainer.querySelectorAll('.ordering-slot');
+        const allFilled = Array.from(slots).every(slot => slot.classList.contains('filled'));
+
+        if (allFilled) {
+            const statusId = activeContainer.id === 'order-arabic-container' ? 'arabic-status' : 'english-status';
+            const statusEl = document.getElementById(statusId);
+            const message = activeContainer.id === 'order-arabic-container' ?
+                '🎉 أحسنت! رتبت الأرقام بشكل صحيح! 🎉' :
+                '🎉 Great Job! You ordered all numbers correctly! 🎉';
+
+            statusEl.textContent = message;
+            statusEl.classList.add('success');
+
+            playSuccessSound();
+            createBigCelebration();
+        }
+    }
+
+    function resetArabicOrdering() {
+        document.getElementById('arabic-status').textContent = 'ابدأ بترتيب الأرقام!';
+        document.getElementById('arabic-status').classList.remove('success');
+        initializeArabicOrdering();
+    }
+
+    function resetEnglishOrdering() {
+        document.getElementById('english-status').textContent = 'Start ordering the numbers!';
+        document.getElementById('english-status').classList.remove('success');
+        initializeEnglishOrdering();
+    }
+
+    function createMiniCelebration(slot) {
+        const prizeEmojis = ['🎉', '⭐', '🌟', '✨', '🎊', '👏', '💫', '🏆', '✅'];
+
+        // Create 5 floating emojis from the slot
+        for (let i = 0; i < 5; i++) {
+            const emoji = document.createElement('div');
+            emoji.textContent = prizeEmojis[Math.floor(Math.random() * prizeEmojis.length)];
+            emoji.className = 'mini-celebration-emoji';
+
+            const rect = slot.getBoundingClientRect();
+            emoji.style.position = 'fixed';
+            emoji.style.left = (rect.left + rect.width / 2 - 15) + 'px';
+            emoji.style.top = (rect.top + rect.height / 2 - 15) + 'px';
+            emoji.style.fontSize = '2em';
+            emoji.style.zIndex = '9999';
+            emoji.style.pointerEvents = 'none';
+            emoji.style.animation = `miniCelebrate ${0.8 + Math.random() * 0.4}s ease-out forwards`;
+            emoji.style.animationDelay = (i * 0.1) + 's';
+
+            // Random horizontal offset
+            const randomX = (Math.random() - 0.5) * 100;
+            emoji.style.setProperty('--random-x', randomX + 'px');
+
+            document.body.appendChild(emoji);
+
+            setTimeout(() => emoji.remove(), 1500);
+        }
+    }
+
+    // Memory game variables
+    let memoryAnimals = [
+        { emoji: '🦁', name: 'Lion', arabic: 'أسد' },
+        { emoji: '🐘', name: 'Elephant', arabic: 'فيل' },
+        { emoji: '🦒', name: 'Giraffe', arabic: 'زرافة' },
+        { emoji: '🐯', name: 'Tiger', arabic: 'نمر' },
+        { emoji: '🐻', name: 'Bear', arabic: 'دب' },
+        { emoji: '🐼', name: 'Panda', arabic: 'باندا' },
+        { emoji: '🐨', name: 'Koala', arabic: 'كوالا' },
+        { emoji: '🦊', name: 'Fox', arabic: 'ثعلب' },
+        { emoji: '🐰', name: 'Rabbit', arabic: 'أرنب' },
+        { emoji: '🐸', name: 'Frog', arabic: 'ضفدع' },
+        { emoji: '🐵', name: 'Monkey', arabic: 'قرد' },
+        { emoji: '🦓', name: 'Zebra', arabic: 'حمار وحشي' },
+        { emoji: '🦘', name: 'Kangaroo', arabic: 'كنغر' },
+        { emoji: '🐧', name: 'Penguin', arabic: 'بطريق' },
+        { emoji: '🦅', name: 'Eagle', arabic: 'نسر' },
+        { emoji: '🦉', name: 'Owl', arabic: 'بومة' },
+        { emoji: '🦜', name: 'Parrot', arabic: 'ببغاء' },
+        { emoji: '🐬', name: 'Dolphin', arabic: 'دولفين' },
+        { emoji: '🦈', name: 'Shark', arabic: 'سمك القرش' },
+        { emoji: '🐳', name: 'Whale', arabic: 'حوت' },
+        { emoji: '🐙', name: 'Octopus', arabic: 'أخطبوط' },
+        { emoji: '🦀', name: 'Crab', arabic: 'سلطعون' },
+        { emoji: '🐍', name: 'Snake', arabic: 'ثعبان' },
+        { emoji: '🦎', name: 'Lizard', arabic: 'سحلية' },
+        { emoji: '🐊', name: 'Crocodile', arabic: 'تمساح' }
+    ];
+
+    let currentGameAnimals = [];
+    let currentTargetAnimal = null;
+    let correctCount = 0;
+    let triesCount = 0;
+    let foundAnimals = new Set();
+
+    function startMemoryGame() {
+        correctCount = 0;
+        triesCount = 0;
+        foundAnimals.clear();
+
+        const shuffled = [...memoryAnimals].sort(() => Math.random() - 0.5);
+        currentGameAnimals = shuffled.slice(0, 5);
+
+        document.getElementById('memory-start').style.display = 'none';
+        document.getElementById('memory-play').style.display = 'block';
+
+        showAnimalsPhase();
+    }
+
+    function showAnimalsPhase() {
+        const grid = document.getElementById('memory-cards-grid');
+        const feedback = document.getElementById('memory-feedback');
+
+        feedback.textContent = '👀 Look carefully at these animals!';
+        feedback.className = 'memory-feedback';
+
+        grid.innerHTML = '';
+
+        const shuffledAnimals = [...currentGameAnimals].sort(() => Math.random() - 0.5);
+
+        shuffledAnimals.forEach((animal, index) => {
+            const card = document.createElement('div');
+            card.className = 'memory-card showing-front';
+            card.setAttribute('data-animal', animal.emoji);
+            card.innerHTML = `
                     <div class="memory-card-front">${animal.emoji}</div>
                     <div class="memory-card-back">❓</div>
                 `;
-                grid.appendChild(card);
-            });
-            
-            setTimeout(() => {
-                flipAllCards();
-                startGamePhase();
-            }, 9000);
+            grid.appendChild(card);
+        });
+
+        setTimeout(() => {
+            flipAllCards();
+            startGamePhase();
+        }, 9000);
+    }
+
+    function flipAllCards() {
+        const cards = document.querySelectorAll('.memory-card');
+        cards.forEach(card => {
+            card.classList.remove('showing-front');
+            card.classList.add('flipped');
+        });
+
+        setTimeout(() => {
+            shuffleCards();
+        }, 500);
+    }
+
+    function shuffleCards() {
+        const grid = document.getElementById('memory-cards-grid');
+        const cards = Array.from(grid.children);
+
+        for (let i = cards.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            grid.insertBefore(cards[j], cards[i]);
         }
-        
-        function flipAllCards() {
-            const cards = document.querySelectorAll('.memory-card');
-            cards.forEach(card => {
+    }
+
+    function startGamePhase() {
+        const feedback = document.getElementById('memory-feedback');
+        feedback.textContent = '🎯 Now find the animals!';
+
+        document.getElementById('correct-count').textContent = correctCount;
+        document.getElementById('tries-count').textContent = triesCount;
+
+        selectNewTarget();
+
+        const cards = document.querySelectorAll('.memory-card');
+        cards.forEach((card) => {
+            card.onclick = () => checkCard(card);
+        });
+    }
+
+    function selectNewTarget() {
+        const remainingAnimals = currentGameAnimals.filter(animal =>
+            !foundAnimals.has(animal.emoji)
+        );
+
+        if (remainingAnimals.length === 0) {
+            gameComplete();
+            return;
+        }
+
+        currentTargetAnimal = remainingAnimals[Math.floor(Math.random() * remainingAnimals.length)];
+
+        document.getElementById('target-emoji').textContent = currentTargetAnimal.emoji;
+        document.getElementById('target-name').textContent = currentTargetAnimal.name;
+    }
+
+    function checkCard(card) {
+        if (card.classList.contains('found')) return;
+
+        triesCount++;
+        document.getElementById('tries-count').textContent = triesCount;
+
+        card.classList.remove('flipped');
+        card.classList.add('showing-front');
+
+        const actualAnimalEmoji = card.getAttribute('data-animal');
+        const actualAnimal = memoryAnimals.find(a => a.emoji === actualAnimalEmoji);
+        const feedback = document.getElementById('memory-feedback');
+
+        if (actualAnimalEmoji === currentTargetAnimal.emoji) {
+            correctCount++;
+            document.getElementById('correct-count').textContent = correctCount;
+
+            feedback.textContent = `✅ Yes! That's the ${actualAnimal.name}!`;
+            feedback.className = 'memory-feedback correct';
+
+            card.classList.add('found');
+            foundAnimals.add(actualAnimalEmoji);
+
+            playSuccessSound();
+            createCelebration();
+
+            setTimeout(() => {
+                selectNewTarget();
+            }, 1500);
+        } else {
+            feedback.textContent = `❌ No, that's a ${actualAnimal.name}. Try again!`;
+            feedback.className = 'memory-feedback wrong';
+
+            playErrorSound();
+
+            setTimeout(() => {
                 card.classList.remove('showing-front');
                 card.classList.add('flipped');
-            });
-            
-            setTimeout(() => {
-                shuffleCards();
-            }, 500);
+                feedback.textContent = '';
+            }, 1500);
         }
-        
-        function shuffleCards() {
-            const grid = document.getElementById('memory-cards-grid');
-            const cards = Array.from(grid.children);
-            
-            for (let i = cards.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                grid.insertBefore(cards[j], cards[i]);
-            }
+    }
+
+    function gameComplete() {
+        const feedback = document.getElementById('memory-feedback');
+        feedback.textContent = `🎉 Amazing! You found all animals! ${correctCount} correct in ${triesCount} tries!`;
+        feedback.className = 'memory-feedback correct';
+
+        createBigCelebration();
+        playSuccessSound();
+    }
+
+    function resetMemoryGame() {
+        document.getElementById('memory-start').style.display = 'block';
+        document.getElementById('memory-play').style.display = 'none';
+        document.getElementById('memory-feedback').textContent = '';
+    }
+
+    function playErrorSound() {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+
+        osc.connect(gain);
+        gain.connect(audioContext.destination);
+
+        osc.frequency.value = 200;
+        osc.type = 'sawtooth';
+
+        gain.gain.setValueAtTime(0.2, audioContext.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+
+        osc.start(audioContext.currentTime);
+        osc.stop(audioContext.currentTime + 0.3);
+    }
+
+    function createBigCelebration() {
+        const feedback = document.getElementById('memory-feedback');
+        const prizeEmojis = ['⭐', '🌟', '✨', '🎉', '🎊', '🏆', '🥇', '👑', '🎈', '🌈', '💎'];
+
+        // Create fullscreen overlay
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = '0';
+        overlay.style.left = '0';
+        overlay.style.width = '100vw';
+        overlay.style.height = '100vh';
+        overlay.style.zIndex = '10000';
+        overlay.style.pointerEvents = 'none';
+        document.body.appendChild(overlay);
+
+        for (let i = 0; i < 60; i++) {
+            const star = document.createElement('div');
+            star.textContent = prizeEmojis[Math.floor(Math.random() * prizeEmojis.length)];
+            star.style.position = 'absolute';
+            star.style.fontSize = '4em';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.animation = 'bigCelebrate 6s ease-out forwards';
+            star.style.animationDelay = Math.random() * 0.5 + 's';
+            overlay.appendChild(star);
         }
-        
-        function startGamePhase() {
-            const feedback = document.getElementById('memory-feedback');
-            feedback.textContent = '🎯 Now find the animals!';
-            
-            document.getElementById('correct-count').textContent = correctCount;
-            document.getElementById('tries-count').textContent = triesCount;
-            
-            selectNewTarget();
-            
-            const cards = document.querySelectorAll('.memory-card');
-            cards.forEach((card) => {
-                card.onclick = () => checkCard(card);
-            });
-        }
-        
-        function selectNewTarget() {
-            const remainingAnimals = currentGameAnimals.filter(animal => 
-                !foundAnimals.has(animal.emoji)
-            );
-            
-            if (remainingAnimals.length === 0) {
-                gameComplete();
-                return;
-            }
-            
-            currentTargetAnimal = remainingAnimals[Math.floor(Math.random() * remainingAnimals.length)];
-            
-            document.getElementById('target-emoji').textContent = currentTargetAnimal.emoji;
-            document.getElementById('target-name').textContent = currentTargetAnimal.name;
-        }
-        
-        function checkCard(card) {
-            if (card.classList.contains('found')) return;
-            
-            triesCount++;
-            document.getElementById('tries-count').textContent = triesCount;
-            
-            card.classList.remove('flipped');
-            card.classList.add('showing-front');
-            
-            const actualAnimalEmoji = card.getAttribute('data-animal');
-            const actualAnimal = memoryAnimals.find(a => a.emoji === actualAnimalEmoji);
-            const feedback = document.getElementById('memory-feedback');
-            
-            if (actualAnimalEmoji === currentTargetAnimal.emoji) {
-                correctCount++;
-                document.getElementById('correct-count').textContent = correctCount;
-                
-                feedback.textContent = `✅ Yes! That's the ${actualAnimal.name}!`;
-                feedback.className = 'memory-feedback correct';
-                
-                card.classList.add('found');
-                foundAnimals.add(actualAnimalEmoji);
-                
-                playSuccessSound();
-                createCelebration();
-                
-                setTimeout(() => {
-                    selectNewTarget();
-                }, 1500);
-            } else {
-                feedback.textContent = `❌ No, that's a ${actualAnimal.name}. Try again!`;
-                feedback.className = 'memory-feedback wrong';
-                
-                playErrorSound();
-                
-                setTimeout(() => {
-                    card.classList.remove('showing-front');
-                    card.classList.add('flipped');
-                    feedback.textContent = '';
-                }, 1500);
-            }
-        }
-        
-        function gameComplete() {
-            const feedback = document.getElementById('memory-feedback');
-            feedback.textContent = `🎉 Amazing! You found all animals! ${correctCount} correct in ${triesCount} tries!`;
-            feedback.className = 'memory-feedback correct';
-            
-            createBigCelebration();
-            playSuccessSound();
-        }
-        
-        function resetMemoryGame() {
-            document.getElementById('memory-start').style.display = 'block';
-            document.getElementById('memory-play').style.display = 'none';
-            document.getElementById('memory-feedback').textContent = '';
-        }
-        
-        function playErrorSound() {
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            const osc = audioContext.createOscillator();
-            const gain = audioContext.createGain();
-            
-            osc.connect(gain);
-            gain.connect(audioContext.destination);
-            
-            osc.frequency.value = 200;
-            osc.type = 'sawtooth';
-            
-            gain.gain.setValueAtTime(0.2, audioContext.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
-            
-            osc.start(audioContext.currentTime);
-            osc.stop(audioContext.currentTime + 0.3);
-        }
-        
-        function createBigCelebration() {
-            const feedback = document.getElementById('memory-feedback');
-            const prizeEmojis = ['⭐', '🌟', '✨', '🎉', '🎊', '🏆', '🥇', '👑', '🎈', '🌈', '💎'];
-            
-            // Create fullscreen overlay
-            const overlay = document.createElement('div');
-            overlay.style.position = 'fixed';
-            overlay.style.top = '0';
-            overlay.style.left = '0';
-            overlay.style.width = '100vw';
-            overlay.style.height = '100vh';
-            overlay.style.zIndex = '10000';
-            overlay.style.pointerEvents = 'none';
-            document.body.appendChild(overlay);
-            
-            for (let i = 0; i < 60; i++) {
-                const star = document.createElement('div');
-                star.textContent = prizeEmojis[Math.floor(Math.random() * prizeEmojis.length)];
-                star.style.position = 'absolute';
-                star.style.fontSize = '4em';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 100 + '%';
-                star.style.animation = 'bigCelebrate 6s ease-out forwards';
-                star.style.animationDelay = Math.random() * 0.5 + 's';
-                overlay.appendChild(star);
-            }
-            
-            setTimeout(() => overlay.remove(), 6000);
-        }
-        
-        
-        // SVG Templates for different pictures
-        const svgTemplates = {
-            butterfly: `
+
+        setTimeout(() => overlay.remove(), 6000);
+    }
+
+
+    // SVG Templates for different pictures
+    const svgTemplates = {
+        butterfly: `
                 <g id="butterfly">
                     <!-- Left Wing Top -->
                     <path d="M 150 200 Q 100 150 120 80 Q 140 100 160 140 L 150 200 Z" class="paint-area" data-number="1" fill="#fff" stroke="#000" stroke-width="3"/>
@@ -2306,7 +3323,7 @@
                     <!-- Right Antenna -->
                     <path d="M 205 140 Q 215 120 220 110" fill="none" stroke="#000" stroke-width="3"/>
                     <circle cx="220" cy="105" r="6" fill="#000"/>
-                    
+
                     <!-- Number labels -->
                     <text x="125" y="140" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">1</text>
                     <text x="125" y="270" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">2</text>
@@ -2316,7 +3333,7 @@
                     <text x="195" y="155" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">6</text>
                 </g>
             `,
-            house: `
+        house: `
                 <g id="house">
                     <!-- Roof -->
                     <path d="M 100 180 L 200 100 L 300 180 Z" class="paint-area" data-number="1" fill="#fff" stroke="#000" stroke-width="3"/>
@@ -2334,7 +3351,7 @@
                     <circle cx="220" cy="280" r="5" class="paint-area" data-number="7" fill="#fff" stroke="#000" stroke-width="2"/>
                     <!-- Ground -->
                     <rect x="80" y="320" width="240" height="20" class="paint-area" data-number="8" fill="#fff" stroke="#000" stroke-width="3"/>
-                    
+
                     <!-- Number labels -->
                     <text x="195" y="155" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">1</text>
                     <text x="195" y="260" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">2</text>
@@ -2346,7 +3363,7 @@
                     <text x="195" y="337" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">8</text>
                 </g>
             `,
-            flower: `
+        flower: `
                 <g id="flower">
                     <!-- Center -->
                     <circle cx="200" cy="200" r="30" class="paint-area" data-number="1" fill="#fff" stroke="#000" stroke-width="3"/>
@@ -2360,7 +3377,7 @@
                     <circle cx="260" cy="200" r="30" class="paint-area" data-number="5" fill="#fff" stroke="#000" stroke-width="3"/>
                     <!-- Stem -->
                     <rect x="190" y="230" width="20" height="100" class="paint-area" data-number="6" fill="#fff" stroke="#000" stroke-width="3"/>
-                    
+
                     <!-- Number labels -->
                     <text x="195" y="207" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">1</text>
                     <text x="195" y="147" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">2</text>
@@ -2370,7 +3387,7 @@
                     <text x="195" y="285" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">6</text>
                 </g>
             `,
-            car: `
+        car: `
                 <g id="car">
                     <!-- Main Body -->
                     <rect x="100" y="200" width="200" height="60" rx="10" class="paint-area" data-number="1" fill="#fff" stroke="#000" stroke-width="3"/>
@@ -2386,7 +3403,7 @@
                     <circle cx="260" cy="270" r="25" class="paint-area" data-number="6" fill="#fff" stroke="#000" stroke-width="3"/>
                     <!-- Headlight -->
                     <circle cx="290" cy="220" r="10" class="paint-area" data-number="7" fill="#fff" stroke="#000" stroke-width="3"/>
-                    
+
                     <!-- Number labels -->
                     <text x="195" y="235" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">1</text>
                     <text x="195" y="180" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">2</text>
@@ -2397,7 +3414,7 @@
                     <text x="287" y="225" font-size="18" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">7</text>
                 </g>
             `,
-            fish: `
+        fish: `
                 <g id="fish">
                     <!-- Body -->
                     <ellipse cx="220" cy="200" rx="80" ry="50" class="paint-area" data-number="1" fill="#fff" stroke="#000" stroke-width="3"/>
@@ -2411,7 +3428,7 @@
                     <circle cx="285" cy="200" r="15" class="paint-area" data-number="5" fill="#fff" stroke="#000" stroke-width="3"/>
                     <!-- Eye -->
                     <circle cx="270" cy="185" r="8" fill="#000"/>
-                    
+
                     <!-- Number labels -->
                     <text x="215" y="207" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">1</text>
                     <text x="110" y="207" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">2</text>
@@ -2420,7 +3437,7 @@
                     <text x="280" y="207" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">5</text>
                 </g>
             `,
-            tree: `
+        tree: `
                 <g id="tree">
                     <!-- Leaves Top -->
                     <circle cx="200" cy="130" r="50" class="paint-area" data-number="1" fill="#fff" stroke="#000" stroke-width="3"/>
@@ -2430,7 +3447,7 @@
                     <circle cx="240" cy="170" r="45" class="paint-area" data-number="3" fill="#fff" stroke="#000" stroke-width="3"/>
                     <!-- Trunk -->
                     <rect x="180" y="200" width="40" height="120" class="paint-area" data-number="4" fill="#fff" stroke="#000" stroke-width="3"/>
-                    
+
                     <!-- Number labels -->
                     <text x="195" y="137" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">1</text>
                     <text x="155" y="177" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">2</text>
@@ -2438,609 +3455,666 @@
                     <text x="195" y="267" font-size="24" font-weight="bold" fill="#000" stroke="#fff" stroke-width="1">4</text>
                 </g>
             `
-        };
-        
-        const pictureTitles = {
-            butterfly: '🦋 Butterfly',
-            house: '🏠 House',
-            flower: '🌸 Flower',
-            car: '🚗 Car',
-            fish: '🐟 Fish',
-            tree: '🌳 Tree'
-        };
-        
-        function selectPicture(pictureName) {
-            currentPicture = pictureName;
-            
-            // Hide selection, show painting area
-            document.getElementById('picture-selection').style.display = 'none';
-            document.getElementById('painting-area').style.display = 'block';
-            
-            // Update title
-            document.getElementById('current-picture-title').textContent = pictureTitles[pictureName];
-            
-            // Load SVG
-            document.getElementById('paint-canvas').innerHTML = svgTemplates[pictureName];
-            
-            // Reset painting state
-            paintedAreas.clear();
-            selectedColor = null;
-            selectedNumber = null;
-            
-            // Remove selection from palette
-            document.querySelectorAll('.palette-color').forEach(btn => {
-                btn.classList.remove('selected');
+    };
+
+    const pictureTitles = {
+        butterfly: '🦋 Butterfly',
+        house: '🏠 House',
+        flower: '🌸 Flower',
+        car: '🚗 Car',
+        fish: '🐟 Fish',
+        tree: '🌳 Tree'
+    };
+
+    function selectPicture(pictureName) {
+        currentPicture = pictureName;
+
+        // Hide selection, show painting area
+        document.getElementById('picture-selection').style.display = 'none';
+        document.getElementById('painting-area').style.display = 'block';
+
+        // Update title
+        document.getElementById('current-picture-title').textContent = pictureTitles[pictureName];
+
+        // Load SVG
+        document.getElementById('paint-canvas').innerHTML = svgTemplates[pictureName];
+
+        // Reset painting state
+        paintedAreas.clear();
+        selectedColor = null;
+        selectedNumber = null;
+
+        // Remove selection from palette
+        document.querySelectorAll('.palette-color').forEach(btn => {
+            btn.classList.remove('selected');
+        });
+
+        // Re-initialize paint areas
+        initializePaintAreas();
+    }
+
+    function backToSelection() {
+        document.getElementById('picture-selection').style.display = 'block';
+        document.getElementById('painting-area').style.display = 'none';
+        document.getElementById('paint-feedback').textContent = '';
+    }
+
+    function initializePaintAreas() {
+        document.querySelectorAll('.paint-area').forEach(area => {
+            area.addEventListener('click', function() {
+                paintArea(this);
             });
-            
-            // Re-initialize paint areas
-            initializePaintAreas();
-        }
-        
-        function backToSelection() {
-            document.getElementById('picture-selection').style.display = 'block';
-            document.getElementById('painting-area').style.display = 'none';
-            document.getElementById('paint-feedback').textContent = '';
-        }
-        
-        function initializePaintAreas() {
-            document.querySelectorAll('.paint-area').forEach(area => {
-                area.addEventListener('click', function() {
-                    paintArea(this);
-                });
-                
-                area.addEventListener('mouseenter', function() {
-                    if (this.getAttribute('fill') === '#fff') {
-                        this.style.opacity = '0.7';
-                    }
-                });
-                
-                area.addEventListener('mouseleave', function() {
-                    this.style.opacity = '1';
-                });
+
+            area.addEventListener('mouseenter', function() {
+                if (this.getAttribute('fill') === '#fff') {
+                    this.style.opacity = '0.7';
+                }
             });
-        }
-        
-        function selectPaletteColor(button) {
-            // Remove selection from all palette colors
-            document.querySelectorAll('.palette-color').forEach(btn => {
-                btn.classList.remove('selected');
+
+            area.addEventListener('mouseleave', function() {
+                this.style.opacity = '1';
             });
-            
-            // Select this color
-            button.classList.add('selected');
-            selectedColor = button.getAttribute('data-color');
-            selectedNumber = button.getAttribute('data-number');
-        }
-        
-        function paintArea(area) {
-            if (!selectedColor || !selectedNumber) {
-                const feedback = document.getElementById('paint-feedback');
-                feedback.textContent = '👆 First select a color from the palette above!';
-                feedback.className = 'game-feedback';
-                setTimeout(() => feedback.textContent = '', 2000);
-                return;
-            }
-            
-            const areaNumber = area.getAttribute('data-number');
-            
-            if (areaNumber === selectedNumber) {
-                // Correct number - paint it!
-                area.setAttribute('fill', selectedColor);
-                paintedAreas.add(areaNumber);
-                
-                // Play success sound
-                playPaintSound();
-                
-                // Show feedback
-                const feedback = document.getElementById('paint-feedback');
-                feedback.textContent = '🎨 Great! Keep painting!';
-                feedback.className = 'game-feedback correct';
-                setTimeout(() => feedback.textContent = '', 1500);
-            } else {
-                // Wrong number
-                const feedback = document.getElementById('paint-feedback');
-                feedback.textContent = `❌ That's area ${areaNumber}, but you selected color ${selectedNumber}!`;
-                feedback.className = 'game-feedback wrong';
-                setTimeout(() => feedback.textContent = '', 2000);
-            }
-        }
-        
-        function resetPainting() {
-            document.querySelectorAll('.paint-area').forEach(area => {
-                area.setAttribute('fill', '#fff');
-            });
-            paintedAreas.clear();
-            
+        });
+    }
+
+    function selectPaletteColor(button) {
+        // Remove selection from all palette colors
+        document.querySelectorAll('.palette-color').forEach(btn => {
+            btn.classList.remove('selected');
+        });
+
+        // Select this color
+        button.classList.add('selected');
+        selectedColor = button.getAttribute('data-color');
+        selectedNumber = button.getAttribute('data-number');
+    }
+
+    function paintArea(area) {
+        if (!selectedColor || !selectedNumber) {
             const feedback = document.getElementById('paint-feedback');
-            feedback.textContent = '🔄 Canvas reset! Start painting again!';
+            feedback.textContent = '👆 First select a color from the palette above!';
             feedback.className = 'game-feedback';
             setTimeout(() => feedback.textContent = '', 2000);
+            return;
         }
-        
-        function checkCompletion() {
-            const totalAreas = document.querySelectorAll('.paint-area').length;
+
+        const areaNumber = area.getAttribute('data-number');
+
+        if (areaNumber === selectedNumber) {
+            // Correct number - paint it!
+            area.setAttribute('fill', selectedColor);
+            paintedAreas.add(areaNumber);
+
+            // Play success sound
+            playPaintSound();
+
+            // Show feedback
             const feedback = document.getElementById('paint-feedback');
-            
-            if (paintedAreas.size === totalAreas) {
-                feedback.textContent = '🎉 Amazing! You completed the butterfly! 🦋';
-                feedback.className = 'game-feedback correct';
-                createCelebration();
-                playSuccessSound();
-            } else {
-                feedback.textContent = `You painted ${paintedAreas.size} out of ${totalAreas} areas. Keep going! 💪`;
-                feedback.className = 'game-feedback';
-            }
+            feedback.textContent = '🎨 Great! Keep painting!';
+            feedback.className = 'game-feedback correct';
+            setTimeout(() => feedback.textContent = '', 1500);
+        } else {
+            // Wrong number
+            const feedback = document.getElementById('paint-feedback');
+            feedback.textContent = `❌ That's area ${areaNumber}, but you selected color ${selectedNumber}!`;
+            feedback.className = 'game-feedback wrong';
+            setTimeout(() => feedback.textContent = '', 2000);
         }
-        
-        function playPaintSound() {
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    }
+
+    function resetPainting() {
+        document.querySelectorAll('.paint-area').forEach(area => {
+            area.setAttribute('fill', '#fff');
+        });
+        paintedAreas.clear();
+
+        const feedback = document.getElementById('paint-feedback');
+        feedback.textContent = '🔄 Canvas reset! Start painting again!';
+        feedback.className = 'game-feedback';
+        setTimeout(() => feedback.textContent = '', 2000);
+    }
+
+    function checkCompletion() {
+        const totalAreas = document.querySelectorAll('.paint-area').length;
+        const feedback = document.getElementById('paint-feedback');
+
+        if (paintedAreas.size === totalAreas) {
+            feedback.textContent = '🎉 Amazing! You completed the butterfly! 🦋';
+            feedback.className = 'game-feedback correct';
+            createCelebration();
+            playSuccessSound();
+        } else {
+            feedback.textContent = `You painted ${paintedAreas.size} out of ${totalAreas} areas. Keep going! 💪`;
+            feedback.className = 'game-feedback';
+        }
+    }
+
+    function playPaintSound() {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+
+        osc.connect(gain);
+        gain.connect(audioContext.destination);
+
+        osc.frequency.value = 800;
+        osc.type = 'sine';
+
+        gain.gain.setValueAtTime(0.15, audioContext.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+
+        osc.start(audioContext.currentTime);
+        osc.stop(audioContext.currentTime + 0.1);
+    }
+
+    function playSuccessSound() {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+        // Play happy ascending notes
+        [523, 659, 784, 1047].forEach((freq, i) => {
             const osc = audioContext.createOscillator();
             const gain = audioContext.createGain();
-            
+
             osc.connect(gain);
             gain.connect(audioContext.destination);
-            
-            osc.frequency.value = 800;
+
+            osc.frequency.value = freq;
             osc.type = 'sine';
-            
-            gain.gain.setValueAtTime(0.15, audioContext.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
-            
-            osc.start(audioContext.currentTime);
-            osc.stop(audioContext.currentTime + 0.1);
+
+            const startTime = audioContext.currentTime + (i * 0.1);
+            gain.gain.setValueAtTime(0.2, startTime);
+            gain.gain.exponentialRampToValueAtTime(0.01, startTime + 0.3);
+
+            osc.start(startTime);
+            osc.stop(startTime + 0.3);
+        });
+    }
+
+    function playPuzzleCorrectSound() {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const osc = audioContext.createOscillator();
+        const gain = audioContext.createGain();
+
+        osc.connect(gain);
+        gain.connect(audioContext.destination);
+
+        osc.frequency.value = 800;
+        osc.type = 'sine';
+
+        gain.gain.setValueAtTime(0.2, audioContext.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+
+        osc.start(audioContext.currentTime);
+        osc.stop(audioContext.currentTime + 0.2);
+    }
+
+    function createCelebration() {
+        const feedback = document.getElementById('paint-feedback');
+        const prizeEmojis = ['⭐', '🌟', '✨', '🎉', '🎊', '🏆', '🦋', '🎨', '🌈', '💎', '👑'];
+
+        for (let i = 0; i < 20; i++) {
+            const star = document.createElement('div');
+            star.textContent = prizeEmojis[Math.floor(Math.random() * prizeEmojis.length)];
+            star.className = 'celebration-star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.animationDelay = Math.random() * 0.3 + 's';
+            feedback.appendChild(star);
+
+            setTimeout(() => star.remove(), 2000);
         }
-        
-        function playSuccessSound() {
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            
-            // Play happy ascending notes
-            [523, 659, 784, 1047].forEach((freq, i) => {
-                const osc = audioContext.createOscillator();
-                const gain = audioContext.createGain();
-                
-                osc.connect(gain);
-                gain.connect(audioContext.destination);
-                
-                osc.frequency.value = freq;
-                osc.type = 'sine';
-                
-                const startTime = audioContext.currentTime + (i * 0.1);
-                gain.gain.setValueAtTime(0.2, startTime);
-                gain.gain.exponentialRampToValueAtTime(0.01, startTime + 0.3);
-                
-                osc.start(startTime);
-                osc.stop(startTime + 0.3);
-            });
-        }
-        
-        function createCelebration() {
-            const feedback = document.getElementById('paint-feedback');
-            const prizeEmojis = ['⭐', '🌟', '✨', '🎉', '🎊', '🏆', '🦋', '🎨', '🌈', '💎', '👑'];
-            
-            for (let i = 0; i < 20; i++) {
-                const star = document.createElement('div');
-                star.textContent = prizeEmojis[Math.floor(Math.random() * prizeEmojis.length)];
-                star.className = 'celebration-star';
-                star.style.left = Math.random() * 100 + '%';
-                star.style.animationDelay = Math.random() * 0.3 + 's';
-                feedback.appendChild(star);
-                
-                setTimeout(() => star.remove(), 2000);
-            }
-        }
-        
-        // Initialize paint by numbers
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add click handlers to palette colors
-            document.querySelectorAll('.palette-color').forEach(button => {
-                button.addEventListener('click', function() {
-                    selectPaletteColor(this);
-                });
-            });
-            
-            // Add click handlers to paint areas
-            document.querySelectorAll('.paint-area').forEach(area => {
-                area.addEventListener('click', function() {
-                    paintArea(this);
-                });
-                
-                // Add hover effect
-                area.addEventListener('mouseenter', function() {
-                    if (this.getAttribute('fill') === '#fff') {
-                        this.style.opacity = '0.7';
-                    }
-                });
-                
-                area.addEventListener('mouseleave', function() {
-                    this.style.opacity = '1';
-                });
+    }
+
+    // Initialize paint by numbers
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add click handlers to palette colors
+        document.querySelectorAll('.palette-color').forEach(button => {
+            button.addEventListener('click', function() {
+                selectPaletteColor(this);
             });
         });
-        // Animal options for each Arabic letter
-        const arabicAnimals = {
-            'أ': [
-                { emoji: '🐰', name: 'أرنب' },
-                { emoji: '🦁', name: 'أسد' },
-                { emoji: '🐟', name: 'أسماك' }
-            ],
-            'ب': [
-                { emoji: '🦆', name: 'بطة' },
-                { emoji: '🐄', name: 'بقرة' },
-                { emoji: '🦉', name: 'بومة' },
-                { emoji: '🦜', name: 'ببغاء' }
-            ],
-            'ت': [
-                { emoji: '🐊', name: 'تمساح' },
-                { emoji: '🐉', name: 'تنين' }
-            ],
-            'ث': [
-                { emoji: '🦊', name: 'ثعلب' },
-                { emoji: '🐍', name: 'ثعبان' },
-                { emoji: '🐂', name: 'ثور' }
-            ],
-            'ج': [
-                { emoji: '🐪', name: 'جمل' },
-                { emoji: '🦘', name: 'جرذ' },
-                { emoji: '🐃', name: 'جاموس' }
-            ],
-            'ح': [
-                { emoji: '🐴', name: 'حصان' },
-                { emoji: '🐋', name: 'حوت' },
-                { emoji: '🐌', name: 'حلزون' },
-                { emoji: '🕊️', name: 'حمامة' }
-            ],
-            'خ': [
-                { emoji: '🐑', name: 'خروف' },
-                { emoji: '🐗', name: 'خنزير' },
-                { emoji: '🦏', name: 'خرتيت' }
-            ],
-            'د': [
-                { emoji: '🐻', name: 'دب' },
-                { emoji: '🐓', name: 'ديك' },
-                { emoji: '🐬', name: 'دولفين' }
-            ],
-            'ر': [
-                { emoji: '🦌', name: 'رنة' },
-                { emoji: '🦃', name: 'ديك رومي' }
-            ],
-            'ز': [
-                { emoji: '🦒', name: 'زرافة' },
-                { emoji: '🦓', name: 'حمار وحشي' }
-            ],
-            'س': [
-                { emoji: '🐟', name: 'سمكة' },
-                { emoji: '🐢', name: 'سلحفاة' },
-                { emoji: '🦎', name: 'سحلية' },
-                { emoji: '🦈', name: 'سمك القرش' }
-            ],
-            'ش': [
-                { emoji: '🐝', name: 'نحلة' },
-                { emoji: '🦔', name: 'قنفذ' }
-            ],
-            'ص': [
-                { emoji: '🦅', name: 'صقر' },
-                { emoji: '🐓', name: 'صوص' }
-            ],
-            'ض': [
-                { emoji: '🐸', name: 'ضفدع' },
-                { emoji: '🦎', name: 'ضب' }
-            ],
-            'ط': [
-                { emoji: '🦚', name: 'طاووس' },
-                { emoji: '🐦', name: 'طائر' }
-            ],
-            'ظ': [
-                { emoji: '🦌', name: 'ظبي' },
-                { emoji: '🦙', name: 'غزال' }
-            ],
-            'ع': [
-                { emoji: '🐦', name: 'عصفور' },
-                { emoji: '🦅', name: 'عقاب' },
-                { emoji: '🕷️', name: 'عنكبوت' }
-            ],
-            'غ': [
-                { emoji: '🐦‍⬛', name: 'غراب' },
-                { emoji: '🦌', name: 'غزال' },
-                { emoji: '🦍', name: 'غوريلا' }
-            ],
-            'ف': [
-                { emoji: '🐘', name: 'فيل' },
-                { emoji: '🦛', name: 'فرس النهر' },
-                { emoji: '🐆', name: 'فهد' },
-                { emoji: '🦋', name: 'فراشة' }
-            ],
-            'ق': [
-                { emoji: '🐱', name: 'قطة' },
-                { emoji: '🦔', name: 'قنفذ' },
-                { emoji: '🐵', name: 'قرد' },
-                { emoji: '🦫', name: 'قندس' }
-            ],
-            'ك': [
-                { emoji: '🐕', name: 'كلب' },
-                { emoji: '🦘', name: 'كنغر' },
-                { emoji: '🐨', name: 'كوالا' }
-            ],
-            'ل': [
-                { emoji: '🦁', name: 'أسد' },
-                { emoji: '🦙', name: 'لاما' }
-            ],
-            'م': [
-                { emoji: '🐐', name: 'ماعز' },
-                { emoji: '🦣', name: 'ماموث' }
-            ],
-            'ن': [
-                { emoji: '🐯', name: 'نمر' },
-                { emoji: '🦅', name: 'نسر' },
-                { emoji: '🐝', name: 'نحلة' },
-                { emoji: '🦔', name: 'نيص' }
-            ],
-            'ه': [
-                { emoji: '🦜', name: 'ببغاء' },
-                { emoji: '🐹', name: 'همستر' }
-            ],
-            'و': [
-                { emoji: '🦢', name: 'بجعة' },
-                { emoji: '🦌', name: 'وعل' }
-            ],
-            'ي': [
-                { emoji: '🕊️', name: 'حمامة' },
-                { emoji: '🐛', name: 'يرقة' }
-            ]
-        };
 
-        // Animal options for each English letter
-        const englishAnimals = {
-            'a': [
-                { emoji: '🐊', name: 'Alligator' },
-                { emoji: '🐜', name: 'Ant' },
-                { emoji: '🐻', name: 'Animal' }
-            ],
-            'b': [
-                { emoji: '🦋', name: 'Butterfly' },
-                { emoji: '🐻', name: 'Bear' },
-                { emoji: '🐝', name: 'Bee' },
-                { emoji: '🐦', name: 'Bird' },
-                { emoji: '🦬', name: 'Buffalo' }
-            ],
-            'c': [
-                { emoji: '🐱', name: 'Cat' },
-                { emoji: '🐄', name: 'Cow' },
-                { emoji: '🐊', name: 'Crocodile' },
-                { emoji: '🦀', name: 'Crab' },
-                { emoji: '🐪', name: 'Camel' }
-            ],
-            'd': [
-                { emoji: '🐕', name: 'Dog' },
-                { emoji: '🦆', name: 'Duck' },
-                { emoji: '🐬', name: 'Dolphin' },
-                { emoji: '🦌', name: 'Deer' }
-            ],
-            'e': [
-                { emoji: '🐘', name: 'Elephant' },
-                { emoji: '🦅', name: 'Eagle' }
-            ],
-            'f': [
-                { emoji: '🐟', name: 'Fish' },
-                { emoji: '🦊', name: 'Fox' },
-                { emoji: '🐸', name: 'Frog' }
-            ],
-            'g': [
-                { emoji: '🐐', name: 'Goat' },
-                { emoji: '🦒', name: 'Giraffe' },
-                { emoji: '🦍', name: 'Gorilla' }
-            ],
-            'h': [
-                { emoji: '🐴', name: 'Horse' },
-                { emoji: '🦛', name: 'Hippo' },
-                { emoji: '🦔', name: 'Hedgehog' },
-                { emoji: '🐹', name: 'Hamster' }
-            ],
-            'i': [
-                { emoji: '🦎', name: 'Iguana' },
-                { emoji: '🐛', name: 'Insect' }
-            ],
-            'j': [
-                { emoji: '🪼', name: 'Jellyfish' },
-                { emoji: '🐆', name: 'Jaguar' }
-            ],
-            'k': [
-                { emoji: '🐨', name: 'Koala' },
-                { emoji: '🦘', name: 'Kangaroo' }
-            ],
-            'l': [
-                { emoji: '🦁', name: 'Lion' },
-                { emoji: '🐆', name: 'Leopard' },
-                { emoji: '🦎', name: 'Lizard' },
-                { emoji: '🦙', name: 'Llama' }
-            ],
-            'm': [
-                { emoji: '🐵', name: 'Monkey' },
-                { emoji: '🐭', name: 'Mouse' },
-                { emoji: '🦟', name: 'Mosquito' }
-            ],
-            'n': [
-                { emoji: '🐳', name: 'Narwhal' }
-            ],
-            'o': [
-                { emoji: '🦉', name: 'Owl' },
-                { emoji: '🦦', name: 'Otter' },
-                { emoji: '🐙', name: 'Octopus' }
-            ],
-            'p': [
-                { emoji: '🐧', name: 'Penguin' },
-                { emoji: '🐷', name: 'Pig' },
-                { emoji: '🦜', name: 'Parrot' },
-                { emoji: '🐼', name: 'Panda' }
-            ],
-            'q': [
-                { emoji: '🐦', name: 'Quail' }
-            ],
-            'r': [
-                { emoji: '🐰', name: 'Rabbit' },
-                { emoji: '🦏', name: 'Rhino' },
-                { emoji: '🐀', name: 'Rat' },
-                { emoji: '🦝', name: 'Raccoon' }
-            ],
-            's': [
-                { emoji: '🐍', name: 'Snake' },
-                { emoji: '🐑', name: 'Sheep' },
-                { emoji: '🦈', name: 'Shark' },
-                { emoji: '🦥', name: 'Sloth' },
-                { emoji: '🐚', name: 'Snail' }
-            ],
-            't': [
-                { emoji: '🐯', name: 'Tiger' },
-                { emoji: '🐢', name: 'Turtle' },
-                { emoji: '🦃', name: 'Turkey' }
-            ],
-            'u': [
-                { emoji: '🦄', name: 'Unicorn' }
-            ],
-            'v': [
-                { emoji: '🦅', name: 'Vulture' }
-            ],
-            'w': [
-                { emoji: '🐋', name: 'Whale' },
-                { emoji: '🐺', name: 'Wolf' },
-                { emoji: '🦏', name: 'Walrus' }
-            ],
-            'x': [
-                { emoji: '🐠', name: 'X-ray Fish' }
-            ],
-            'y': [
-                { emoji: '🐃', name: 'Yak' }
-            ],
-            'z': [
-                { emoji: '🦓', name: 'Zebra' }
-            ]
-        };
+        // Add click handlers to paint areas
+        document.querySelectorAll('.paint-area').forEach(area => {
+            area.addEventListener('click', function() {
+                paintArea(this);
+            });
 
-        // Function to get random animal for a letter
-        function getRandomAnimal(letter, language) {
-            const animals = language === 'arabic' ? arabicAnimals[letter] : englishAnimals[letter];
-            if (!animals || animals.length === 0) return null;
-            return animals[Math.floor(Math.random() * animals.length)];
+            // Add hover effect
+            area.addEventListener('mouseenter', function() {
+                if (this.getAttribute('fill') === '#fff') {
+                    this.style.opacity = '0.7';
+                }
+            });
+
+            area.addEventListener('mouseleave', function() {
+                this.style.opacity = '1';
+            });
+        });
+    });
+    // Animal options for each Arabic letter
+    const arabicAnimals = {
+        'أ': [
+            { emoji: '🐰', name: 'أرنب' },
+            { emoji: '🦁', name: 'أسد' },
+            { emoji: '🐟', name: 'أسماك' }
+        ],
+        'ب': [
+            { emoji: '🦆', name: 'بطة' },
+            { emoji: '🐄', name: 'بقرة' },
+            { emoji: '🦉', name: 'بومة' },
+            { emoji: '🦜', name: 'ببغاء' }
+        ],
+        'ت': [
+            { emoji: '🐊', name: 'تمساح' },
+            { emoji: '🐉', name: 'تنين' }
+        ],
+        'ث': [
+            { emoji: '🦊', name: 'ثعلب' },
+            { emoji: '🐍', name: 'ثعبان' },
+            { emoji: '🐂', name: 'ثور' }
+        ],
+        'ج': [
+            { emoji: '🐪', name: 'جمل' },
+            { emoji: '🦘', name: 'جرذ' },
+            { emoji: '🐃', name: 'جاموس' }
+        ],
+        'ح': [
+            { emoji: '🐴', name: 'حصان' },
+            { emoji: '🐋', name: 'حوت' },
+            { emoji: '🐌', name: 'حلزون' },
+            { emoji: '🕊️', name: 'حمامة' }
+        ],
+        'خ': [
+            { emoji: '🐑', name: 'خروف' },
+            { emoji: '🐗', name: 'خنزير' },
+            { emoji: '🦏', name: 'خرتيت' }
+        ],
+        'د': [
+            { emoji: '🐻', name: 'دب' },
+            { emoji: '🐓', name: 'ديك' },
+            { emoji: '🐬', name: 'دولفين' }
+        ],
+        'ر': [
+            { emoji: '🦌', name: 'رنة' },
+            { emoji: '🦃', name: 'ديك رومي' }
+        ],
+        'ز': [
+            { emoji: '🦒', name: 'زرافة' },
+            { emoji: '🦓', name: 'حمار وحشي' }
+        ],
+        'س': [
+            { emoji: '🐟', name: 'سمكة' },
+            { emoji: '🐢', name: 'سلحفاة' },
+            { emoji: '🦎', name: 'سحلية' },
+            { emoji: '🦈', name: 'سمك القرش' }
+        ],
+        'ش': [
+            { emoji: '🐝', name: 'نحلة' },
+            { emoji: '🦔', name: 'قنفذ' }
+        ],
+        'ص': [
+            { emoji: '🦅', name: 'صقر' },
+            { emoji: '🐓', name: 'صوص' }
+        ],
+        'ض': [
+            { emoji: '🐸', name: 'ضفدع' },
+            { emoji: '🦎', name: 'ضب' }
+        ],
+        'ط': [
+            { emoji: '🦚', name: 'طاووس' },
+            { emoji: '🐦', name: 'طائر' }
+        ],
+        'ظ': [
+            { emoji: '🦌', name: 'ظبي' },
+            { emoji: '🦙', name: 'غزال' }
+        ],
+        'ع': [
+            { emoji: '🐦', name: 'عصفور' },
+            { emoji: '🦅', name: 'عقاب' },
+            { emoji: '🕷️', name: 'عنكبوت' }
+        ],
+        'غ': [
+            { emoji: '🐦‍⬛', name: 'غراب' },
+            { emoji: '🦌', name: 'غزال' },
+            { emoji: '🦍', name: 'غوريلا' }
+        ],
+        'ف': [
+            { emoji: '🐘', name: 'فيل' },
+            { emoji: '🦛', name: 'فرس النهر' },
+            { emoji: '🐆', name: 'فهد' },
+            { emoji: '🦋', name: 'فراشة' }
+        ],
+        'ق': [
+            { emoji: '🐱', name: 'قطة' },
+            { emoji: '🦔', name: 'قنفذ' },
+            { emoji: '🐵', name: 'قرد' },
+            { emoji: '🦫', name: 'قندس' }
+        ],
+        'ك': [
+            { emoji: '🐕', name: 'كلب' },
+            { emoji: '🦘', name: 'كنغر' },
+            { emoji: '🐨', name: 'كوالا' }
+        ],
+        'ل': [
+            { emoji: '🦁', name: 'أسد' },
+            { emoji: '🦙', name: 'لاما' }
+        ],
+        'م': [
+            { emoji: '🐐', name: 'ماعز' },
+            { emoji: '🦣', name: 'ماموث' }
+        ],
+        'ن': [
+            { emoji: '🐯', name: 'نمر' },
+            { emoji: '🦅', name: 'نسر' },
+            { emoji: '🐝', name: 'نحلة' },
+            { emoji: '🦔', name: 'نيص' }
+        ],
+        'ه': [
+            { emoji: '🐹', name: 'همستر' },
+            { emoji: '🦔', name: 'هدهد' },
+            { emoji: '🐆', name: 'هر' }
+        ],
+        'و': [
+            { emoji: '🦌', name: 'وعل' },
+            { emoji: '🦆', name: 'وز' },
+            { emoji: '🐺', name: 'وشق' }
+        ],
+        'ي': [
+            { emoji: '🐛', name: 'يرقة' },
+            { emoji: '🦎', name: 'يحمور' },
+            { emoji: '🪲', name: 'يعسوب' }
+        ]
+    };
+
+    // Animal options for each English letter
+    const englishAnimals = {
+        'a': [
+            { emoji: '🐊', name: 'Alligator' },
+            { emoji: '🐜', name: 'Ant' },
+            { emoji: '🐻', name: 'Animal' }
+        ],
+        'b': [
+            { emoji: '🦋', name: 'Butterfly' },
+            { emoji: '🐻', name: 'Bear' },
+            { emoji: '🐝', name: 'Bee' },
+            { emoji: '🐦', name: 'Bird' },
+            { emoji: '🦬', name: 'Buffalo' }
+        ],
+        'c': [
+            { emoji: '🐱', name: 'Cat' },
+            { emoji: '🐄', name: 'Cow' },
+            { emoji: '🐊', name: 'Crocodile' },
+            { emoji: '🦀', name: 'Crab' },
+            { emoji: '🐪', name: 'Camel' }
+        ],
+        'd': [
+            { emoji: '🐕', name: 'Dog' },
+            { emoji: '🦆', name: 'Duck' },
+            { emoji: '🐬', name: 'Dolphin' },
+            { emoji: '🦌', name: 'Deer' }
+        ],
+        'e': [
+            { emoji: '🐘', name: 'Elephant' },
+            { emoji: '🦅', name: 'Eagle' }
+        ],
+        'f': [
+            { emoji: '🐟', name: 'Fish' },
+            { emoji: '🦊', name: 'Fox' },
+            { emoji: '🐸', name: 'Frog' }
+        ],
+        'g': [
+            { emoji: '🐐', name: 'Goat' },
+            { emoji: '🦒', name: 'Giraffe' },
+            { emoji: '🦍', name: 'Gorilla' }
+        ],
+        'h': [
+            { emoji: '🐴', name: 'Horse' },
+            { emoji: '🦛', name: 'Hippo' },
+            { emoji: '🦔', name: 'Hedgehog' },
+            { emoji: '🐹', name: 'Hamster' }
+        ],
+        'i': [
+            { emoji: '🦎', name: 'Iguana' },
+            { emoji: '🐛', name: 'Insect' }
+        ],
+        'j': [
+            { emoji: '🪼', name: 'Jellyfish' },
+            { emoji: '🐆', name: 'Jaguar' }
+        ],
+        'k': [
+            { emoji: '🐨', name: 'Koala' },
+            { emoji: '🦘', name: 'Kangaroo' }
+        ],
+        'l': [
+            { emoji: '🦁', name: 'Lion' },
+            { emoji: '🐆', name: 'Leopard' },
+            { emoji: '🦎', name: 'Lizard' },
+            { emoji: '🦙', name: 'Llama' }
+        ],
+        'm': [
+            { emoji: '🐵', name: 'Monkey' },
+            { emoji: '🐭', name: 'Mouse' },
+            { emoji: '🦟', name: 'Mosquito' }
+        ],
+        'n': [
+            { emoji: '🐳', name: 'Narwhal' }
+        ],
+        'o': [
+            { emoji: '🦉', name: 'Owl' },
+            { emoji: '🦦', name: 'Otter' },
+            { emoji: '🐙', name: 'Octopus' }
+        ],
+        'p': [
+            { emoji: '🐧', name: 'Penguin' },
+            { emoji: '🐷', name: 'Pig' },
+            { emoji: '🦜', name: 'Parrot' },
+            { emoji: '🐼', name: 'Panda' }
+        ],
+        'q': [
+            { emoji: '🐦', name: 'Quail' }
+        ],
+        'r': [
+            { emoji: '🐰', name: 'Rabbit' },
+            { emoji: '🦏', name: 'Rhino' },
+            { emoji: '🐀', name: 'Rat' },
+            { emoji: '🦝', name: 'Raccoon' }
+        ],
+        's': [
+            { emoji: '🐍', name: 'Snake' },
+            { emoji: '🐑', name: 'Sheep' },
+            { emoji: '🦈', name: 'Shark' },
+            { emoji: '🦥', name: 'Sloth' },
+            { emoji: '🐚', name: 'Snail' }
+        ],
+        't': [
+            { emoji: '🐯', name: 'Tiger' },
+            { emoji: '🐢', name: 'Turtle' },
+            { emoji: '🦃', name: 'Turkey' }
+        ],
+        'u': [
+            { emoji: '🦄', name: 'Unicorn' }
+        ],
+        'v': [
+            { emoji: '🦅', name: 'Vulture' }
+        ],
+        'w': [
+            { emoji: '🐋', name: 'Whale' },
+            { emoji: '🐺', name: 'Wolf' },
+            { emoji: '🦏', name: 'Walrus' }
+        ],
+        'x': [
+            { emoji: '🐠', name: 'X-ray Fish' }
+        ],
+        'y': [
+            { emoji: '🐃', name: 'Yak' }
+        ],
+        'z': [
+            { emoji: '🦓', name: 'Zebra' }
+        ]
+    };
+
+    // Function to get random animal for a letter
+    function getRandomAnimal(letter, language) {
+        const animals = language === 'arabic' ? arabicAnimals[letter] : englishAnimals[letter];
+        if (!animals || animals.length === 0) return null;
+        return animals[Math.floor(Math.random() * animals.length)];
+    }
+
+    // Sound generation functions
+    function playFlipSound() {
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+
+        oscillator.frequency.value = 800;
+        oscillator.type = 'sine';
+
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
+
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + 0.2);
+    }
+
+    // Tab switching function
+    function showTab(language) {
+        const arabicContainer = document.getElementById('arabic-container');
+        const englishContainer = document.getElementById('english-container');
+        const numbersContainer = document.getElementById('numbers-container');
+        const memoryContainer = document.getElementById('memory-container');
+        const orderArabicContainer = document.getElementById('order-arabic-container');
+        const orderEnglishContainer = document.getElementById('order-english-container');
+        const countArabicContainer = document.getElementById('count-arabic-container');
+        const countEnglishContainer = document.getElementById('count-english-container');
+        const mainTitle = document.getElementById('main-title');
+        const subtitle = document.getElementById('subtitle');
+        const tabs = document.querySelectorAll('.tab-btn');
+
+        // Hide all containers
+        arabicContainer.style.display = 'none';
+        englishContainer.style.display = 'none';
+        numbersContainer.style.display = 'none';
+        memoryContainer.style.display = 'none';
+        orderArabicContainer.style.display = 'none';
+        orderEnglishContainer.style.display = 'none';
+        countArabicContainer.style.display = 'none';
+        countEnglishContainer.style.display = 'none';
+
+        // Remove active class from all tabs
+        tabs.forEach(tab => tab.classList.remove('active'));
+
+        if (language === 'arabic') {
+            arabicContainer.style.display = 'grid';
+            mainTitle.textContent = '🌟 تعلم الحروف العربية 🌟';
+            subtitle.textContent = 'اضغط على البطاقة لرؤية الحيوان!';
+            document.body.style.direction = 'rtl';
+            tabs[0].classList.add('active');
+        } else if (language === 'english') {
+            englishContainer.style.display = 'grid';
+            mainTitle.textContent = '🌟 Learn English Letters 🌟';
+            subtitle.textContent = 'Click the card to see the animal!';
+            document.body.style.direction = 'ltr';
+            tabs[1].classList.add('active');
+        } else if (language === 'numbers') {
+            numbersContainer.style.display = 'block';
+            mainTitle.textContent = '🎨 Paint by Numbers - لون بالأرقام 🎨';
+            subtitle.textContent = 'Click a number, then paint matching areas!';
+            document.body.style.direction = 'ltr';
+            tabs[2].classList.add('active');
+        } else if (language === 'memory') {
+            memoryContainer.style.display = 'block';
+            mainTitle.textContent = '🧠 Animal Memory Game - لعبة الذاكرة 🧠';
+            subtitle.textContent = 'Remember and find the animals!';
+            document.body.style.direction = 'ltr';
+            tabs[3].classList.add('active');
+        } else if (language === 'order-arabic') {
+            orderArabicContainer.style.display = 'block';
+            mainTitle.textContent = '🔢 رتب الأرقام العربية 🔢';
+            subtitle.textContent = 'اسحب الأرقام لترتيبها من ١ إلى ١٠';
+            document.body.style.direction = 'rtl';
+            tabs[4].classList.add('active');
+            initializeArabicOrdering();
+        } else if (language === 'order-english') {
+            orderEnglishContainer.style.display = 'block';
+            mainTitle.textContent = '🔢 Order the Numbers 🔢';
+            subtitle.textContent = 'Drag numbers from 1 to 10 in order';
+            document.body.style.direction = 'ltr';
+            tabs[5].classList.add('active');
+            initializeEnglishOrdering();
+        } else if (language === 'count-arabic') {
+            countArabicContainer.style.display = 'block';
+            mainTitle.textContent = '🍎 عد الفواكه والخضروات 🥕';
+            subtitle.textContent = 'كم عدد الفواكه أو الخضروات؟ اختر الرقم الصحيح!';
+            document.body.style.direction = 'rtl';
+            tabs[6].classList.add('active');
+            generateArabicCounting();
+        } else if (language === 'count-english') {
+            countEnglishContainer.style.display = 'block';
+            mainTitle.textContent = '🍎 Count Fruits and Vegetables 🥕';
+            subtitle.textContent = 'How many fruits or vegetables? Choose the correct number!';
+            document.body.style.direction = 'ltr';
+            tabs[7].classList.add('active');
+            generateEnglishCounting();
         }
+    }
 
-        // Sound generation functions
-        function playFlipSound() {
-            const audioContext = new (window.AudioContext || window.webkitAudioContext)();
-            const oscillator = audioContext.createOscillator();
-            const gainNode = audioContext.createGain();
-            
-            oscillator.connect(gainNode);
-            gainNode.connect(audioContext.destination);
-            
-            oscillator.frequency.value = 800;
-            oscillator.type = 'sine';
-            
-            gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.2);
-            
-            oscillator.start(audioContext.currentTime);
-            oscillator.stop(audioContext.currentTime + 0.2);
-        }
+    // Add sound effect on flip (optional - using beep)
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add data attributes to all cards
+        const allCards = document.querySelectorAll('.card');
 
-        // Tab switching function
-        function showTab(language) {
-            const arabicContainer = document.getElementById('arabic-container');
-            const englishContainer = document.getElementById('english-container');
-            const numbersContainer = document.getElementById('numbers-container');
-            const memoryContainer = document.getElementById('memory-container');
-            const mainTitle = document.getElementById('main-title');
-            const subtitle = document.getElementById('subtitle');
-            const tabs = document.querySelectorAll('.tab-btn');
-            
-            // Hide all containers
-            arabicContainer.style.display = 'none';
-            englishContainer.style.display = 'none';
-            numbersContainer.style.display = 'none';
-            memoryContainer.style.display = 'none';
-            
-            // Remove active class from all tabs
-            tabs.forEach(tab => tab.classList.remove('active'));
-            
-            if (language === 'arabic') {
-                arabicContainer.style.display = 'grid';
-                mainTitle.textContent = '🌟 تعلم الحروف العربية 🌟';
-                subtitle.textContent = 'اضغط على البطاقة لرؤية الحيوان!';
-                document.body.style.direction = 'rtl';
-                tabs[0].classList.add('active');
-            } else if (language === 'english') {
-                englishContainer.style.display = 'grid';
-                mainTitle.textContent = '🌟 Learn English Letters 🌟';
-                subtitle.textContent = 'Click the card to see the animal!';
-                document.body.style.direction = 'ltr';
-                tabs[1].classList.add('active');
-            } else if (language === 'numbers') {
-                numbersContainer.style.display = 'block';
-                mainTitle.textContent = '🎨 Paint by Numbers - لون بالأرقام 🎨';
-                subtitle.textContent = 'Click a number, then paint matching areas!';
-                document.body.style.direction = 'ltr';
-                tabs[2].classList.add('active');
-            } else if (language === 'memory') {
-                memoryContainer.style.display = 'block';
-                mainTitle.textContent = '🧠 Animal Memory Game - لعبة الذاكرة 🧠';
-                subtitle.textContent = 'Remember and find the animals!';
-                document.body.style.direction = 'ltr';
-                tabs[3].classList.add('active');
+        // Setup Arabic cards
+        const arabicLetters = ['أ', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ر', 'ز', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ك', 'ل', 'م', 'ن', 'ه', 'و', 'ي'];
+        const arabicCards = document.querySelectorAll('#arabic-container .card');
+        arabicCards.forEach((card, index) => {
+            if (index < arabicLetters.length) {
+                card.setAttribute('data-letter', arabicLetters[index]);
+                card.setAttribute('data-language', 'arabic');
             }
-        }
+        });
 
-        // Add sound effect on flip (optional - using beep)
-        document.addEventListener('DOMContentLoaded', function() {
-            // Add data attributes to all cards
-            const allCards = document.querySelectorAll('.card');
-            
-            // Setup Arabic cards
-            const arabicLetters = ['أ', 'ب', 'ت', 'ث', 'ج', 'ح', 'خ', 'د', 'ر', 'ز', 'س', 'ش', 'ص', 'ض', 'ط', 'ظ', 'ع', 'غ', 'ف', 'ق', 'ك', 'ل', 'م', 'ن', 'ه', 'و', 'ي'];
-            const arabicCards = document.querySelectorAll('#arabic-container .card');
-            arabicCards.forEach((card, index) => {
-                if (index < arabicLetters.length) {
-                    card.setAttribute('data-letter', arabicLetters[index]);
-                    card.setAttribute('data-language', 'arabic');
-                }
-            });
-            
-            // Setup English cards
-            const englishLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
-            const englishCards = document.querySelectorAll('#english-container .card');
-            englishCards.forEach((card, index) => {
-                if (index < englishLetters.length) {
-                    card.setAttribute('data-letter', englishLetters[index]);
-                    card.setAttribute('data-language', 'english');
-                }
-            });
-            
-            // Add click handler to all cards
-            allCards.forEach(card => {
-                card.addEventListener('click', function() {
-                    const letter = this.getAttribute('data-letter');
-                    const language = this.getAttribute('data-language');
-                    const isFlipped = this.classList.contains('flipped');
-                    let animal = null;
-                    
-                    if (!isFlipped) {
-                        // Flipping to show animal - randomize it
-                        animal = getRandomAnimal(letter, language);
-                        if (animal) {
-                            const emojiDiv = this.querySelector('.animal-emoji');
-                            const nameDiv = this.querySelector('.animal-name');
-                            if (emojiDiv && nameDiv) {
-                                emojiDiv.textContent = animal.emoji;
-                                nameDiv.textContent = animal.name;
-                            }
+        // Setup English cards
+        const englishLetters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
+        const englishCards = document.querySelectorAll('#english-container .card');
+        englishCards.forEach((card, index) => {
+            if (index < englishLetters.length) {
+                card.setAttribute('data-letter', englishLetters[index]);
+                card.setAttribute('data-language', 'english');
+            }
+        });
+
+        // Add click handler to all cards
+        allCards.forEach(card => {
+            card.addEventListener('click', function() {
+                const letter = this.getAttribute('data-letter');
+                const language = this.getAttribute('data-language');
+                const isFlipped = this.classList.contains('flipped');
+                let animal = null;
+
+                if (!isFlipped) {
+                    // Flipping to show animal - randomize it
+                    animal = getRandomAnimal(letter, language);
+                    if (animal) {
+                        const emojiDiv = this.querySelector('.animal-emoji');
+                        const nameDiv = this.querySelector('.animal-name');
+                        if (emojiDiv && nameDiv) {
+                            emojiDiv.textContent = animal.emoji;
+                            nameDiv.textContent = animal.name;
                         }
                     }
-                    
-                    // Toggle flip
-                    this.classList.toggle('flipped');
-                    
-                    // Play flip sound
-                    playFlipSound();
-                });
+                }
+
+                // Toggle flip
+                this.classList.toggle('flipped');
+
+                // Play flip sound
+                playFlipSound();
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
