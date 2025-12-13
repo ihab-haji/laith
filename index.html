@@ -41,7 +41,7 @@
         .child-photo {
             width: 180px;
             height: 180px;
-            border-radius: 50%;
+            border-radius: 15px;
             object-fit: cover;
             border: 6px solid white;
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
@@ -219,6 +219,7 @@
                 width: 140px;
                 height: 140px;
                 border: 5px solid white;
+                border-radius: 12px;
             }
             
             .header h1 {
@@ -285,6 +286,7 @@
                 width: 120px;
                 height: 120px;
                 border: 4px solid white;
+                border-radius: 10px;
             }
             
             .header h1 {
@@ -1604,6 +1606,7 @@
             overflow: hidden;
         }
 
+        /* Nose removed - cleaner look
         .box-body::before {
             content: '👃';
             position: absolute;
@@ -1613,6 +1616,7 @@
             font-size: 2.5em;
             filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
         }
+        */
 
         .box-body::after {
             content: '';
@@ -1865,6 +1869,130 @@
             align-items: center;
             justify-content: center;
             position: relative;
+        }
+
+        /* 50 Coin Prize Styles */
+        .coin-prize-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            animation: fadeIn 0.5s;
+        }
+
+        .prize-content {
+            background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+            border: 8px solid #ff8c00;
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            animation: prizePopIn 0.6s ease-out;
+            max-width: 600px;
+        }
+
+        @keyframes prizePopIn {
+            0% { transform: scale(0) rotate(-180deg); opacity: 0; }
+            50% { transform: scale(1.2) rotate(10deg); }
+            100% { transform: scale(1) rotate(0deg); opacity: 1; }
+        }
+
+        .prize-title {
+            font-size: 4em;
+            color: #ff1493;
+            text-shadow: 
+                3px 3px 0 #fff,
+                -3px -3px 0 #fff,
+                3px -3px 0 #fff,
+                -3px 3px 0 #fff,
+                0 0 20px rgba(255,215,0,1);
+            margin-bottom: 20px;
+            animation: bounce 1s infinite;
+        }
+
+        .prize-message {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+        }
+
+        .money-prize {
+            font-size: 3.5em;
+            font-weight: bold;
+            color: #228b22;
+            margin-bottom: 30px;
+            text-shadow: 
+                3px 3px 0 #fff,
+                -3px -3px 0 #fff,
+                3px -3px 0 #fff,
+                -3px 3px 0 #fff;
+            animation: moneyGlow 1.5s ease-in-out infinite;
+        }
+
+        @keyframes moneyGlow {
+            0%, 100% { 
+                filter: drop-shadow(0 0 10px #228b22);
+                transform: scale(1);
+            }
+            50% { 
+                filter: drop-shadow(0 0 30px #00ff00);
+                transform: scale(1.1);
+            }
+        }
+
+        .prize-emojis {
+            font-size: 3em;
+            margin-bottom: 30px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .new-game-btn {
+            font-size: 2em;
+            font-weight: bold;
+            padding: 20px 50px;
+            background: linear-gradient(135deg, #4CAF50 0%, #81c784 100%);
+            color: white;
+            border: 6px solid #2e7d32;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .new-game-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+        }
+
+        .falling-money {
+            position: absolute;
+            top: -50px;
+            animation: fallMoney 4s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes fallMoney {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
         }
 
         .answer-btn::before {
@@ -3219,12 +3347,64 @@
         let currentPicture = '';
         
         // Coin Math Game Variables
+        const bankShapes = [
+            {
+                name: 'piggy',
+                emoji: '🐷',
+                color: '#ff69b4',
+                lightColor: '#ffb6d9',
+                borderColor: '#ff1493',
+                feature: '👃'
+            },
+            {
+                name: 'bunny',
+                emoji: '🐰',
+                color: '#ffd6e7',
+                lightColor: '#ffe6f0',
+                borderColor: '#ff69b4',
+                feature: '🦷'
+            },
+            {
+                name: 'bear',
+                emoji: '🐻',
+                color: '#d2691e',
+                lightColor: '#deb887',
+                borderColor: '#8b4513',
+                feature: '🍯'
+            },
+            {
+                name: 'frog',
+                emoji: '🐸',
+                color: '#90ee90',
+                lightColor: '#b4f5b4',
+                borderColor: '#228b22',
+                feature: '👅'
+            },
+            {
+                name: 'duck',
+                emoji: '🦆',
+                color: '#ffd700',
+                lightColor: '#ffed4e',
+                borderColor: '#ffa500',
+                feature: '🪶'
+            },
+            {
+                name: 'cat',
+                emoji: '🐱',
+                color: '#dda0dd',
+                lightColor: '#f0c8f0',
+                borderColor: '#9370db',
+                feature: '🐾'
+            }
+        ];
+        
         let coinMathScore = 0;
         let boxCoinCount = 0;
         let currentFirstNum = 0;
         let currentSecondNum = 0;
         let currentCorrectAnswer = 0;
         let coinAnswered = false;
+        let currentBankShape = null;
         
         function generateCoinProblem() {
             coinAnswered = false;
@@ -3346,6 +3526,13 @@
                     
                     // Play coin sound
                     playCoinSound();
+                    
+                    // Check if reached 50 coins
+                    if (boxCoinCount === 50) {
+                        setTimeout(() => {
+                            show50CoinPrize();
+                        }, 1000);
+                    }
                 }, i * 150);
             }
             
@@ -3406,6 +3593,104 @@
             
             osc.start(audioContext.currentTime);
             osc.stop(audioContext.currentTime + 0.1);
+        }
+        
+        function selectRandomBank() {
+            currentBankShape = bankShapes[Math.floor(Math.random() * bankShapes.length)];
+            applyBankStyle();
+        }
+        
+        function applyBankStyle() {
+            const root = document.documentElement;
+            root.style.setProperty('--bank-color', currentBankShape.color);
+            root.style.setProperty('--bank-light-color', currentBankShape.lightColor);
+            root.style.setProperty('--bank-border-color', currentBankShape.borderColor);
+            
+            // Update emoji in CSS (nose/feature removed for cleaner look)
+            const style = document.createElement('style');
+            style.id = 'bank-style';
+            const existingStyle = document.getElementById('bank-style');
+            if (existingStyle) {
+                existingStyle.remove();
+            }
+            
+            style.textContent = `
+                .box-lid::before {
+                    content: '${currentBankShape.emoji}' !important;
+                }
+                .box-lid {
+                    background: linear-gradient(135deg, ${currentBankShape.color} 0%, ${currentBankShape.lightColor} 50%, ${currentBankShape.color} 100%) !important;
+                    border-color: ${currentBankShape.borderColor} !important;
+                }
+                .box-body {
+                    background: linear-gradient(135deg, ${currentBankShape.color} 0%, ${currentBankShape.lightColor} 50%, ${currentBankShape.color} 100%) !important;
+                    border-color: ${currentBankShape.borderColor} !important;
+                }
+                .treasure-box::before,
+                .treasure-box::after {
+                    background: linear-gradient(135deg, ${currentBankShape.color}, ${currentBankShape.lightColor}) !important;
+                    border-color: ${currentBankShape.borderColor} !important;
+                }
+                .box-body::after {
+                    border-color: ${currentBankShape.borderColor} !important;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+        
+        function show50CoinPrize() {
+            // Create prize overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'coin-prize-overlay';
+            overlay.innerHTML = `
+                <div class="prize-content">
+                    <h1 class="prize-title">🎉 AMAZING! 🎉</h1>
+                    <div class="prize-message">You collected 50 coins!</div>
+                    <div class="money-prize">💰 $100 Prize! 💰</div>
+                    <div class="prize-emojis">
+                        🪙💰🏆✨🌟💎🎊🎁💵💴💶💷
+                    </div>
+                    <button class="new-game-btn" onclick="startNewCoinGame()">🎮 Start New Game 🎮</button>
+                </div>
+            `;
+            document.body.appendChild(overlay);
+            
+            // Play success sound
+            playSuccessSound();
+            
+            // Create money falling animation
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const money = document.createElement('div');
+                    money.className = 'falling-money';
+                    money.textContent = ['💰', '💵', '💴', '💶', '💷', '🪙'][Math.floor(Math.random() * 6)];
+                    money.style.left = Math.random() * 100 + '%';
+                    money.style.animationDelay = Math.random() * 2 + 's';
+                    money.style.fontSize = (2 + Math.random() * 2) + 'em';
+                    overlay.appendChild(money);
+                }, i * 100);
+            }
+        }
+        
+        function startNewCoinGame() {
+            // Remove prize overlay
+            const overlay = document.querySelector('.coin-prize-overlay');
+            if (overlay) {
+                overlay.remove();
+            }
+            
+            // Reset game
+            boxCoinCount = 0;
+            coinMathScore = 0;
+            document.getElementById('box-coin-count').textContent = '0';
+            document.getElementById('coin-score').textContent = '0';
+            document.getElementById('box-coins').innerHTML = '';
+            
+            // Select new random bank
+            selectRandomBank();
+            
+            // Generate new problem
+            generateCoinProblem();
         }
         
         function nextCoinProblem() {
@@ -4856,6 +5141,11 @@
                 subtitle.textContent = 'Add the coins and choose the correct answer!';
                 document.body.style.direction = 'ltr';
                 tabs[8].classList.add('active');
+                
+                // Select random bank if not already selected
+                if (!currentBankShape) {
+                    selectRandomBank();
+                }
                 generateCoinProblem();
             }
         }
