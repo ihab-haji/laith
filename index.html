@@ -453,6 +453,69 @@
             .animal-name {
                 font-size: 1.2em;
             }
+
+            .lunch-game-content h2 {
+                font-size: 2.2em;
+            }
+
+            .lunch-instructions {
+                font-size: 1.2em;
+            }
+
+            .lunch-box-slots {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .compartments {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .compartment {
+                min-height: 150px;
+            }
+
+            .check-lunch-btn, .reset-lunch-btn, .close-lunch-btn {
+                font-size: 1.35em;
+                padding: 15px 28px;
+                flex: 0 1 auto;
+                max-width: 220px;
+            }
+
+            .lunchbox-buttons {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 12px;
+                justify-content: center;
+                padding: 12px;
+            }
+
+            .lunchbox-body {
+                padding: 30px 25px 35px 25px;
+            }
+
+            .open-lunchbox-btn {
+                font-size: 1.6em;
+                padding: 15px 40px;
+            }
+
+            .shelf-items {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            }
+
+            .food-emoji {
+                font-size: 2.5em;
+            }
+
+            .teeth-warning {
+                padding: 25px;
+                max-width: 90%;
+            }
+
+            .tooth {
+                width: 28px;
+                height: 38px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -543,6 +606,98 @@
             
             .animal-name {
                 font-size: 1.3em;
+            }
+
+            .lunch-game-content h2 {
+                font-size: 1.8em;
+            }
+
+            .lunch-instructions {
+                font-size: 1em;
+            }
+
+            .lunch-box-slots {
+                grid-template-columns: 1fr;
+            }
+
+            .compartments {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .compartment {
+                min-height: 130px;
+            }
+
+            .compartment-label {
+                font-size: 1.1em;
+            }
+
+            .compartment-content {
+                font-size: 3em;
+            }
+
+            .check-lunch-btn, .reset-lunch-btn, .close-lunch-btn {
+                font-size: 1.3em;
+                padding: 14px 25px;
+                width: 100%;
+                max-width: 100%;
+                flex: 0 1 100%;
+            }
+
+            .lunchbox-buttons {
+                flex-direction: column;
+                gap: 12px;
+                padding: 15px;
+            }
+
+            .lunchbox-body {
+                padding: 25px 20px 30px 20px;
+                min-height: auto;
+            }
+
+            .open-lunchbox-btn {
+                font-size: 1.4em;
+                padding: 12px 30px;
+                bottom: 20px;
+            }
+
+            .realistic-lunchbox {
+                width: 100%;
+                padding: 10px;
+            }
+
+            .close-lunchbox-btn {
+                top: 5px;
+                right: 5px;
+                font-size: 1.5em;
+                padding: 15px 30px;
+            }
+
+            .shelf-items {
+                grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            }
+
+            .food-emoji {
+                font-size: 2em;
+            }
+
+            .teeth-warning {
+                padding: 20px;
+            }
+
+            .teeth-warning h2 {
+                font-size: 1.8em;
+            }
+
+            .tooth {
+                width: 22px;
+                height: 30px;
+            }
+
+            .check-lunch-btn, .reset-lunch-btn {
+                font-size: 1.2em;
+                padding: 12px 30px;
             }
         }
 
@@ -2194,6 +2349,624 @@
             }
         }
 
+        /* Lunch Box Packing Game Styles */
+        .lunch-box-game-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            padding: 40px 20px;
+        }
+
+        .lunch-game-content {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .lunch-game-content {
+            direction: rtl;
+        }
+
+        .lunch-game-content h2 {
+            text-align: center;
+            font-size: 3em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .lunch-instructions {
+            text-align: center;
+            font-size: 1.5em;
+            color: #34495e;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .lunch-instructions-en {
+            text-align: center;
+            font-size: 1.2em;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            direction: ltr;
+        }
+
+        /* Fixed Bottom Button to Open Lunch Box */
+        .open-lunchbox-btn {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            font-size: 2em;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(238,90,36,0.5);
+            z-index: 100;
+            transition: all 0.3s ease;
+            animation: pulseButton 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseButton {
+            0%, 100% { transform: translateX(-50%) scale(1); }
+            50% { transform: translateX(-50%) scale(1.05); }
+        }
+
+        .open-lunchbox-btn:hover {
+            transform: translateX(-50%) scale(1.1);
+            box-shadow: 0 15px 40px rgba(238,90,36,0.7);
+        }
+
+        /* Lunch Box Overlay */
+        .lunchbox-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 10000;
+            overflow-y: auto;
+            overflow-x: hidden;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+            direction: rtl;
+        }
+
+        .realistic-lunchbox {
+            position: relative;
+            max-width: 900px;
+            width: 95%;
+            margin: auto;
+            animation: slideUp 0.5s ease;
+            max-height: none;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Close Button */
+        .close-lunchbox-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            border: 4px solid white;
+            padding: 20px 40px;
+            font-size: 2em;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(231,76,60,0.7);
+            transition: all 0.3s ease;
+            z-index: 10001;
+            animation: pulseClose 2s ease-in-out infinite;
+        }
+
+        @keyframes pulseClose {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 8px 25px rgba(231,76,60,0.7);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 12px 35px rgba(231,76,60,0.9);
+            }
+        }
+
+        .close-lunchbox-btn:hover {
+            background: linear-gradient(135deg, #c0392b 0%, #a93226 100%);
+            transform: scale(1.15);
+            box-shadow: 0 15px 40px rgba(231,76,60,1);
+        }
+
+        /* 3D Realistic Lunch Box */
+        .lunchbox-3d {
+            perspective: 1000px;
+        }
+
+        .lunchbox-handle {
+            width: 150px;
+            height: 20px;
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            margin: 0 auto 10px;
+            border-radius: 10px 10px 0 0;
+            position: relative;
+            box-shadow: 
+                inset 0 -2px 5px rgba(0,0,0,0.3),
+                0 5px 10px rgba(0,0,0,0.3);
+        }
+
+        .lunchbox-handle::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 8px;
+            background: #95a5a6;
+            border-radius: 4px;
+        }
+
+        .lunchbox-lid-top {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            padding: 25px;
+            border-radius: 30px 30px 0 0;
+            box-shadow: 
+                0 -5px 15px rgba(0,0,0,0.2),
+                inset 0 -3px 10px rgba(0,0,0,0.2);
+            border: 5px solid #c0392b;
+            position: relative;
+        }
+
+        .lunchbox-lid-top::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            height: 3px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 3px;
+        }
+
+        .lid-label {
+            text-align: center;
+            font-size: 2.5em;
+            font-weight: bold;
+            color: white;
+            text-shadow: 
+                2px 2px 4px rgba(0,0,0,0.3),
+                0 0 20px rgba(255,255,255,0.5);
+        }
+
+        .lunchbox-body {
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            padding: 35px 35px 40px 35px;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 
+                0 10px 40px rgba(0,0,0,0.4),
+                inset 0 5px 15px rgba(0,0,0,0.1);
+            border: 5px solid #f39c12;
+            border-top: none;
+            min-height: 400px;
+        }
+
+        .compartments {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .compartment {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 
+                0 5px 15px rgba(0,0,0,0.2),
+                inset 0 2px 5px rgba(0,0,0,0.1);
+            border: 4px dashed #bdc3c7;
+            transition: all 0.3s ease;
+            min-height: 180px;
+            position: relative;
+        }
+
+        .compartment::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+            border-radius: 20px;
+            pointer-events: none;
+        }
+
+        .compartment.filled {
+            border: 4px solid #27ae60;
+            box-shadow: 
+                0 8px 25px rgba(39,174,96,0.4),
+                inset 0 2px 5px rgba(39,174,96,0.1);
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+        }
+
+        .compartment-label {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            text-align: center;
+            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+        }
+
+        .label-en {
+            display: block;
+            font-size: 0.7em;
+            color: #7f8c8d;
+            direction: ltr;
+        }
+
+        .compartment-content {
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4.5em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .compartment-content:hover {
+            transform: scale(1.1);
+        }
+
+        .lunchbox-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 25px;
+            padding: 10px;
+        }
+
+        .check-lunch-btn, .reset-lunch-btn, .close-lunch-btn {
+            padding: 16px 30px;
+            font-size: 1.4em;
+            font-weight: bold;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            flex: 0 1 auto;
+            max-width: 250px;
+            white-space: nowrap;
+        }
+
+        .check-lunch-btn {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+        }
+
+        .check-lunch-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(39,174,96,0.4);
+        }
+
+        .reset-lunch-btn {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+        }
+
+        .reset-lunch-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(231,76,60,0.4);
+        }
+
+        .close-lunch-btn {
+            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+            border: 3px solid white;
+            animation: pulsateClose 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulsateClose {
+            0%, 100% { 
+                transform: scale(1);
+                box-shadow: 0 8px 20px rgba(255,107,53,0.5);
+            }
+            50% { 
+                transform: scale(1.05);
+                box-shadow: 0 12px 30px rgba(255,107,53,0.8);
+            }
+        }
+
+        .close-lunch-btn:hover {
+            background: linear-gradient(135deg, #f7931e 0%, #ff6b35 100%);
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(255,107,53,0.9);
+        }
+
+        .food-shelves-container {
+            background: rgba(255,255,255,0.9);
+            border-radius: 30px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .food-shelves-container h3 {
+            text-align: center;
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        .food-shelf {
+            background: #f8f9fa;
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .food-shelf.unhealthy-shelf {
+            background: linear-gradient(135deg, #ffe5e5 0%, #ffd5d5 100%);
+            border: 3px solid #e74c3c;
+        }
+
+        .shelf-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: linear-gradient(135deg, #a29bfe 0%, #6c5ce7 100%);
+            color: white;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .unhealthy-shelf .shelf-title {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+        }
+
+        .shelf-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 15px;
+        }
+
+        .food-item {
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border: 3px solid transparent;
+        }
+
+        .food-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .food-item.healthy {
+            border-color: #27ae60;
+        }
+
+        .food-item.unhealthy {
+            border-color: #e74c3c;
+            background: #fff5f5;
+        }
+
+        .food-item.selected {
+            transform: scale(0.9);
+            opacity: 0.5;
+        }
+
+        .food-emoji {
+            font-size: 3.5em;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .food-name {
+            font-size: 0.9em;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .food-name-ar {
+            font-size: 0.8em;
+            color: #7f8c8d;
+        }
+
+        .lunch-feedback {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 1.8em;
+            font-weight: bold;
+            min-height: 60px;
+        }
+
+        .lunch-feedback.success {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            color: #155724;
+            border: 3px solid #28a745;
+        }
+
+        .lunch-feedback.warning {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%);
+            color: #856404;
+            border: 3px solid #ffc107;
+        }
+
+        .lunch-feedback.error {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            color: #721c24;
+            border: 3px solid #dc3545;
+        }
+
+        /* Teeth Health Display */
+        .teeth-display {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .teeth-warning {
+            background: white;
+            border-radius: 30px;
+            padding: 40px;
+            max-width: 800px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            animation: popIn 0.5s ease;
+        }
+
+        .teeth-warning h2 {
+            color: #e74c3c;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .teeth-warning p {
+            font-size: 1.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .mouth-container {
+            background: #ffe0e0;
+            border-radius: 50px;
+            padding: 30px;
+            margin: 30px auto;
+            display: inline-block;
+            border: 5px solid #e74c3c;
+        }
+
+        .child-mouth {
+            background: #ff9999;
+            border-radius: 30px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .upper-teeth, .lower-teeth {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin: 10px 0;
+        }
+
+        .tooth {
+            width: 35px;
+            height: 45px;
+            background: white;
+            border-radius: 8px 8px 15px 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            animation: toothAppear 0.5s ease;
+        }
+
+        .tooth.decayed {
+            background: linear-gradient(135deg, #8b4513 0%, #654321 50%, #000 100%);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            animation: decayAnimation 1s ease;
+        }
+
+        @keyframes toothAppear {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes decayAnimation {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(-5deg); }
+            75% { transform: rotate(5deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .teeth-message {
+            font-size: 1.3em;
+            color: #2c3e50;
+            margin: 15px 0;
+        }
+
+        .teeth-message-ar {
+            font-size: 1.3em;
+            color: #34495e;
+            direction: rtl;
+        }
+
+        .try-again-btn {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.5em;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            margin-top: 20px;
+            box-shadow: 0 6px 15px rgba(52,152,219,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .try-again-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(52,152,219,0.6);
+        }
+
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
@@ -2480,6 +3253,15 @@
                     <p class="card-subtitle">حساب العملات</p>
                     <div class="card-info">متعة الجمع!</div>
                     <div class="play-badge special">العب</div>
+                </div>
+                
+                <!-- Row 6: Healthy Living -->
+                <div class="category-card" onclick="showTab('lunch-box')">
+                    <div class="card-icon">🍱</div>
+                    <h3 class="card-title">Lunch Box Packing</h3>
+                    <p class="card-subtitle">حقيبة الغداء</p>
+                    <div class="card-info">وجبة صحية!</div>
+                    <div class="play-badge">العب</div>
                 </div>
             </div>
         </div>
@@ -3790,6 +4572,127 @@
         </div>
     </div>
 
+    <!-- Lunch Box Packing Game Container -->
+    <div class="lunch-box-game-container" id="lunch-box-container" style="display: none;">
+        <div class="lunch-game-content">
+            <h2>🍱 رتب حقيبة الغداء الصحية! 🍱</h2>
+            <p class="lunch-instructions">اختر فاكهة واحدة، خضار واحد، بروتين واحد، ووجبة خفيفة واحدة لوجبة متوازنة!</p>
+            <p class="lunch-instructions-en">Choose 1 fruit, 1 vegetable, 1 protein, and 1 snack!</p>
+            
+            <!-- Fixed Bottom Button to Open Lunch Box -->
+            <button class="open-lunchbox-btn" id="open-lunchbox-btn" onclick="openLunchBoxOverlay()">
+                🍱 افتح حقيبة الغداء
+            </button>
+            
+            <!-- Lunch Box Overlay (Hidden initially) -->
+            <div class="lunchbox-overlay" id="lunchbox-overlay" style="display: none;">
+                <div class="realistic-lunchbox">
+                    <!-- Realistic Lunch Box -->
+                    <div class="lunchbox-3d">
+                        <div class="lunchbox-handle"></div>
+                        <div class="lunchbox-lid-top">
+                            <div class="lid-label">🍱 حقيبتي 🍱</div>
+                        </div>
+                        <div class="lunchbox-body">
+                            <div class="compartments">
+                                <div class="compartment" data-category="fruit">
+                                    <div class="compartment-label">🍎 فاكهة<br><span class="label-en">Fruit</span></div>
+                                    <div class="compartment-content" id="fruit-slot"></div>
+                                </div>
+                                <div class="compartment" data-category="vegetable">
+                                    <div class="compartment-label">🥕 خضار<br><span class="label-en">Vegetable</span></div>
+                                    <div class="compartment-content" id="vegetable-slot"></div>
+                                </div>
+                                <div class="compartment" data-category="protein">
+                                    <div class="compartment-label">🍗 بروتين<br><span class="label-en">Protein</span></div>
+                                    <div class="compartment-content" id="protein-slot"></div>
+                                </div>
+                                <div class="compartment" data-category="snack">
+                                    <div class="compartment-label">🍪 وجبة خفيفة<br><span class="label-en">Snack</span></div>
+                                    <div class="compartment-content" id="snack-slot"></div>
+                                </div>
+                            </div>
+                            <div class="lunchbox-buttons">
+                                <button class="check-lunch-btn" onclick="checkLunchBox()">✓ تحقق من الوجبة</button>
+                                <button class="reset-lunch-btn" onclick="resetLunchBox()">🔄 ابدأ من جديد</button>
+                                <button class="close-lunch-btn" onclick="closeLunchBoxOverlay()">✖️ إغلاق</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Food Shelves -->
+            <div class="food-shelves-container">
+                <h3>🏪 Food Store - Choose Your Foods! 🏪</h3>
+                
+                <!-- Fruits Shelf -->
+                <div class="food-shelf">
+                    <div class="shelf-title">🍎 Fruits Shelf - رف الفواكه</div>
+                    <div class="shelf-items" id="fruits-shelf">
+                        <!-- Foods will be added by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Vegetables Shelf -->
+                <div class="food-shelf">
+                    <div class="shelf-title">🥕 Vegetables Shelf - رف الخضروات</div>
+                    <div class="shelf-items" id="vegetables-shelf">
+                        <!-- Foods will be added by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Proteins Shelf -->
+                <div class="food-shelf">
+                    <div class="shelf-title">🍗 Proteins Shelf - رف البروتينات</div>
+                    <div class="shelf-items" id="proteins-shelf">
+                        <!-- Foods will be added by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Healthy Snacks Shelf -->
+                <div class="food-shelf">
+                    <div class="shelf-title">✨ Healthy Snacks - وجبات خفيفة صحية</div>
+                    <div class="shelf-items" id="healthy-snacks-shelf">
+                        <!-- Foods will be added by JavaScript -->
+                    </div>
+                </div>
+                
+                <!-- Unhealthy Snacks Shelf (Warning!) -->
+                <div class="food-shelf unhealthy-shelf">
+                    <div class="shelf-title">⚠️ Unhealthy Treats - حلويات غير صحية ⚠️</div>
+                    <div class="shelf-items" id="unhealthy-snacks-shelf">
+                        <!-- Foods will be added by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Feedback Message -->
+            <div class="lunch-feedback" id="lunch-feedback"></div>
+            
+            <!-- Teeth Health Display -->
+            <div class="teeth-display" id="teeth-display" style="display: none;">
+                <div class="teeth-warning">
+                    <h2>⚠️ Warning: Too Much Sugar Hurts Your Teeth! ⚠️</h2>
+                    <p>تحذير: السكر الكثير يضر أسنانك!</p>
+                    <div class="mouth-container">
+                        <div class="child-mouth">
+                            <div class="upper-teeth" id="upper-teeth">
+                                <!-- Teeth will be added by JavaScript -->
+                            </div>
+                            <div class="lower-teeth" id="lower-teeth">
+                                <!-- Teeth will be added by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                    <p class="teeth-message">Choose healthier options to keep your teeth strong and white! 🦷✨</p>
+                    <p class="teeth-message-ar">اختر خيارات صحية للحفاظ على أسنانك قوية وبيضاء!</p>
+                    <button class="try-again-btn" onclick="resetLunchBox()">Try Again! 🔄</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Paint by numbers variables
         let selectedColor = null;
@@ -4146,6 +5049,237 @@
         
         function nextCoinProblem() {
             generateCoinProblem();
+        }
+        
+        // Lunch Box Packing Game Variables and Functions
+        const lunchBoxSlots = {
+            fruit: null,
+            vegetable: null,
+            protein: null,
+            snack: null
+        };
+
+        const foodDatabase = {
+            fruits: [
+                { emoji: '🍎', name: 'Apple', arabic: 'تفاحة', healthy: true },
+                { emoji: '🍊', name: 'Orange', arabic: 'برتقالة', healthy: true },
+                { emoji: '🍌', name: 'Banana', arabic: 'موز', healthy: true },
+                { emoji: '🍇', name: 'Grapes', arabic: 'عنب', healthy: true },
+                { emoji: '🍓', name: 'Strawberry', arabic: 'فراولة', healthy: true },
+                { emoji: '🍉', name: 'Watermelon', arabic: 'بطيخ', healthy: true },
+                { emoji: '🍑', name: 'Peach', arabic: 'خوخ', healthy: true },
+                { emoji: '🍒', name: 'Cherry', arabic: 'كرز', healthy: true },
+                { emoji: '🥝', name: 'Kiwi', arabic: 'كيوي', healthy: true },
+                { emoji: '🍍', name: 'Pineapple', arabic: 'أناناس', healthy: true },
+                { emoji: '🥭', name: 'Mango', arabic: 'مانجو', healthy: true },
+                { emoji: '🍐', name: 'Pear', arabic: 'كمثرى', healthy: true }
+            ],
+            vegetables: [
+                { emoji: '🥕', name: 'Carrot', arabic: 'جزر', healthy: true },
+                { emoji: '🥦', name: 'Broccoli', arabic: 'بروكلي', healthy: true },
+                { emoji: '🥬', name: 'Lettuce', arabic: 'خس', healthy: true },
+                { emoji: '🍅', name: 'Tomato', arabic: 'طماطم', healthy: true },
+                { emoji: '🥒', name: 'Cucumber', arabic: 'خيار', healthy: true },
+                { emoji: '🌽', name: 'Corn', arabic: 'ذرة', healthy: true },
+                { emoji: '🫑', name: 'Pepper', arabic: 'فلفل', healthy: true },
+                { emoji: '🧅', name: 'Onion', arabic: 'بصل', healthy: true },
+                { emoji: '🥔', name: 'Potato', arabic: 'بطاطا', healthy: true },
+                { emoji: '🍆', name: 'Eggplant', arabic: 'باذنجان', healthy: true },
+                { emoji: '🫛', name: 'Peas', arabic: 'بازلاء', healthy: true },
+                { emoji: '🌶️', name: 'Chili', arabic: 'فلفل حار', healthy: true }
+            ],
+            proteins: [
+                { emoji: '🍗', name: 'Chicken', arabic: 'دجاج', healthy: true },
+                { emoji: '🥚', name: 'Egg', arabic: 'بيض', healthy: true },
+                { emoji: '🐟', name: 'Fish', arabic: 'سمك', healthy: true },
+                { emoji: '🥩', name: 'Meat', arabic: 'لحم', healthy: true },
+                { emoji: '🧀', name: 'Cheese', arabic: 'جبن', healthy: true },
+                { emoji: '🥜', name: 'Peanuts', arabic: 'فول سوداني', healthy: true },
+                { emoji: '🫘', name: 'Beans', arabic: 'فول', healthy: true },
+                { emoji: '🍤', name: 'Shrimp', arabic: 'جمبري', healthy: true }
+            ],
+            healthySnacks: [
+                { emoji: '🥜', name: 'Nuts', arabic: 'مكسرات', healthy: true },
+                { emoji: '🍿', name: 'Popcorn', arabic: 'فشار', healthy: true },
+                { emoji: '🥛', name: 'Milk', arabic: 'حليب', healthy: true },
+                { emoji: '🧃', name: 'Juice', arabic: 'عصير', healthy: true },
+                { emoji: '🥨', name: 'Pretzel', arabic: 'كعك', healthy: true },
+                { emoji: '🍯', name: 'Honey', arabic: 'عسل', healthy: true },
+                { emoji: '🥖', name: 'Bread', arabic: 'خبز', healthy: true },
+                { emoji: '🥐', name: 'Croissant', arabic: 'كرواسون', healthy: true }
+            ],
+            unhealthySnacks: [
+                { emoji: '🍭', name: 'Lollipop', arabic: 'مصاصة', healthy: false },
+                { emoji: '🍫', name: 'Chocolate', arabic: 'شوكولاتة', healthy: false },
+                { emoji: '🍬', name: 'Candy', arabic: 'حلوى', healthy: false },
+                { emoji: '🍩', name: 'Donut', arabic: 'دونات', healthy: false },
+                { emoji: '🍪', name: 'Cookie', arabic: 'بسكويت', healthy: false },
+                { emoji: '🎂', name: 'Cake', arabic: 'كعكة', healthy: false },
+                { emoji: '🧁', name: 'Cupcake', arabic: 'كب كيك', healthy: false },
+                { emoji: '🍦', name: 'Ice Cream', arabic: 'آيس كريم', healthy: false },
+                { emoji: '🥤', name: 'Soda', arabic: 'صودا', healthy: false },
+                { emoji: '🍟', name: 'Fries', arabic: 'بطاطس مقلية', healthy: false }
+            ]
+        };
+
+        function openLunchBoxOverlay() {
+            const overlay = document.getElementById('lunchbox-overlay');
+            overlay.style.display = 'flex';
+            
+            // Close when clicking outside the lunch box (on dark background)
+            overlay.onclick = function(e) {
+                if (e.target === overlay) {
+                    closeLunchBoxOverlay();
+                }
+            };
+            
+            playSuccessSound();
+        }
+
+        function closeLunchBoxOverlay() {
+            document.getElementById('lunchbox-overlay').style.display = 'none';
+        }
+
+        function initializeLunchBoxGame() {
+            // Reset slots
+            lunchBoxSlots.fruit = null;
+            lunchBoxSlots.vegetable = null;
+            lunchBoxSlots.protein = null;
+            lunchBoxSlots.snack = null;
+            
+            // Clear slots display
+            document.getElementById('fruit-slot').innerHTML = '';
+            document.getElementById('vegetable-slot').innerHTML = '';
+            document.getElementById('protein-slot').innerHTML = '';
+            document.getElementById('snack-slot').innerHTML = '';
+            
+            // Clear feedback
+            document.getElementById('lunch-feedback').textContent = '';
+            document.getElementById('lunch-feedback').className = 'lunch-feedback';
+            
+            // Hide teeth display
+            document.getElementById('teeth-display').style.display = 'none';
+            
+            // Populate food shelves
+            populateShelf('fruits-shelf', foodDatabase.fruits, 'fruit');
+            populateShelf('vegetables-shelf', foodDatabase.vegetables, 'vegetable');
+            populateShelf('proteins-shelf', foodDatabase.proteins, 'protein');
+            populateShelf('healthy-snacks-shelf', foodDatabase.healthySnacks, 'snack');
+            populateShelf('unhealthy-snacks-shelf', foodDatabase.unhealthySnacks, 'snack');
+        }
+
+        function populateShelf(shelfId, foods, category) {
+            const shelf = document.getElementById(shelfId);
+            shelf.innerHTML = '';
+            
+            foods.forEach((food, index) => {
+                const foodItem = document.createElement('div');
+                foodItem.className = `food-item ${food.healthy ? 'healthy' : 'unhealthy'}`;
+                foodItem.innerHTML = `
+                    <div class="food-emoji">${food.emoji}</div>
+                    <div class="food-name">${food.name}</div>
+                    <div class="food-name-ar">${food.arabic}</div>
+                `;
+                foodItem.onclick = () => selectFood(food, category, foodItem);
+                shelf.appendChild(foodItem);
+            });
+        }
+
+        function selectFood(food, category, foodItem) {
+            // Store food in appropriate slot
+            lunchBoxSlots[category] = food;
+            
+            // Update slot display
+            const slotId = category + '-slot';
+            const slot = document.getElementById(slotId);
+            slot.innerHTML = `<div style="font-size: 4em;">${food.emoji}</div>`;
+            
+            // Mark slot as filled
+            slot.parentElement.classList.add('filled');
+            
+            // Mark food item as selected
+            foodItem.classList.add('selected');
+            
+            // Play selection sound
+            playSuccessSound();
+            
+            // Clear any previous feedback
+            document.getElementById('lunch-feedback').textContent = '';
+            document.getElementById('lunch-feedback').className = 'lunch-feedback';
+        }
+
+        function checkLunchBox() {
+            const feedback = document.getElementById('lunch-feedback');
+            
+            // Check if all slots filled
+            const allFilled = lunchBoxSlots.fruit && lunchBoxSlots.vegetable && 
+                             lunchBoxSlots.protein && lunchBoxSlots.snack;
+            
+            if (!allFilled) {
+                feedback.textContent = '❌ املأ جميع الخانات الأربعة! - Please fill all 4 slots!';
+                feedback.className = 'lunch-feedback warning';
+                playErrorSound();
+                return;
+            }
+            
+            // Check for unhealthy snack
+            if (!lunchBoxSlots.snack.healthy) {
+                showTeethWarning();
+                playErrorSound();
+                return;
+            }
+            
+            // All healthy - success!
+            feedback.textContent = '🎉 ممتاز! اختيار رائع! 🎉 Perfect! Great lunch choice!';
+            feedback.className = 'lunch-feedback success';
+            createCelebration();
+            playSuccessSound();
+        }
+
+        function showTeethWarning() {
+            const teethDisplay = document.getElementById('teeth-display');
+            teethDisplay.style.display = 'flex';
+            
+            // Create teeth
+            const upperTeeth = document.getElementById('upper-teeth');
+            const lowerTeeth = document.getElementById('lower-teeth');
+            
+            upperTeeth.innerHTML = '';
+            lowerTeeth.innerHTML = '';
+            
+            // Create 8 upper teeth (some decayed)
+            for (let i = 0; i < 8; i++) {
+                const tooth = document.createElement('div');
+                tooth.className = 'tooth';
+                // Randomly decay some teeth (30% chance)
+                if (Math.random() < 0.35) {
+                    setTimeout(() => {
+                        tooth.classList.add('decayed');
+                    }, i * 100);
+                }
+                upperTeeth.appendChild(tooth);
+            }
+            
+            // Create 8 lower teeth (some decayed)
+            for (let i = 0; i < 8; i++) {
+                const tooth = document.createElement('div');
+                tooth.className = 'tooth';
+                // Randomly decay some teeth (30% chance)
+                if (Math.random() < 0.35) {
+                    setTimeout(() => {
+                        tooth.classList.add('decayed');
+                    }, i * 100 + 400);
+                }
+                lowerTeeth.appendChild(tooth);
+            }
+        }
+
+        function resetLunchBox() {
+            // Hide teeth warning if visible
+            document.getElementById('teeth-display').style.display = 'none';
+            
+            // Reinitialize game
+            initializeLunchBoxGame();
         }
         
         // Counting Game Variables
@@ -5888,6 +7022,7 @@
             const countArabicContainer = document.getElementById('count-arabic-container');
             const countEnglishContainer = document.getElementById('count-english-container');
             const coinMathContainer = document.getElementById('coin-math-container');
+            const lunchBoxContainer = document.getElementById('lunch-box-container');
             const mainMenu = document.getElementById('main-menu');
             const mainTitle = document.getElementById('main-title');
             const subtitle = document.getElementById('subtitle');
@@ -5909,6 +7044,7 @@
             countArabicContainer.style.display = 'none';
             countEnglishContainer.style.display = 'none';
             coinMathContainer.style.display = 'none';
+            lunchBoxContainer.style.display = 'none';
             
             if (language === 'arabic') {
                 arabicContainer.style.display = 'grid';
@@ -5965,6 +7101,12 @@
                     selectRandomBank();
                 }
                 generateCoinProblem();
+            } else if (language === 'lunch-box') {
+                lunchBoxContainer.style.display = 'block';
+                mainTitle.textContent = '🍱 Pack Your Healthy Lunch Box - حقيبة الغداء الصحية 🍱';
+                subtitle.textContent = 'Choose healthy foods for a balanced meal!';
+                document.body.style.direction = 'ltr';
+                initializeLunchBoxGame();
             }
         }
         
@@ -5979,6 +7121,7 @@
             document.getElementById('count-arabic-container').style.display = 'none';
             document.getElementById('count-english-container').style.display = 'none';
             document.getElementById('coin-math-container').style.display = 'none';
+            document.getElementById('lunch-box-container').style.display = 'none';
             
             // Show main menu and hide back button
             document.getElementById('main-menu').style.display = 'block';
