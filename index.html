@@ -67,38 +67,198 @@
             font-size: 1.5em;
         }
 
-        .tabs {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
+        /* Main Menu Screen */
+        .main-menu-screen {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            animation: gradientShift 10s ease infinite;
         }
 
-        .tab-btn {
-            background: white;
-            color: #667eea;
-            border: none;
-            padding: 15px 30px;
-            font-size: 1.3em;
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .menu-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .game-title {
+            font-size: 4em;
+            color: white;
+            text-shadow: 
+                4px 4px 0 rgba(0,0,0,0.2),
+                0 0 30px rgba(255,255,255,0.5);
+            margin-bottom: 10px;
+            animation: titleBounce 2s ease-in-out infinite;
+        }
+
+        @keyframes titleBounce {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .game-subtitle {
+            font-size: 2em;
+            color: #ffe6f0;
             font-weight: bold;
-            border-radius: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .game-categories {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 30px;
+            padding: 40px 30px;
+            text-align: center;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            min-height: 44px;
-            touch-action: manipulation;
-            -webkit-tap-highlight-color: transparent;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.2),
+                0 0 0 5px rgba(255,255,255,0.1);
+            position: relative;
+            overflow: hidden;
         }
 
-        .tab-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+        .category-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.5s;
         }
 
-        .tab-btn.active {
+        .category-card:hover::before {
+            left: 100%;
+        }
+
+        .category-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 
+                0 20px 50px rgba(0,0,0,0.3),
+                0 0 0 8px rgba(255,255,255,0.2);
+        }
+
+        .category-card:active {
+            transform: translateY(-10px) scale(1.02);
+        }
+
+        .special-card {
+            background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+            color: white;
+        }
+
+        .special-card .card-title,
+        .special-card .card-subtitle,
+        .special-card .card-info {
+            color: white;
+        }
+
+        .card-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+            filter: drop-shadow(0 5px 10px rgba(0,0,0,0.2));
+            animation: iconFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes iconFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        .card-title {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        .card-subtitle {
+            font-size: 1.2em;
+            color: #764ba2;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .card-info {
+            display: inline-block;
             background: linear-gradient(135deg, #FFE53B 0%, #FF2525 100%);
             color: white;
-            transform: scale(1.05);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 1em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .play-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4CAF50 0%, #2e7d32 100%);
+            color: white;
+            padding: 12px 40px;
+            border-radius: 25px;
+            font-size: 1.3em;
+            font-weight: bold;
+            box-shadow: 0 6px 15px rgba(76,175,80,0.4);
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover .play-badge {
+            transform: scale(1.1);
+            box-shadow: 0 8px 20px rgba(76,175,80,0.6);
+        }
+
+        .play-badge.special {
+            background: linear-gradient(135deg, #ff6b6b 0%, #c92a2a 100%);
+            box-shadow: 0 6px 15px rgba(255,107,107,0.4);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Back to Menu Button */
+        .back-to-menu {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            font-weight: bold;
+            border-radius: 25px;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: none;
+        }
+
+        .back-to-menu:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+        }
+
+        .back-to-menu.visible {
+            display: block;
         }
 
         .container {
@@ -232,18 +392,37 @@
                 padding: 5px;
             }
             
-            .tabs {
-                gap: 5px;
-                padding: 10px;
-                flex-wrap: wrap;
+            .game-title {
+                font-size: 3em;
+            }
+
+            .game-subtitle {
+                font-size: 1.5em;
+            }
+
+            .game-categories {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 20px;
+            }
+
+            .category-card {
+                padding: 30px 20px;
+            }
+
+            .card-icon {
+                font-size: 4em;
+            }
+
+            .card-title {
+                font-size: 1.5em;
+            }
+
+            .back-to-menu {
+                font-size: 1em;
+                padding: 12px 20px;
+            }
             }
             
-            .tab-btn {
-                font-size: 0.9em;
-                padding: 10px 15px;
-                min-width: 45%;
-                flex: 1 1 45%;
-            }
             
             .container {
                 grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -298,16 +477,41 @@
                 font-size: 0.9em;
             }
             
-            .tabs {
-                gap: 5px;
-                padding: 8px;
+            .game-title {
+                font-size: 2.2em;
             }
-            
-            .tab-btn {
-                font-size: 0.8em;
-                padding: 8px 10px;
-                min-width: 48%;
-                flex: 1 1 48%;
+
+            .game-subtitle {
+                font-size: 1.2em;
+            }
+
+            .game-categories {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 10px;
+            }
+
+            .category-card {
+                padding: 25px 20px;
+            }
+
+            .card-icon {
+                font-size: 3.5em;
+            }
+
+            .card-title {
+                font-size: 1.3em;
+            }
+
+            .card-subtitle {
+                font-size: 1em;
+            }
+
+            .back-to-menu {
+                font-size: 0.9em;
+                padding: 10px 15px;
+                top: 10px;
+                left: 10px;
             }
             
             .container {
@@ -2182,31 +2386,107 @@
     </style>
 </head>
 <body>
+    <!-- Back to Menu Button -->
+    <button class="back-to-menu" id="back-to-menu" onclick="backToMainMenu()">⬅️ Main Menu</button>
+
     <div class="header">
         <!-- Child Photo Section -->
         <div class="child-photo-container">
             <img src="child-photo.jpg" alt="Child Photo" class="child-photo">
         </div>
         
-        <h1 id="main-title">🌟 تعلم الحروف العربية 🌟</h1>
-        <p id="subtitle">اضغط على البطاقة لرؤية الحيوان!</p>
+        <h1 id="main-title" style="display: none;">🌟 تعلم الحروف العربية 🌟</h1>
+        <p id="subtitle" style="display: none;">اضغط على البطاقة لرؤية الحيوان!</p>
         
-        <!-- Tab Buttons -->
-        <div class="tabs">
-            <button class="tab-btn active" onclick="showTab('arabic')">🌙 الحروف العربية</button>
-            <button class="tab-btn" onclick="showTab('english')">🌟 English Letters</button>
-            <button class="tab-btn" onclick="showTab('numbers')">🎨 Paint Numbers</button>
-            <button class="tab-btn" onclick="showTab('memory')">🧠 Memory Game</button>
-            <button class="tab-btn" onclick="showTab('order-arabic')">🔢 رتب الأرقام</button>
-            <button class="tab-btn" onclick="showTab('order-english')">🔢 Order Numbers</button>
-            <button class="tab-btn" onclick="showTab('count-arabic')">🍎 عد الفواكه</button>
-            <button class="tab-btn" onclick="showTab('count-english')">🍎 Count Fruits</button>
-            <button class="tab-btn" onclick="showTab('coin-math')">🪙 Coin Math</button>
+        <!-- Main Menu Screen -->
+        <div id="main-menu" class="main-menu-screen">
+            <div class="menu-header">
+                <h1 class="game-title">🌟 ليث حجي 🌟</h1>
+            </div>
+            
+            <div class="game-categories">
+                <!-- Row 1: Letters -->
+                <div class="category-card" onclick="showTab('arabic')">
+                    <div class="card-icon">🌙</div>
+                    <h3 class="card-title">Arabic Letters</h3>
+                    <p class="card-subtitle">الحروف العربية</p>
+                    <div class="card-info">٢٨ حرف</div>
+                    <div class="play-badge">العب</div>
+                </div>
+                
+                <div class="category-card" onclick="showTab('english')">
+                    <div class="card-icon">🌟</div>
+                    <h3 class="card-title">English Letters</h3>
+                    <p class="card-subtitle">A to Z</p>
+                    <div class="card-info">٢٦ حرف</div>
+                    <div class="play-badge">العب</div>
+                </div>
+                
+                <!-- Row 2: Creative -->
+                <div class="category-card" onclick="showTab('numbers')">
+                    <div class="card-icon">🎨</div>
+                    <h3 class="card-title">Paint by Numbers</h3>
+                    <p class="card-subtitle">لون بالأرقام</p>
+                    <div class="card-info">١٦ صورة</div>
+                    <div class="play-badge">العب</div>
+                </div>
+                
+                <div class="category-card" onclick="showTab('memory')">
+                    <div class="card-icon">🧠</div>
+                    <h3 class="card-title">Memory Game</h3>
+                    <p class="card-subtitle">لعبة الذاكرة</p>
+                    <div class="card-info">ابحث عن الأزواج</div>
+                    <div class="play-badge">العب</div>
+                </div>
+                
+                <!-- Row 3: Numbers Arabic -->
+                <div class="category-card" onclick="showTab('order-arabic')">
+                    <div class="card-icon">🔢</div>
+                    <h3 class="card-title">Order Numbers</h3>
+                    <p class="card-subtitle">رتب الأرقام</p>
+                    <div class="card-info">من ١ إلى ١٠</div>
+                    <div class="play-badge">العب</div>
+                </div>
+                
+                <div class="category-card" onclick="showTab('count-arabic')">
+                    <div class="card-icon">🍎</div>
+                    <h3 class="card-title">Count Fruits</h3>
+                    <p class="card-subtitle">عد الفواكه</p>
+                    <div class="card-info">تعلم العد</div>
+                    <div class="play-badge">العب</div>
+                </div>
+                
+                <!-- Row 4: Numbers English -->
+                <div class="category-card" onclick="showTab('order-english')">
+                    <div class="card-icon">🔢</div>
+                    <h3 class="card-title">Order Numbers</h3>
+                    <p class="card-subtitle">1 to 10</p>
+                    <div class="card-info">إنجليزي</div>
+                    <div class="play-badge">العب</div>
+                </div>
+                
+                <div class="category-card" onclick="showTab('count-english')">
+                    <div class="card-icon">🥕</div>
+                    <h3 class="card-title">Count Vegetables</h3>
+                    <p class="card-subtitle">Learn to Count</p>
+                    <div class="card-info">من ١ إلى ١٠</div>
+                    <div class="play-badge">العب</div>
+                </div>
+                
+                <!-- Row 5: Math -->
+                <div class="category-card special-card" onclick="showTab('coin-math')">
+                    <div class="card-icon">🪙</div>
+                    <h3 class="card-title">Coin Math</h3>
+                    <p class="card-subtitle">حساب العملات</p>
+                    <div class="card-info">متعة الجمع!</div>
+                    <div class="play-badge special">العب</div>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Arabic Cards Container -->
-    <div class="container" id="arabic-container">
+    <div class="container" id="arabic-container" style="display: none;">
         <!-- أ - أرنب (Rabbit) -->
         <div class="card" data-letter="أ" data-language="arabic">
             <div class="card-inner">
@@ -5608,9 +5888,16 @@
             const countArabicContainer = document.getElementById('count-arabic-container');
             const countEnglishContainer = document.getElementById('count-english-container');
             const coinMathContainer = document.getElementById('coin-math-container');
+            const mainMenu = document.getElementById('main-menu');
             const mainTitle = document.getElementById('main-title');
             const subtitle = document.getElementById('subtitle');
-            const tabs = document.querySelectorAll('.tab-btn');
+            const backBtn = document.getElementById('back-to-menu');
+            
+            // Hide main menu and show back button
+            mainMenu.style.display = 'none';
+            backBtn.classList.add('visible');
+            mainTitle.style.display = 'block';
+            subtitle.style.display = 'block';
             
             // Hide all containers
             arabicContainer.style.display = 'none';
@@ -5623,67 +5910,55 @@
             countEnglishContainer.style.display = 'none';
             coinMathContainer.style.display = 'none';
             
-            // Remove active class from all tabs
-            tabs.forEach(tab => tab.classList.remove('active'));
-            
             if (language === 'arabic') {
                 arabicContainer.style.display = 'grid';
                 mainTitle.textContent = '🌟 تعلم الحروف العربية 🌟';
                 subtitle.textContent = 'اضغط على البطاقة لرؤية الحيوان!';
                 document.body.style.direction = 'rtl';
-                tabs[0].classList.add('active');
             } else if (language === 'english') {
                 englishContainer.style.display = 'grid';
                 mainTitle.textContent = '🌟 Learn English Letters 🌟';
                 subtitle.textContent = 'Click the card to see the animal!';
                 document.body.style.direction = 'ltr';
-                tabs[1].classList.add('active');
             } else if (language === 'numbers') {
                 numbersContainer.style.display = 'block';
                 mainTitle.textContent = '🎨 Paint by Numbers - لون بالأرقام 🎨';
                 subtitle.textContent = 'Click a number, then paint matching areas!';
                 document.body.style.direction = 'ltr';
-                tabs[2].classList.add('active');
             } else if (language === 'memory') {
                 memoryContainer.style.display = 'block';
                 mainTitle.textContent = '🧠 Animal Memory Game - لعبة الذاكرة 🧠';
                 subtitle.textContent = 'Remember and find the animals!';
                 document.body.style.direction = 'ltr';
-                tabs[3].classList.add('active');
             } else if (language === 'order-arabic') {
                 orderArabicContainer.style.display = 'block';
                 mainTitle.textContent = '🔢 رتب الأرقام العربية 🔢';
                 subtitle.textContent = 'اسحب الأرقام لترتيبها من ١ إلى ١٠';
                 document.body.style.direction = 'rtl';
-                tabs[4].classList.add('active');
                 initializeArabicOrdering();
             } else if (language === 'order-english') {
                 orderEnglishContainer.style.display = 'block';
                 mainTitle.textContent = '🔢 Order the Numbers 🔢';
                 subtitle.textContent = 'Drag numbers from 1 to 10 in order';
                 document.body.style.direction = 'ltr';
-                tabs[5].classList.add('active');
                 initializeEnglishOrdering();
             } else if (language === 'count-arabic') {
                 countArabicContainer.style.display = 'block';
                 mainTitle.textContent = '🍎 عد الفواكه والخضروات 🥕';
                 subtitle.textContent = 'كم عدد الفواكه أو الخضروات؟ اختر الرقم الصحيح!';
                 document.body.style.direction = 'rtl';
-                tabs[6].classList.add('active');
                 generateArabicCounting();
             } else if (language === 'count-english') {
                 countEnglishContainer.style.display = 'block';
                 mainTitle.textContent = '🍎 Count Fruits and Vegetables 🥕';
                 subtitle.textContent = 'How many fruits or vegetables? Choose the correct number!';
                 document.body.style.direction = 'ltr';
-                tabs[7].classList.add('active');
                 generateEnglishCounting();
             } else if (language === 'coin-math') {
                 coinMathContainer.style.display = 'block';
                 mainTitle.textContent = '🪙 Golden Coin Math - حساب العملات الذهبية 🪙';
                 subtitle.textContent = 'Add the coins and choose the correct answer!';
                 document.body.style.direction = 'ltr';
-                tabs[8].classList.add('active');
                 
                 // Select random bank if not already selected
                 if (!currentBankShape) {
@@ -5691,6 +5966,26 @@
                 }
                 generateCoinProblem();
             }
+        }
+        
+        function backToMainMenu() {
+            // Hide all game containers
+            document.getElementById('arabic-container').style.display = 'none';
+            document.getElementById('english-container').style.display = 'none';
+            document.getElementById('numbers-container').style.display = 'none';
+            document.getElementById('memory-container').style.display = 'none';
+            document.getElementById('order-arabic-container').style.display = 'none';
+            document.getElementById('order-english-container').style.display = 'none';
+            document.getElementById('count-arabic-container').style.display = 'none';
+            document.getElementById('count-english-container').style.display = 'none';
+            document.getElementById('coin-math-container').style.display = 'none';
+            
+            // Show main menu and hide back button
+            document.getElementById('main-menu').style.display = 'block';
+            document.getElementById('back-to-menu').classList.remove('visible');
+            document.getElementById('main-title').style.display = 'none';
+            document.getElementById('subtitle').style.display = 'none';
+            document.body.style.direction = 'ltr';
         }
 
         // Add sound effect on flip (optional - using beep)
