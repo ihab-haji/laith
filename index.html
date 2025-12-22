@@ -2909,19 +2909,76 @@
         }
 
         .tooth {
-            width: 35px;
-            height: 45px;
-            background: white;
-            border-radius: 8px 8px 15px 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            width: 38px;
+            height: 50px;
+            background: linear-gradient(180deg, 
+                #ffffff 0%, 
+                #f8f9fa 40%, 
+                #e9ecef 80%, 
+                #dee2e6 100%);
+            border-radius: 45% 45% 15% 15%;
+            box-shadow: 
+                0 3px 8px rgba(0,0,0,0.3),
+                inset 0 2px 4px rgba(255,255,255,0.8),
+                inset 0 -3px 6px rgba(0,0,0,0.1);
+            position: relative;
             transition: all 0.3s ease;
             animation: toothAppear 0.5s ease;
         }
 
+        .tooth::before {
+            content: '';
+            position: absolute;
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60%;
+            height: 15px;
+            background: linear-gradient(180deg, 
+                rgba(255,255,255,0.9) 0%, 
+                rgba(255,255,255,0) 100%);
+            border-radius: 50%;
+            filter: blur(2px);
+        }
+
+        .tooth::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 8px;
+            background: linear-gradient(90deg, 
+                rgba(0,0,0,0.05) 0%, 
+                rgba(0,0,0,0.02) 50%, 
+                rgba(0,0,0,0.05) 100%);
+            border-radius: 0 0 15% 15%;
+        }
+
         .tooth.decayed {
-            background: linear-gradient(135deg, #8b4513 0%, #654321 50%, #000 100%);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            background: linear-gradient(180deg, 
+                #8b6f47 0%, 
+                #654321 30%, 
+                #4a2f1a 60%, 
+                #2d1810 100%);
+            box-shadow: 
+                0 3px 10px rgba(0,0,0,0.6),
+                inset 0 2px 6px rgba(0,0,0,0.5),
+                inset 0 -2px 4px rgba(139,111,71,0.3);
             animation: decayAnimation 1s ease;
+        }
+
+        .tooth.decayed::before {
+            background: linear-gradient(180deg, 
+                rgba(139,111,71,0.4) 0%, 
+                rgba(0,0,0,0.3) 100%);
+        }
+
+        .tooth.decayed::after {
+            background: linear-gradient(90deg, 
+                rgba(0,0,0,0.3) 0%, 
+                rgba(0,0,0,0.2) 50%, 
+                rgba(0,0,0,0.3) 100%);
         }
 
         @keyframes toothAppear {
@@ -2936,9 +2993,10 @@
         }
 
         @keyframes decayAnimation {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(-5deg); }
-            75% { transform: rotate(5deg); }
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(-5deg) scale(0.98); }
+            50% { transform: rotate(0deg) scale(0.96); }
+            75% { transform: rotate(5deg) scale(0.98); }
         }
 
         @keyframes fadeIn {
@@ -2988,6 +3046,328 @@
 
         .try-again-btn:hover {
             transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(52,152,219,0.6);
+        }
+
+        /* ===== NEW REFACTORED LUNCH BOX STYLES ===== */
+        
+        .lunch-main-container {
+            display: flex;
+            gap: 15px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        /* Left Side: 3D Lunch Box */
+        .lunch-box-side {
+            flex: 0 0 350px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* CSS 3D Lunch Box */
+        .css-lunchbox-3d {
+            perspective: 1000px;
+            width: 100%;
+        }
+
+        .lunch-box-lid {
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            border-radius: 12px 12px 0 0;
+            border: 4px solid #c0392b;
+            box-shadow: 
+                0 4px 10px rgba(0,0,0,0.3),
+                inset 0 2px 10px rgba(255,255,255,0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .lid-handle {
+            width: 80px;
+            height: 12px;
+            background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+            border-radius: 6px;
+            box-shadow: 
+                inset 0 2px 4px rgba(0,0,0,0.4),
+                0 2px 4px rgba(255,255,255,0.3);
+        }
+
+        .lunch-box-container-3d {
+            width: 100%;
+            min-height: 280px;
+            background: linear-gradient(135deg, #ffd93d 0%, #ffb800 100%);
+            border: 4px solid #f39c12;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            box-shadow: 
+                0 10px 30px rgba(0,0,0,0.3),
+                inset 0 4px 15px rgba(0,0,0,0.1);
+            transform-style: preserve-3d;
+        }
+
+        .lunch-box-inner {
+            padding: 15px;
+            height: 100%;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+            margin: 8px;
+        }
+
+        .food-items-display {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+            align-items: center;
+            min-height: 240px;
+            padding: 10px;
+        }
+
+        .food-item-in-box {
+            font-size: 3.5em;
+            filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+            animation: foodPop 0.4s ease;
+        }
+
+        @keyframes foodPop {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Action Buttons */
+        .lunch-action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .check-lunch-btn-new,
+        .reset-lunch-btn-new {
+            flex: 1;
+            padding: 12px;
+            font-size: 1.3em;
+            font-weight: bold;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .check-lunch-btn-new {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+        }
+
+        .reset-lunch-btn-new {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+        }
+
+        .check-lunch-btn-new:hover,
+        .reset-lunch-btn-new:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Feedback */
+        .lunch-feedback-new {
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: bold;
+            padding: 12px;
+            border-radius: 12px;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lunch-feedback-new.success {
+            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+            color: #155724;
+            border: 2px solid #28a745;
+        }
+
+        .lunch-feedback-new.error {
+            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+            color: #721c24;
+            border: 2px solid #dc3545;
+        }
+
+        /* Right Side: Food Selection */
+        .food-selection-side {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .food-selection-title {
+            text-align: center;
+            font-size: 2em;
+            color: #2c3e50;
+            margin: 0 0 15px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .food-columns {
+            display: flex;
+            gap: 10px;
+        }
+
+        .food-column {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .food-items-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+            gap: 8px;
+        }
+
+        .food-item-card {
+            background: white;
+            border-radius: 12px;
+            padding: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .food-item-card:hover {
+            transform: translateY(-4px) scale(1.05);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            border-color: #3498db;
+        }
+
+        .food-item-card.selected {
+            opacity: 0.5;
+            transform: scale(0.9);
+            border-color: #95a5a6;
+        }
+
+        .food-item-card.unhealthy {
+            border: 2px solid #e74c3c;
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe5e5 100%);
+        }
+
+        .food-emoji {
+            font-size: 3em;
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .food-name {
+            font-size: 0.75em;
+            color: #2c3e50;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .lunch-main-container {
+                flex-direction: column-reverse;
+                padding: 5px;
+                gap: 10px;
+            }
+
+            .lunch-box-side {
+                flex: none;
+                width: 100%;
+            }
+
+            .food-selection-title {
+                font-size: 1.5em;
+                margin: 0 0 10px 0;
+            }
+
+            .food-items-grid {
+                grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+                gap: 6px;
+            }
+
+            .food-emoji {
+                font-size: 2.5em;
+            }
+
+            .food-name {
+                font-size: 0.7em;
+            }
+
+            .food-item-in-box {
+                font-size: 2.8em;
+            }
+
+            .lunch-box-container-3d {
+                min-height: 220px;
+            }
+
+            .food-items-display {
+                min-height: 180px;
+                gap: 6px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .lunch-main-container {
+                padding: 3px;
+            }
+
+            .food-columns {
+                gap: 6px;
+            }
+
+            .food-items-grid {
+                grid-template-columns: repeat(auto-fill, minmax(55px, 1fr));
+                gap: 4px;
+            }
+
+            .food-item-card {
+                padding: 6px;
+                border-radius: 8px;
+            }
+
+            .food-emoji {
+                font-size: 2.2em;
+            }
+
+            .food-name {
+                font-size: 0.65em;
+            }
+
+            .food-item-in-box {
+                font-size: 2.5em;
+            }
+
+            .check-lunch-btn-new,
+            .reset-lunch-btn-new {
+                font-size: 1.1em;
+                padding: 10px;
+            }
+
+            .lunch-box-container-3d {
+                min-height: 180px;
+            }
+
+            .food-items-display {
+                min-height: 140px;
+                padding: 6px;
+            }
+
+            .lunch-feedback-new {
+                font-size: 1.1em;
+                padding: 8px;
+            }
+        }
             box-shadow: 0 8px 20px rgba(52,152,219,0.6);
         }
 
@@ -4613,119 +4993,70 @@
     <!-- Lunch Box Packing Game Container -->
     <div class="lunch-box-game-container" id="lunch-box-container" style="display: none;">
         <div class="lunch-game-content">
-            <h2>🍱 رتب حقيبة الغداء الصحية! 🍱</h2>
-            <p class="lunch-instructions">اختر فاكهة واحدة، خضار واحد، بروتين واحد، ووجبة خفيفة واحدة لوجبة متوازنة!</p>
-            <p class="lunch-instructions-en">Choose 1 fruit, 1 vegetable, 1 protein, and 1 snack!</p>
             
-            <!-- Fixed Bottom Button to Open Lunch Box -->
-            <button class="open-lunchbox-btn" id="open-lunchbox-btn" onclick="openLunchBoxOverlay()">
-                🍱 افتح حقيبة الغداء
-            </button>
-            
-            <!-- Lunch Box Overlay (Hidden initially) -->
-            <div class="lunchbox-overlay" id="lunchbox-overlay" style="display: none;">
-                <div class="realistic-lunchbox">
-                    <!-- Realistic Lunch Box -->
-                    <div class="lunchbox-3d">
-                        <div class="lunchbox-handle"></div>
-                        <div class="lunchbox-lid-top">
-                            <div class="lid-label">🍱 حقيبتي 🍱</div>
+            <!-- Main Container: 3D Lunch Box + Food Selection -->
+            <div class="lunch-main-container">
+                
+                <!-- Left Side: 3D Lunch Box -->
+                <div class="lunch-box-side">
+                    <div class="css-lunchbox-3d" id="css-lunchbox">
+                        <div class="lunch-box-lid">
+                            <div class="lid-handle"></div>
                         </div>
-                        <div class="lunchbox-body">
-                            <div class="compartments">
-                                <div class="compartment" data-category="fruit">
-                                    <div class="compartment-label">🍎 فاكهة<br><span class="label-en">Fruit</span></div>
-                                    <div class="compartment-content" id="fruit-slot"></div>
+                        <div class="lunch-box-container-3d">
+                            <div class="lunch-box-inner">
+                                <div class="food-items-display" id="food-items-display">
+                                    <!-- Selected food emojis will appear here -->
                                 </div>
-                                <div class="compartment" data-category="vegetable">
-                                    <div class="compartment-label">🥕 خضار<br><span class="label-en">Vegetable</span></div>
-                                    <div class="compartment-content" id="vegetable-slot"></div>
-                                </div>
-                                <div class="compartment" data-category="protein">
-                                    <div class="compartment-label">🍗 بروتين<br><span class="label-en">Protein</span></div>
-                                    <div class="compartment-content" id="protein-slot"></div>
-                                </div>
-                                <div class="compartment" data-category="snack">
-                                    <div class="compartment-label">🍪 وجبة خفيفة<br><span class="label-en">Snack</span></div>
-                                    <div class="compartment-content" id="snack-slot"></div>
-                                </div>
-                            </div>
-                            <div class="lunchbox-buttons">
-                                <button class="check-lunch-btn" onclick="checkLunchBox()">✓ تحقق من الوجبة</button>
-                                <button class="reset-lunch-btn" onclick="resetLunchBox()">🔄 ابدأ من جديد</button>
-                                <button class="close-lunch-btn" onclick="closeLunchBoxOverlay()">✖️ إغلاق</button>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="lunch-action-buttons">
+                        <button class="check-lunch-btn-new" onclick="checkLunchBox()">✓ تحقق</button>
+                        <button class="reset-lunch-btn-new" onclick="resetLunchBox()">🔄 إعادة</button>
+                    </div>
+                    
+                    <!-- Feedback -->
+                    <div class="lunch-feedback-new" id="lunch-feedback"></div>
                 </div>
+                
+                <!-- Right Side: Food Selection in 2 Columns -->
+                <div class="food-selection-side">
+                    <h3 class="food-selection-title">اختر طعامك 🍽️</h3>
+                    
+                    <div class="food-columns">
+                        <!-- Column 1 -->
+                        <div class="food-column">
+                            <div class="food-items-grid" id="food-column-1">
+                                <!-- Foods will be added by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <!-- Column 2 -->
+                        <div class="food-column">
+                            <div class="food-items-grid" id="food-column-2">
+                                <!-- Foods will be added by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
             </div>
-            
-            <!-- Food Shelves -->
-            <div class="food-shelves-container">
-                <h3>🏪 Food Store - Choose Your Foods! 🏪</h3>
-                
-                <!-- Fruits Shelf -->
-                <div class="food-shelf">
-                    <div class="shelf-title">🍎 Fruits Shelf - رف الفواكه</div>
-                    <div class="shelf-items" id="fruits-shelf">
-                        <!-- Foods will be added by JavaScript -->
-                    </div>
-                </div>
-                
-                <!-- Vegetables Shelf -->
-                <div class="food-shelf">
-                    <div class="shelf-title">🥕 Vegetables Shelf - رف الخضروات</div>
-                    <div class="shelf-items" id="vegetables-shelf">
-                        <!-- Foods will be added by JavaScript -->
-                    </div>
-                </div>
-                
-                <!-- Proteins Shelf -->
-                <div class="food-shelf">
-                    <div class="shelf-title">🍗 Proteins Shelf - رف البروتينات</div>
-                    <div class="shelf-items" id="proteins-shelf">
-                        <!-- Foods will be added by JavaScript -->
-                    </div>
-                </div>
-                
-                <!-- Healthy Snacks Shelf -->
-                <div class="food-shelf">
-                    <div class="shelf-title">✨ Healthy Snacks - وجبات خفيفة صحية</div>
-                    <div class="shelf-items" id="healthy-snacks-shelf">
-                        <!-- Foods will be added by JavaScript -->
-                    </div>
-                </div>
-                
-                <!-- Unhealthy Snacks Shelf (Warning!) -->
-                <div class="food-shelf unhealthy-shelf">
-                    <div class="shelf-title">⚠️ Unhealthy Treats - حلويات غير صحية ⚠️</div>
-                    <div class="shelf-items" id="unhealthy-snacks-shelf">
-                        <!-- Foods will be added by JavaScript -->
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Feedback Message -->
-            <div class="lunch-feedback" id="lunch-feedback"></div>
             
             <!-- Teeth Health Display -->
             <div class="teeth-display" id="teeth-display" style="display: none;">
                 <div class="teeth-warning">
-                    <h2>⚠️ Warning: Too Much Sugar Hurts Your Teeth! ⚠️</h2>
-                    <p>تحذير: السكر الكثير يضر أسنانك!</p>
+                    <h2>⚠️ تحذير: السكر يضر أسنانك! ⚠️</h2>
                     <div class="mouth-container">
                         <div class="child-mouth">
-                            <div class="upper-teeth" id="upper-teeth">
-                                <!-- Teeth will be added by JavaScript -->
-                            </div>
-                            <div class="lower-teeth" id="lower-teeth">
-                                <!-- Teeth will be added by JavaScript -->
-                            </div>
+                            <div class="upper-teeth" id="upper-teeth"></div>
+                            <div class="lower-teeth" id="lower-teeth"></div>
                         </div>
                     </div>
-                    <p class="teeth-message">Choose healthier options to keep your teeth strong and white! 🦷✨</p>
-                    <p class="teeth-message-ar">اختر خيارات صحية للحفاظ على أسنانك قوية وبيضاء!</p>
-                    <button class="try-again-btn" onclick="resetLunchBox()">Try Again! 🔄</button>
+                    <p class="teeth-message-ar">اختر خيارات صحية!</p>
+                    <button class="try-again-btn" onclick="resetLunchBox()">حاول مرة أخرى! 🔄</button>
                 </div>
             </div>
         </div>
@@ -5179,97 +5510,152 @@
         }
 
         function initializeLunchBoxGame() {
-            // Reset slots
-            lunchBoxSlots.fruit = null;
-            lunchBoxSlots.vegetable = null;
-            lunchBoxSlots.protein = null;
-            lunchBoxSlots.snack = null;
+            // Reset all stored foods
+            selectedFoods = [];
             
-            // Clear slots display
-            document.getElementById('fruit-slot').innerHTML = '';
-            document.getElementById('vegetable-slot').innerHTML = '';
-            document.getElementById('protein-slot').innerHTML = '';
-            document.getElementById('snack-slot').innerHTML = '';
+            // Clear lunch box display
+            document.getElementById('food-items-display').innerHTML = '';
             
             // Clear feedback
-            document.getElementById('lunch-feedback').textContent = '';
-            document.getElementById('lunch-feedback').className = 'lunch-feedback';
+            const feedback = document.getElementById('lunch-feedback');
+            feedback.textContent = '';
+            feedback.className = 'lunch-feedback-new';
             
             // Hide teeth display
             document.getElementById('teeth-display').style.display = 'none';
             
-            // Populate food shelves
-            populateShelf('fruits-shelf', foodDatabase.fruits, 'fruit');
-            populateShelf('vegetables-shelf', foodDatabase.vegetables, 'vegetable');
-            populateShelf('proteins-shelf', foodDatabase.proteins, 'protein');
-            populateShelf('healthy-snacks-shelf', foodDatabase.healthySnacks, 'snack');
-            populateShelf('unhealthy-snacks-shelf', foodDatabase.unhealthySnacks, 'snack');
+            // Combine all foods into 2 columns (mixed healthy/unhealthy)
+            const allFoods = [
+                ...foodDatabase.fruits,
+                ...foodDatabase.vegetables,
+                ...foodDatabase.proteins,
+                ...foodDatabase.healthySnacks,
+                ...foodDatabase.unhealthySnacks
+            ];
+            
+            // Shuffle for variety
+            const shuffled = allFoods.sort(() => Math.random() - 0.5);
+            
+            // Split into 2 columns
+            const midpoint = Math.ceil(shuffled.length / 2);
+            const column1Foods = shuffled.slice(0, midpoint);
+            const column2Foods = shuffled.slice(midpoint);
+            
+            // Populate columns
+            populateColumn('food-column-1', column1Foods);
+            populateColumn('food-column-2', column2Foods);
         }
 
-        function populateShelf(shelfId, foods, category) {
-            const shelf = document.getElementById(shelfId);
-            shelf.innerHTML = '';
+        function populateColumn(columnId, foods) {
+            const column = document.getElementById(columnId);
+            column.innerHTML = '';
             
-            foods.forEach((food, index) => {
-                const foodItem = document.createElement('div');
-                foodItem.className = `food-item ${food.healthy ? 'healthy' : 'unhealthy'}`;
-                foodItem.innerHTML = `
+            foods.forEach(food => {
+                const foodCard = document.createElement('div');
+                foodCard.className = `food-item-card ${food.healthy ? '' : 'unhealthy'}`;
+                foodCard.innerHTML = `
                     <div class="food-emoji">${food.emoji}</div>
-                    <div class="food-name">${food.name}</div>
-                    <div class="food-name-ar">${food.arabic}</div>
+                    <div class="food-name">${food.arabic}</div>
                 `;
-                foodItem.onclick = () => selectFood(food, category, foodItem);
-                shelf.appendChild(foodItem);
+                foodCard.onclick = () => selectFoodItem(food, foodCard);
+                column.appendChild(foodCard);
             });
         }
 
-        function selectFood(food, category, foodItem) {
-            // Store food in appropriate slot
-            lunchBoxSlots[category] = food;
+        let selectedFoods = [];
+        const MAX_FOODS = 4;
+
+        function selectFoodItem(food, foodCard) {
+            // Check if already at max
+            if (selectedFoods.length >= MAX_FOODS && !foodCard.classList.contains('selected')) {
+                const feedback = document.getElementById('lunch-feedback');
+                feedback.textContent = '❌ الحقيبة ممتلئة! (4 عناصر فقط)';
+                feedback.className = 'lunch-feedback-new error';
+                playErrorSound();
+                
+                // Scroll to lunch box to show it's full
+                scrollToLunchBox();
+                
+                setTimeout(() => {
+                    feedback.textContent = '';
+                    feedback.className = 'lunch-feedback-new';
+                }, 2000);
+                return;
+            }
             
-            // Update slot display
-            const slotId = category + '-slot';
-            const slot = document.getElementById(slotId);
-            slot.innerHTML = `<div style="font-size: 4em;">${food.emoji}</div>`;
+            // Toggle selection
+            if (foodCard.classList.contains('selected')) {
+                // Deselect
+                foodCard.classList.remove('selected');
+                selectedFoods = selectedFoods.filter(f => f.emoji !== food.emoji);
+            } else {
+                // Select
+                foodCard.classList.add('selected');
+                selectedFoods.push(food);
+                playSuccessSound();
+                
+                // If reached 4 items, scroll to lunch box
+                if (selectedFoods.length === MAX_FOODS) {
+                    setTimeout(() => {
+                        scrollToLunchBox();
+                    }, 300);
+                }
+            }
             
-            // Mark slot as filled
-            slot.parentElement.classList.add('filled');
+            // Update lunch box display
+            updateLunchBoxDisplay();
             
-            // Mark food item as selected
-            foodItem.classList.add('selected');
+            // Clear feedback
+            const feedback = document.getElementById('lunch-feedback');
+            feedback.textContent = '';
+            feedback.className = 'lunch-feedback-new';
+        }
+
+        function scrollToLunchBox() {
+            const lunchBox = document.getElementById('css-lunchbox');
+            if (lunchBox) {
+                lunchBox.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'center' 
+                });
+            }
+        }
+
+        function updateLunchBoxDisplay() {
+            const display = document.getElementById('food-items-display');
+            display.innerHTML = '';
             
-            // Play selection sound
-            playSuccessSound();
-            
-            // Clear any previous feedback
-            document.getElementById('lunch-feedback').textContent = '';
-            document.getElementById('lunch-feedback').className = 'lunch-feedback';
+            selectedFoods.forEach(food => {
+                const foodItem = document.createElement('div');
+                foodItem.className = 'food-item-in-box';
+                foodItem.textContent = food.emoji;
+                display.appendChild(foodItem);
+            });
         }
 
         function checkLunchBox() {
             const feedback = document.getElementById('lunch-feedback');
             
-            // Check if all slots filled
-            const allFilled = lunchBoxSlots.fruit && lunchBoxSlots.vegetable && 
-                             lunchBoxSlots.protein && lunchBoxSlots.snack;
-            
-            if (!allFilled) {
-                feedback.textContent = '❌ املأ جميع الخانات الأربعة! - Please fill all 4 slots!';
-                feedback.className = 'lunch-feedback warning';
+            // Check if 4 items selected
+            if (selectedFoods.length < 4) {
+                feedback.textContent = `❌ اختر 4 عناصر! (لديك ${selectedFoods.length})`;
+                feedback.className = 'lunch-feedback-new error';
                 playErrorSound();
                 return;
             }
             
-            // Check for unhealthy snack
-            if (!lunchBoxSlots.snack.healthy) {
+            // Check for unhealthy items
+            const hasUnhealthy = selectedFoods.some(food => !food.healthy);
+            
+            if (hasUnhealthy) {
                 showTeethWarning();
                 playErrorSound();
                 return;
             }
             
             // All healthy - success!
-            feedback.textContent = '🎉 ممتاز! اختيار رائع! 🎉 Perfect! Great lunch choice!';
-            feedback.className = 'lunch-feedback success';
+            feedback.textContent = '🎉 ممتاز! اختيار صحي رائع! 🎉';
+            feedback.className = 'lunch-feedback-new success';
             createCelebration();
             playSuccessSound();
         }
