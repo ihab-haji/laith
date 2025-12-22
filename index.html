@@ -1909,7 +1909,7 @@
             height: 60px;
             background: linear-gradient(135deg, #ff69b4 0%, #ffb6d9 50%, #ff69b4 100%);
             border: 6px solid #ff1493;
-            border-radius: 50% 50% 0 0;
+            border-radius: 15px 15px 0 0;
             position: relative;
             z-index: 10;
             box-shadow: 
@@ -1938,7 +1938,7 @@
             width: 80px;
             height: 15px;
             background: #ff1493;
-            border-radius: 50%;
+            border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
         }
 
@@ -1952,7 +1952,7 @@
             background: linear-gradient(135deg, #ff69b4 0%, #ffb6d9 50%, #ff69b4 100%);
             border: 6px solid #ff1493;
             border-top: none;
-            border-radius: 40% 40% 50% 50%;
+            border-radius: 0 0 15px 15px;
             padding: 25px;
             position: relative;
             box-shadow: 
@@ -2007,7 +2007,7 @@
             height: 50px;
             background: linear-gradient(135deg, #ff69b4, #ffb6d9);
             border: 4px solid #ff1493;
-            border-radius: 50% 50% 0 50%;
+            border-radius: 10px 10px 0 10px;
             transform: rotate(-20deg);
             box-shadow: 
                 inset 0 2px 8px rgba(255,255,255,0.4),
@@ -2024,7 +2024,7 @@
             height: 50px;
             background: linear-gradient(135deg, #ffb6d9, #ff69b4);
             border: 4px solid #ff1493;
-            border-radius: 50% 50% 50% 0;
+            border-radius: 10px 10px 10px 0;
             transform: rotate(20deg);
             box-shadow: 
                 inset 0 2px 8px rgba(255,255,255,0.4),
@@ -3160,7 +3160,7 @@
 </head>
 <body>
     <!-- Back to Menu Button -->
-    <button class="back-to-menu" id="back-to-menu" onclick="backToMainMenu()">⬅️ Main Menu</button>
+    <button class="back-to-menu" id="back-to-menu" onclick="backToMainMenu()">⬅️ القائمة الرئيسية</button>
 
     <div class="header">
         <!-- Child Photo Section -->
@@ -4364,18 +4364,15 @@
     <!-- Memory Game Container -->
     <div class="memory-container" id="memory-container" style="display: none;">
         <div class="memory-game">
-            <div class="game-header">
-                <h2>🧠 Animal Memory Game - لعبة الذاكرة 🧠</h2>
-                <p>Remember the animals and find them!</p>
-            </div>
             
             <!-- Start Screen -->
             <div class="memory-start" id="memory-start">
                 <div class="start-card">
                     <div class="big-emoji">🎮</div>
-                    <h3>Ready to Play?</h3>
-                    <p>You will see 5 animal cards. Try to remember them!</p>
-                    <button class="start-game-btn" onclick="startMemoryGame()">🚀 Start Game</button>
+                    <h3>جاهز للعب؟</h3>
+                    <p>ستشاهد ٥ بطاقات حيوانات. حاول أن تتذكرها!</p>
+                    <p style="font-size: 0.9em; color: #7f8c8d; margin-top: 5px;">You will see 5 animal cards. Try to remember them!</p>
+                    <button class="start-game-btn" onclick="startMemoryGame()">🚀 ابدأ اللعبة</button>
                 </div>
             </div>
             
@@ -4383,16 +4380,16 @@
             <div class="memory-play" id="memory-play" style="display: none;">
                 <div class="memory-header">
                     <div class="score-display">
-                        <span class="score-label">✅ Correct:</span>
+                        <span class="score-label">✅ صحيح:</span>
                         <span class="score-value" id="correct-count">0</span>
                     </div>
                     <div class="target-display" id="target-display">
-                        <span class="target-label">🎯 Find:</span>
+                        <span class="target-label">🎯 ابحث عن:</span>
                         <span class="target-emoji" id="target-emoji">🦁</span>
-                        <span class="target-name" id="target-name">Lion</span>
+                        <span class="target-name" id="target-name">أسد</span>
                     </div>
                     <div class="tries-display">
-                        <span class="tries-label">❌ Tries:</span>
+                        <span class="tries-label">❌ محاولات:</span>
                         <span class="tries-value" id="tries-count">0</span>
                     </div>
                 </div>
@@ -4403,7 +4400,7 @@
                 
                 <div class="memory-feedback" id="memory-feedback"></div>
                 
-                <button class="control-btn" onclick="resetMemoryGame()" style="margin-top: 20px;">🔄 New Game</button>
+                <button class="control-btn" onclick="resetMemoryGame()" style="margin-top: 20px;">🔄 لعبة جديدة</button>
             </div>
         </div>
     </div>
@@ -4441,12 +4438,13 @@
     <div class="ordering-container" id="order-english-container" style="display: none;">
         <div class="ordering-game">
             <div class="game-header">
-                <h2>🔢 Order the Numbers 🔢</h2>
-                <p>Drag the numbers to put them in order from 1 to 10</p>
+                <h2>🔢 رتب الأرقام الإنجليزية 🔢</h2>
+                <p>اسحب الأرقام لترتيبها من 1 إلى 10</p>
+                <p style="font-size: 0.9em; color: #7f8c8d;">Drag the numbers to put them in order from 1 to 10</p>
             </div>
             
             <div class="ordering-status">
-                <div class="status-message" id="english-status">Start ordering the numbers!</div>
+                <div class="status-message" id="english-status">ابدأ بترتيب الأرقام!</div>
             </div>
             
             <div class="ordering-area">
@@ -4455,14 +4453,15 @@
                 </div>
                 
                 <div class="ordering-pieces-container">
-                    <h3>Drag numbers from here:</h3>
+                    <h3>اسحب الأرقام من هنا:</h3>
+                    <p style="font-size: 0.9em; color: #7f8c8d;">Drag numbers from here</p>
                     <div class="ordering-pieces" id="english-pieces">
                         <!-- Draggable numbers will be generated here -->
                     </div>
                 </div>
             </div>
             
-            <button class="control-btn" onclick="resetEnglishOrdering()">🔄 Start Over</button>
+            <button class="control-btn" onclick="resetEnglishOrdering()">🔄 ابدأ من جديد</button>
         </div>
     </div>
 
@@ -4525,7 +4524,6 @@
         <div class="coin-math-game">
             <div class="game-header">
                 <h2>🪙 Golden Coin Math - حساب العملات الذهبية 🪙</h2>
-                <p>Add the coins and choose the correct answer!</p>
             </div>
             
             <div class="coin-score">
@@ -5777,7 +5775,7 @@
             const grid = document.getElementById('memory-cards-grid');
             const feedback = document.getElementById('memory-feedback');
             
-            feedback.textContent = '👀 Look carefully at these animals!';
+            feedback.textContent = '👀 انظر بعناية إلى هذه الحيوانات!';
             feedback.className = 'memory-feedback';
             
             grid.innerHTML = '';
@@ -5808,24 +5806,13 @@
                 card.classList.add('flipped');
             });
             
-            setTimeout(() => {
-                shuffleCards();
-            }, 500);
-        }
-        
-        function shuffleCards() {
-            const grid = document.getElementById('memory-cards-grid');
-            const cards = Array.from(grid.children);
-            
-            for (let i = cards.length - 1; i > 0; i--) {
-                const j = Math.floor(Math.random() * (i + 1));
-                grid.insertBefore(cards[j], cards[i]);
-            }
+            // Don't shuffle - keep cards in same position!
+            // Players need to remember WHERE each animal was
         }
         
         function startGamePhase() {
             const feedback = document.getElementById('memory-feedback');
-            feedback.textContent = '🎯 Now find the animals!';
+            feedback.textContent = '🎯 الآن ابحث عن الحيوانات!';
             
             document.getElementById('correct-count').textContent = correctCount;
             document.getElementById('tries-count').textContent = triesCount;
@@ -5851,7 +5838,7 @@
             currentTargetAnimal = remainingAnimals[Math.floor(Math.random() * remainingAnimals.length)];
             
             document.getElementById('target-emoji').textContent = currentTargetAnimal.emoji;
-            document.getElementById('target-name').textContent = currentTargetAnimal.name;
+            document.getElementById('target-name').textContent = currentTargetAnimal.arabicName;
         }
         
         function checkCard(card) {
@@ -5871,7 +5858,7 @@
                 correctCount++;
                 document.getElementById('correct-count').textContent = correctCount;
                 
-                feedback.textContent = `✅ Yes! That's the ${actualAnimal.name}!`;
+                feedback.textContent = `✅ نعم! هذا هو ${actualAnimal.arabicName}!`;
                 feedback.className = 'memory-feedback correct';
                 
                 card.classList.add('found');
@@ -5884,7 +5871,7 @@
                     selectNewTarget();
                 }, 1500);
             } else {
-                feedback.textContent = `❌ No, that's a ${actualAnimal.name}. Try again!`;
+                feedback.textContent = `❌ لا، هذا ${actualAnimal.arabicName}. حاول مرة أخرى!`;
                 feedback.className = 'memory-feedback wrong';
                 
                 playErrorSound();
@@ -5899,7 +5886,7 @@
         
         function gameComplete() {
             const feedback = document.getElementById('memory-feedback');
-            feedback.textContent = `🎉 Amazing! You found all animals! ${correctCount} correct in ${triesCount} tries!`;
+            feedback.textContent = `🎉 رائع! وجدت جميع الحيوانات! ${correctCount} صحيح في ${triesCount} محاولة!`;
             feedback.className = 'memory-feedback correct';
             
             createBigCelebration();
@@ -7063,8 +7050,8 @@
                 document.body.style.direction = 'ltr';
             } else if (language === 'memory') {
                 memoryContainer.style.display = 'block';
-                mainTitle.textContent = '🧠 Animal Memory Game - لعبة الذاكرة 🧠';
-                subtitle.textContent = 'Remember and find the animals!';
+                mainTitle.textContent = '';
+                subtitle.textContent = '';
                 document.body.style.direction = 'ltr';
             } else if (language === 'order-arabic') {
                 orderArabicContainer.style.display = 'block';
@@ -7093,7 +7080,7 @@
             } else if (language === 'coin-math') {
                 coinMathContainer.style.display = 'block';
                 mainTitle.textContent = '🪙 Golden Coin Math - حساب العملات الذهبية 🪙';
-                subtitle.textContent = 'Add the coins and choose the correct answer!';
+                subtitle.textContent = '';
                 document.body.style.direction = 'ltr';
                 
                 // Select random bank if not already selected
