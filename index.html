@@ -4522,9 +4522,6 @@
     <!-- Coin Math Game -->
     <div class="coin-math-container" id="coin-math-container" style="display: none;">
         <div class="coin-math-game">
-            <div class="game-header">
-                <h2>🪙 Golden Coin Math - حساب العملات الذهبية 🪙</h2>
-            </div>
             
             <div class="coin-score">
                 <div class="score-display">Score: <span id="coin-score">0</span> ⭐</div>
@@ -4552,7 +4549,6 @@
             <!-- Answer Options and Treasure Box Side by Side -->
             <div class="answer-and-box-container">
                 <div class="answer-options">
-                    <h3>Choose the correct answer:</h3>
                     <div class="answer-buttons" id="answer-buttons"></div>
                 </div>
                 
@@ -7079,7 +7075,7 @@
                 generateEnglishCounting();
             } else if (language === 'coin-math') {
                 coinMathContainer.style.display = 'block';
-                mainTitle.textContent = '🪙 Golden Coin Math - حساب العملات الذهبية 🪙';
+                mainTitle.textContent = '';
                 subtitle.textContent = '';
                 document.body.style.direction = 'ltr';
                 
