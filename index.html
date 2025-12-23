@@ -5474,8 +5474,7 @@
                 { emoji: '🧃', name: 'Juice', arabic: 'عصير', healthy: true },
                 { emoji: '🥨', name: 'Pretzel', arabic: 'كعك', healthy: true },
                 { emoji: '🍯', name: 'Honey', arabic: 'عسل', healthy: true },
-                { emoji: '🥖', name: 'Bread', arabic: 'خبز', healthy: true },
-                { emoji: '🥐', name: 'Croissant', arabic: 'كرواسون', healthy: true }
+                { emoji: '🥖', name: 'Bread', arabic: 'خبز', healthy: true }
             ],
             unhealthySnacks: [
                 { emoji: '🍭', name: 'Lollipop', arabic: 'مصاصة', healthy: false },
@@ -5487,7 +5486,17 @@
                 { emoji: '🧁', name: 'Cupcake', arabic: 'كب كيك', healthy: false },
                 { emoji: '🍦', name: 'Ice Cream', arabic: 'آيس كريم', healthy: false },
                 { emoji: '🥤', name: 'Soda', arabic: 'صودا', healthy: false },
-                { emoji: '🍟', name: 'Fries', arabic: 'بطاطس مقلية', healthy: false }
+                { emoji: '🍟', name: 'Fries', arabic: 'بطاطس مقلية', healthy: false },
+                { emoji: '🥐', name: 'Croissant', arabic: 'كرواسون', healthy: false },
+                { emoji: '🍕', name: 'Pizza', arabic: 'بيتزا', healthy: false },
+                { emoji: '🌭', name: 'Hot Dog', arabic: 'هوت دوج', healthy: false },
+                { emoji: '🍔', name: 'Burger', arabic: 'برجر', healthy: false },
+                { emoji: '🥓', name: 'Bacon', arabic: 'بيكون', healthy: false },
+                { emoji: '🍰', name: 'Cake Slice', arabic: 'قطعة كعكة', healthy: false },
+                { emoji: '🧇', name: 'Waffle', arabic: 'وافل', healthy: false },
+                { emoji: '🥞', name: 'Pancakes', arabic: 'بان كيك', healthy: false },
+                { emoji: '🍮', name: 'Pudding', arabic: 'بودنج', healthy: false },
+                { emoji: '🍡', name: 'Dango', arabic: 'دانجو', healthy: false }
             ]
         };
 
@@ -7517,7 +7526,7 @@
             } else if (language === 'lunch-box') {
                 lunchBoxContainer.style.display = 'block';
                 mainTitle.textContent = '🍱 Pack Your Healthy Lunch Box - حقيبة الغداء الصحية 🍱';
-                subtitle.textContent = 'Choose healthy foods for a balanced meal!';
+                subtitle.textContent = '';
                 document.body.style.direction = 'ltr';
                 initializeLunchBoxGame();
             }
