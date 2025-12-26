@@ -816,35 +816,52 @@
         .color-palette {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 8px;
             margin-bottom: 30px;
             flex-wrap: wrap;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 15px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 15px;
         }
 
         .palette-color {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             border: 3px solid #333;
             border-radius: 10px;
-            font-size: 1.5em;
+            font-size: 1.3em;
             font-weight: bold;
             color: white;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            position: relative;
         }
 
         .palette-color:hover {
-            transform: scale(1.1);
+            transform: scale(1.15);
             box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            z-index: 10;
         }
 
         .palette-color.selected {
-            border: 5px solid #FFD700;
+            border: 4px solid #FFD700;
             border-radius: 15px;
-            transform: scale(1.2);
+            transform: scale(1.25);
             box-shadow: 0 8px 16px rgba(255,215,0,0.5);
+            z-index: 20;
+        }
+        
+        .palette-info {
+            text-align: center;
+            color: #667eea;
+            font-size: 0.9em;
+            margin-bottom: 10px;
+            font-weight: bold;
         }
 
         .canvas-container {
@@ -1032,9 +1049,13 @@
             }
             
             .palette-color {
-                width: 50px;
-                height: 50px;
-                font-size: 1.2em;
+                width: 45px;
+                height: 45px;
+                font-size: 1.1em;
+            }
+            
+            .palette-info {
+                font-size: 0.9em;
             }
             
             .control-btn {
@@ -1092,9 +1113,13 @@
             }
             
             .palette-color {
-                width: 45px;
-                height: 45px;
-                font-size: 1.1em;
+                width: 42px;
+                height: 42px;
+                font-size: 1em;
+            }
+            
+            .palette-info {
+                font-size: 0.85em;
             }
             
             .control-btn {
@@ -1865,6 +1890,328 @@
             }
 
             .control-btn {
+                width: 100%;
+            }
+        }
+
+        /* Win Screen Overlay Styles */
+        .win-screen-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10000;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .win-screen-content {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            border-radius: 40px;
+            padding: 50px 60px;
+            text-align: center;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 
+                0 0 60px rgba(102, 126, 234, 0.8),
+                0 0 120px rgba(118, 75, 162, 0.6),
+                inset 0 0 60px rgba(255, 255, 255, 0.1);
+            animation: winPopIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .win-screen-content::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                transparent 30%,
+                rgba(255, 255, 255, 0.1) 50%,
+                transparent 70%
+            );
+            animation: shimmer 3s infinite;
+        }
+
+        @keyframes shimmer {
+            0% { transform: translateX(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) rotate(45deg); }
+        }
+
+        @keyframes winPopIn {
+            0% { 
+                transform: scale(0) rotate(-20deg); 
+                opacity: 0;
+            }
+            60% { 
+                transform: scale(1.1) rotate(5deg); 
+            }
+            100% { 
+                transform: scale(1) rotate(0deg); 
+                opacity: 1;
+            }
+        }
+
+        .win-trophy {
+            font-size: 8em;
+            animation: trophyBounce 1s ease infinite;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes trophyBounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
+        }
+
+        .win-title {
+            font-size: 3.5em;
+            color: #FFD700;
+            text-shadow: 
+                3px 3px 0 #FF6B6B,
+                6px 6px 0 rgba(0, 0, 0, 0.2);
+            margin: 20px 0;
+            animation: titlePulse 1.5s ease infinite;
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes titlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .win-subtitle {
+            font-size: 2em;
+            color: white;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .win-score-display {
+            font-size: 2.5em;
+            color: #FFE66D;
+            font-weight: bold;
+            margin: 20px 0;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px 40px;
+            border-radius: 25px;
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .win-stars {
+            font-size: 3em;
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+        }
+
+        .win-stars span {
+            display: inline-block;
+            animation: starSpin 1s ease infinite;
+        }
+
+        .win-stars span:nth-child(1) { animation-delay: 0s; }
+        .win-stars span:nth-child(2) { animation-delay: 0.1s; }
+        .win-stars span:nth-child(3) { animation-delay: 0.2s; }
+        .win-stars span:nth-child(4) { animation-delay: 0.3s; }
+        .win-stars span:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes starSpin {
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.3); }
+        }
+
+        .win-message {
+            font-size: 1.5em;
+            color: #fff;
+            opacity: 0.95;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        .win-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .win-btn {
+            padding: 18px 40px;
+            font-size: 1.4em;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .win-btn-play {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+        }
+
+        .win-btn-play:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(76, 175, 80, 0.5);
+        }
+
+        .win-btn-menu {
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            color: white;
+        }
+
+        .win-btn-menu:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(33, 150, 243, 0.5);
+        }
+
+        .win-confetti {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .confetti-piece {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            animation: confettiFall 4s linear infinite;
+        }
+
+        @keyframes confettiFall {
+            0% {
+                transform: translateY(-100%) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        .win-fireworks {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            pointer-events: none;
+        }
+
+        .firework {
+            position: absolute;
+            font-size: 2.5em;
+            animation: fireworkBurst 2s ease-out infinite;
+        }
+
+        @keyframes fireworkBurst {
+            0% { 
+                transform: scale(0); 
+                opacity: 1;
+            }
+            50% { 
+                transform: scale(1.5); 
+                opacity: 1;
+            }
+            100% { 
+                transform: scale(2); 
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .win-screen-content {
+                padding: 35px 25px;
+            }
+            
+            .win-trophy {
+                font-size: 5em;
+            }
+            
+            .win-title {
+                font-size: 2.5em;
+            }
+            
+            .win-subtitle {
+                font-size: 1.5em;
+            }
+            
+            .win-score-display {
+                font-size: 1.8em;
+            }
+            
+            .win-message {
+                font-size: 1.2em;
+            }
+            
+            .win-btn {
+                padding: 15px 30px;
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .win-screen-content {
+                padding: 25px 20px;
+            }
+            
+            .win-trophy {
+                font-size: 4em;
+            }
+            
+            .win-title {
+                font-size: 2em;
+            }
+            
+            .win-subtitle {
+                font-size: 1.2em;
+            }
+            
+            .win-score-display {
+                font-size: 1.5em;
+                padding: 12px 25px;
+            }
+            
+            .win-stars {
+                font-size: 2em;
+            }
+            
+            .win-message {
+                font-size: 1em;
+            }
+            
+            .win-btn {
+                padding: 12px 25px;
+                font-size: 1.1em;
                 width: 100%;
             }
         }
@@ -4693,7 +5040,7 @@
                             </svg>
                         </div>
                         <h3>🌈 Rainbow</h3>
-                        <p>7 areas</p>
+                        <p>8 areas</p>
                     </div>
                     
                     <div class="picture-card" onclick="selectPicture('cat')">
@@ -4745,7 +5092,7 @@
                             </svg>
                         </div>
                         <h3>🎈 Balloons</h3>
-                        <p>10 areas</p>
+                        <p>8 areas</p>
                     </div>
                 </div>
             </div>
@@ -4898,7 +5245,7 @@
             </div>
             
             <div class="counting-score">
-                <div class="score-display">النقاط: <span id="arabic-count-score">0</span> 🌟</div>
+                <div class="score-display">النقاط: <span id="arabic-count-score">0</span> / 10 🌟</div>
             </div>
             
             <div class="counting-card" id="arabic-counting-card">
@@ -4925,7 +5272,7 @@
             </div>
             
             <div class="counting-score">
-                <div class="score-display">Score: <span id="english-count-score">0</span> 🌟</div>
+                <div class="score-display">Score: <span id="english-count-score">0</span> / 10 🌟</div>
             </div>
             
             <div class="counting-card" id="english-counting-card">
@@ -5058,6 +5405,37 @@
                     <p class="teeth-message-ar">اختر خيارات صحية!</p>
                     <button class="try-again-btn" onclick="resetLunchBox()">حاول مرة أخرى! 🔄</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Win Screen Overlay for Counting Games -->
+    <div id="counting-win-screen" class="win-screen-overlay" style="display: none;">
+        <div class="win-confetti" id="win-confetti"></div>
+        <div class="win-fireworks" id="win-fireworks"></div>
+        <div class="win-screen-content">
+            <div class="win-trophy">🏆</div>
+            <h1 class="win-title" id="win-title">YOU WON!</h1>
+            <p class="win-subtitle" id="win-subtitle">🎉 Amazing Job! 🎉</p>
+            <div class="win-score-display" id="win-score-display">10 / 10 ⭐</div>
+            <div class="win-stars">
+                <span>⭐</span>
+                <span>🌟</span>
+                <span>✨</span>
+                <span>🌟</span>
+                <span>⭐</span>
+            </div>
+            <p class="win-message" id="win-message">
+                You counted 10 fruits and vegetables correctly!<br>
+                You're a super counting champion! 🥇
+            </p>
+            <div class="win-buttons">
+                <button class="win-btn win-btn-play" id="win-play-again" onclick="playCountingAgain()">
+                    🔄 Play Again
+                </button>
+                <button class="win-btn win-btn-menu" onclick="goToMainMenu()">
+                    🏠 Main Menu
+                </button>
             </div>
         </div>
     </div>
@@ -5801,6 +6179,13 @@
                 createCountingCelebration('arabic-counting-card');
                 
                 allButtons.forEach(b => b.disabled = true);
+                
+                // Check for win condition at 10
+                if (arabicCountScore >= 10) {
+                    setTimeout(() => {
+                        showCountingWinScreen('arabic');
+                    }, 1000);
+                }
             } else {
                 btn.classList.add('wrong');
                 playErrorSound();
@@ -5864,6 +6249,13 @@
                 createCountingCelebration('english-counting-card');
                 
                 allButtons.forEach(b => b.disabled = true);
+                
+                // Check for win condition at 10
+                if (englishCountScore >= 10) {
+                    setTimeout(() => {
+                        showCountingWinScreen('english');
+                    }, 1000);
+                }
             } else {
                 btn.classList.add('wrong');
                 playErrorSound();
@@ -5910,6 +6302,152 @@
         
         function nextEnglishCounting() {
             generateEnglishCounting();
+        }
+        
+        // Win Screen Variables
+        let currentWinGameType = '';
+        
+        function showCountingWinScreen(gameType) {
+            currentWinGameType = gameType;
+            const winScreen = document.getElementById('counting-win-screen');
+            const winTitle = document.getElementById('win-title');
+            const winSubtitle = document.getElementById('win-subtitle');
+            const winMessage = document.getElementById('win-message');
+            const winScoreDisplay = document.getElementById('win-score-display');
+            const playAgainBtn = document.getElementById('win-play-again');
+            
+            if (gameType === 'arabic') {
+                winTitle.textContent = '🎊 فزت! 🎊';
+                winSubtitle.textContent = '🌟 أحسنت! رائع جداً! 🌟';
+                winScoreDisplay.textContent = '١٠ / ١٠ ⭐';
+                winMessage.innerHTML = 'لقد عددت ١٠ فاكهة وخضار بشكل صحيح!<br>أنت بطل العد! 🥇';
+                playAgainBtn.textContent = '🔄 العب مرة أخرى';
+            } else {
+                winTitle.textContent = '🎊 YOU WON! 🎊';
+                winSubtitle.textContent = '🌟 Amazing Job! 🌟';
+                winScoreDisplay.textContent = '10 / 10 ⭐';
+                winMessage.innerHTML = 'You counted 10 fruits and vegetables correctly!<br>You\'re a super counting champion! 🥇';
+                playAgainBtn.textContent = '🔄 Play Again';
+            }
+            
+            // Show the win screen
+            winScreen.style.display = 'flex';
+            
+            // Create confetti
+            createWinConfetti();
+            
+            // Create fireworks
+            createWinFireworks();
+            
+            // Play victory sound
+            playVictorySound();
+        }
+        
+        function createWinConfetti() {
+            const confettiContainer = document.getElementById('win-confetti');
+            confettiContainer.innerHTML = '';
+            
+            const colors = ['#FF6B6B', '#4ECDC4', '#FFE66D', '#95E1D3', '#FF69B4', '#6BCB77', '#4D96FF', '#FFD93D', '#FF6B6B', '#C9B1FF'];
+            const shapes = ['■', '●', '▲', '★', '♦', '♥'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti-piece';
+                confetti.textContent = shapes[Math.floor(Math.random() * shapes.length)];
+                confetti.style.color = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.fontSize = (Math.random() * 20 + 10) + 'px';
+                confetti.style.animationDelay = Math.random() * 3 + 's';
+                confetti.style.animationDuration = (Math.random() * 2 + 3) + 's';
+                confettiContainer.appendChild(confetti);
+            }
+        }
+        
+        function createWinFireworks() {
+            const fireworksContainer = document.getElementById('win-fireworks');
+            fireworksContainer.innerHTML = '';
+            
+            const fireworkEmojis = ['🎆', '🎇', '✨', '💫', '⭐', '🌟', '💥', '🎉'];
+            
+            for (let i = 0; i < 12; i++) {
+                const firework = document.createElement('div');
+                firework.className = 'firework';
+                firework.textContent = fireworkEmojis[Math.floor(Math.random() * fireworkEmojis.length)];
+                firework.style.left = (10 + Math.random() * 80) + '%';
+                firework.style.top = (10 + Math.random() * 80) + '%';
+                firework.style.animationDelay = (Math.random() * 2) + 's';
+                firework.style.animationDuration = (1.5 + Math.random()) + 's';
+                fireworksContainer.appendChild(firework);
+            }
+        }
+        
+        function playVictorySound() {
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                
+                // Play a victory fanfare
+                const notes = [
+                    { freq: 523, duration: 0.15 },  // C5
+                    { freq: 659, duration: 0.15 },  // E5
+                    { freq: 784, duration: 0.15 },  // G5
+                    { freq: 1047, duration: 0.3 },  // C6
+                    { freq: 784, duration: 0.15 },  // G5
+                    { freq: 1047, duration: 0.5 }   // C6 (longer)
+                ];
+                
+                let startTime = audioContext.currentTime;
+                
+                notes.forEach(note => {
+                    const osc = audioContext.createOscillator();
+                    const gain = audioContext.createGain();
+                    
+                    osc.connect(gain);
+                    gain.connect(audioContext.destination);
+                    
+                    osc.frequency.value = note.freq;
+                    osc.type = 'sine';
+                    
+                    gain.gain.setValueAtTime(0.3, startTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, startTime + note.duration);
+                    
+                    osc.start(startTime);
+                    osc.stop(startTime + note.duration);
+                    
+                    startTime += note.duration * 0.8;
+                });
+            } catch (e) {
+                // Audio not supported
+            }
+        }
+        
+        function playCountingAgain() {
+            // Hide win screen
+            document.getElementById('counting-win-screen').style.display = 'none';
+            
+            // Reset score and start new game
+            if (currentWinGameType === 'arabic') {
+                arabicCountScore = 0;
+                document.getElementById('arabic-count-score').textContent = '0';
+                generateArabicCounting();
+            } else {
+                englishCountScore = 0;
+                document.getElementById('english-count-score').textContent = '0';
+                generateEnglishCounting();
+            }
+        }
+        
+        function goToMainMenu() {
+            // Hide win screen
+            document.getElementById('counting-win-screen').style.display = 'none';
+            
+            // Reset scores
+            arabicCountScore = 0;
+            englishCountScore = 0;
+            document.getElementById('arabic-count-score').textContent = '0';
+            document.getElementById('english-count-score').textContent = '0';
+            
+            // Navigate to main menu
+            showScreen('main-menu');
         }
         
         // Number Ordering Game Variables
@@ -6920,6 +7458,175 @@
             balloon: '🎈 Balloons'
         };
         
+        // Color configuration for each picture - colors match the number of areas
+        const pictureColors = {
+            butterfly: [
+                { number: 1, color: '#FF6B6B', name: 'Coral Red' },
+                { number: 2, color: '#4ECDC4', name: 'Teal' },
+                { number: 3, color: '#FFE66D', name: 'Yellow' },
+                { number: 4, color: '#95E1D3', name: 'Mint' },
+                { number: 5, color: '#8B4513', name: 'Brown' },
+                { number: 6, color: '#FF69B4', name: 'Pink' }
+            ],
+            house: [
+                { number: 1, color: '#D2691E', name: 'Roof Brown' },
+                { number: 2, color: '#FFE4B5', name: 'Wall Beige' },
+                { number: 3, color: '#8B4513', name: 'Door Brown' },
+                { number: 4, color: '#87CEEB', name: 'Window Blue' },
+                { number: 5, color: '#87CEEB', name: 'Window Blue' },
+                { number: 6, color: '#A0522D', name: 'Chimney' },
+                { number: 7, color: '#FFD700', name: 'Gold Knob' },
+                { number: 8, color: '#228B22', name: 'Green Ground' }
+            ],
+            flower: [
+                { number: 1, color: '#FFD700', name: 'Yellow Center' },
+                { number: 2, color: '#FF69B4', name: 'Pink Petal' },
+                { number: 3, color: '#FF1493', name: 'Deep Pink' },
+                { number: 4, color: '#FF6B6B', name: 'Coral Petal' },
+                { number: 5, color: '#FF4500', name: 'Orange Petal' },
+                { number: 6, color: '#228B22', name: 'Green Stem' }
+            ],
+            car: [
+                { number: 1, color: '#FF0000', name: 'Red Body' },
+                { number: 2, color: '#FF4444', name: 'Red Roof' },
+                { number: 3, color: '#87CEEB', name: 'Window' },
+                { number: 4, color: '#87CEEB', name: 'Window' },
+                { number: 5, color: '#333333', name: 'Black Wheel' },
+                { number: 6, color: '#333333', name: 'Black Wheel' },
+                { number: 7, color: '#FFFF00', name: 'Headlight' }
+            ],
+            fish: [
+                { number: 1, color: '#FFA500', name: 'Orange Body' },
+                { number: 2, color: '#FF6347', name: 'Red Tail' },
+                { number: 3, color: '#FFD700', name: 'Top Fin' },
+                { number: 4, color: '#FFD700', name: 'Bottom Fin' },
+                { number: 5, color: '#FF69B4', name: 'Pink Mouth' }
+            ],
+            tree: [
+                { number: 1, color: '#228B22', name: 'Green Top' },
+                { number: 2, color: '#32CD32', name: 'Light Green' },
+                { number: 3, color: '#228B22', name: 'Green Right' },
+                { number: 4, color: '#8B4513', name: 'Brown Trunk' }
+            ],
+            robot: [
+                { number: 1, color: '#A9A9A9', name: 'Silver Head' },
+                { number: 2, color: '#00CED1', name: 'Cyan Eye' },
+                { number: 3, color: '#00CED1', name: 'Cyan Eye' },
+                { number: 4, color: '#FFD700', name: 'Gold Antenna' },
+                { number: 5, color: '#FF0000', name: 'Red Light' },
+                { number: 6, color: '#333333', name: 'Black Mouth' },
+                { number: 7, color: '#708090', name: 'Slate Body' },
+                { number: 8, color: '#4169E1', name: 'Blue Arm' },
+                { number: 9, color: '#4169E1', name: 'Blue Arm' },
+                { number: 10, color: '#2F4F4F', name: 'Dark Leg' },
+                { number: 11, color: '#2F4F4F', name: 'Dark Leg' },
+                { number: 12, color: '#32CD32', name: 'Green Panel' }
+            ],
+            rocket: [
+                { number: 1, color: '#FF0000', name: 'Red Nose' },
+                { number: 2, color: '#FFFFFF', name: 'White Body' },
+                { number: 3, color: '#00BFFF', name: 'Blue Window' },
+                { number: 4, color: '#FF4500', name: 'Orange Fin' },
+                { number: 5, color: '#FF4500', name: 'Orange Fin' },
+                { number: 6, color: '#A9A9A9', name: 'Gray Base' },
+                { number: 7, color: '#FFA500', name: 'Orange Flame' },
+                { number: 8, color: '#FFD700', name: 'Yellow Flame' },
+                { number: 9, color: '#FFA500', name: 'Orange Flame' },
+                { number: 10, color: '#0000FF', name: 'Blue Stripe' }
+            ],
+            castle: [
+                { number: 1, color: '#D2B48C', name: 'Tan Tower' },
+                { number: 2, color: '#D2B48C', name: 'Tan Tower' },
+                { number: 3, color: '#DEB887', name: 'Building' },
+                { number: 4, color: '#8B4513', name: 'Brown Top' },
+                { number: 5, color: '#8B4513', name: 'Brown Top' },
+                { number: 6, color: '#8B4513', name: 'Brown Top' },
+                { number: 7, color: '#8B4513', name: 'Brown Top' },
+                { number: 8, color: '#B22222', name: 'Red Roof' },
+                { number: 9, color: '#654321', name: 'Dark Door' },
+                { number: 10, color: '#87CEEB', name: 'Blue Window' },
+                { number: 11, color: '#87CEEB', name: 'Blue Window' }
+            ],
+            boat: [
+                { number: 1, color: '#8B4513', name: 'Brown Hull' },
+                { number: 2, color: '#D2691E', name: 'Tan Deck' },
+                { number: 3, color: '#654321', name: 'Dark Mast' },
+                { number: 4, color: '#FFFFFF', name: 'White Sail' },
+                { number: 5, color: '#FFF5EE', name: 'Light Sail' },
+                { number: 6, color: '#1E90FF', name: 'Blue Port' },
+                { number: 7, color: '#1E90FF', name: 'Blue Port' },
+                { number: 8, color: '#4682B4', name: 'Steel Water' },
+                { number: 9, color: '#FF0000', name: 'Red Flag' }
+            ],
+            sun: [
+                { number: 1, color: '#FFD700', name: 'Gold Center' },
+                { number: 2, color: '#FFA500', name: 'Orange Ray' },
+                { number: 3, color: '#FFA500', name: 'Orange Ray' },
+                { number: 4, color: '#FFA500', name: 'Orange Ray' },
+                { number: 5, color: '#FFA500', name: 'Orange Ray' },
+                { number: 6, color: '#FFFF00', name: 'Yellow Ray' },
+                { number: 7, color: '#FFFF00', name: 'Yellow Ray' },
+                { number: 8, color: '#FFFF00', name: 'Yellow Ray' },
+                { number: 9, color: '#FFFF00', name: 'Yellow Ray' }
+            ],
+            owl: [
+                { number: 1, color: '#8B4513', name: 'Brown Body' },
+                { number: 2, color: '#FFFFE0', name: 'Light Eye' },
+                { number: 3, color: '#FFFFE0', name: 'Light Eye' },
+                { number: 4, color: '#000000', name: 'Black Pupil' },
+                { number: 5, color: '#000000', name: 'Black Pupil' },
+                { number: 6, color: '#FFA500', name: 'Orange Beak' },
+                { number: 7, color: '#D2691E', name: 'Tan Wing' },
+                { number: 8, color: '#D2691E', name: 'Tan Wing' },
+                { number: 9, color: '#A0522D', name: 'Brown Tuft' },
+                { number: 10, color: '#A0522D', name: 'Brown Tuft' }
+            ],
+            rainbow: [
+                { number: 1, color: '#FF0000', name: 'Red Arc' },
+                { number: 2, color: '#FFA500', name: 'Orange Arc' },
+                { number: 3, color: '#FFFF00', name: 'Yellow Arc' },
+                { number: 4, color: '#00FF00', name: 'Green Arc' },
+                { number: 5, color: '#0000FF', name: 'Blue Arc' },
+                { number: 6, color: '#800080', name: 'Purple Arc' },
+                { number: 7, color: '#FFFFFF', name: 'White Cloud' },
+                { number: 8, color: '#F0F0F0', name: 'Light Cloud' }
+            ],
+            cat: [
+                { number: 1, color: '#FFA500', name: 'Orange Body' },
+                { number: 2, color: '#FFB347', name: 'Light Orange' },
+                { number: 3, color: '#FF8C00', name: 'Dark Orange' },
+                { number: 4, color: '#FF8C00', name: 'Dark Orange' },
+                { number: 5, color: '#32CD32', name: 'Green Eye' },
+                { number: 6, color: '#32CD32', name: 'Green Eye' },
+                { number: 7, color: '#FF69B4', name: 'Pink Nose' },
+                { number: 8, color: '#FFB6C1', name: 'Light Pink' },
+                { number: 9, color: '#FFB6C1', name: 'Light Pink' },
+                { number: 10, color: '#D2691E', name: 'Brown Tail' },
+                { number: 11, color: '#FFDAB9', name: 'Peach Paw' },
+                { number: 12, color: '#FFDAB9', name: 'Peach Paw' }
+            ],
+            pizza: [
+                { number: 1, color: '#FFD700', name: 'Gold Cheese' },
+                { number: 2, color: '#D2691E', name: 'Brown Crust' },
+                { number: 3, color: '#FF0000', name: 'Red Pepperoni' },
+                { number: 4, color: '#FF0000', name: 'Red Pepperoni' },
+                { number: 5, color: '#FF0000', name: 'Red Pepperoni' },
+                { number: 6, color: '#F5F5DC', name: 'Beige Mushroom' },
+                { number: 7, color: '#F5F5DC', name: 'Beige Mushroom' },
+                { number: 8, color: '#FFFACD', name: 'Yellow Cheese' }
+            ],
+            balloon: [
+                { number: 1, color: '#FF0000', name: 'Red Balloon' },
+                { number: 2, color: '#B22222', name: 'Dark Red Tie' },
+                { number: 3, color: '#8B0000', name: 'Knot' },
+                { number: 4, color: '#808080', name: 'Gray String' },
+                { number: 5, color: '#0000FF', name: 'Blue Balloon' },
+                { number: 6, color: '#00008B', name: 'Dark Blue Tie' },
+                { number: 7, color: '#000080', name: 'Navy Knot' },
+                { number: 8, color: '#808080', name: 'Gray String' }
+            ]
+        };
+        
         function selectPicture(pictureName) {
             currentPicture = pictureName;
             
@@ -6933,18 +7640,60 @@
             // Load SVG
             document.getElementById('paint-canvas').innerHTML = svgTemplates[pictureName];
             
+            // Generate dynamic color palette based on picture's areas
+            generateColorPalette(pictureName);
+            
             // Reset painting state
             paintedAreas.clear();
             selectedColor = null;
             selectedNumber = null;
             
-            // Remove selection from palette
-            document.querySelectorAll('.palette-color').forEach(btn => {
-                btn.classList.remove('selected');
-            });
-            
             // Re-initialize paint areas
             initializePaintAreas();
+        }
+        
+        function generateColorPalette(pictureName) {
+            const colors = pictureColors[pictureName];
+            const paletteContainer = document.getElementById('color-palette');
+            
+            // Clear existing palette
+            paletteContainer.innerHTML = '';
+            
+            // Add info about number of colors
+            const infoDiv = document.createElement('div');
+            infoDiv.className = 'palette-info';
+            infoDiv.innerHTML = `🎨 This picture has <strong>${colors.length} colors</strong> to paint!`;
+            infoDiv.style.width = '100%';
+            infoDiv.style.marginBottom = '15px';
+            paletteContainer.appendChild(infoDiv);
+            
+            // Generate buttons for each color
+            colors.forEach(colorInfo => {
+                const button = document.createElement('button');
+                button.className = 'palette-color';
+                button.setAttribute('data-number', colorInfo.number);
+                button.setAttribute('data-color', colorInfo.color);
+                button.style.background = colorInfo.color;
+                button.textContent = colorInfo.number;
+                button.title = colorInfo.name;
+                
+                // Adjust text color for better visibility on light backgrounds
+                const lightColors = ['#FFFFFF', '#FFFF00', '#FFD700', '#FFFFE0', '#F5F5DC', '#FFFACD', '#FFF5EE', '#FFDAB9', '#FFE4B5', '#F0F0F0', '#FFB6C1', '#95E1D3', '#FFE66D'];
+                if (lightColors.includes(colorInfo.color.toUpperCase()) || colorInfo.color.toUpperCase() === '#FFFFFF') {
+                    button.style.color = '#333';
+                    button.style.textShadow = 'none';
+                } else {
+                    button.style.color = '#fff';
+                    button.style.textShadow = '1px 1px 2px rgba(0,0,0,0.5)';
+                }
+                
+                // Add click handler
+                button.addEventListener('click', function() {
+                    selectPaletteColor(this);
+                });
+                
+                paletteContainer.appendChild(button);
+            });
         }
         
         function backToSelection() {
